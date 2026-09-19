@@ -1,0 +1,153 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "n": [
+          "n",
+          6
+        ],
+        "result": [
+          "factorial",
+          1
+        ],
+        "i": [
+          "i",
+          1
+        ]
+      },
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {
+        "b0": {
+          "opcode": "operator_multiply",
+          "next": null,
+          "parent": "b1",
+          "inputs": {
+            "NUM1": [
+              2,
+              [
+                12,
+                "factorial",
+                "result"
+              ]
+            ],
+            "NUM2": [
+              2,
+              [
+                12,
+                "i",
+                "i"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b1": {
+          "opcode": "data_setvariableto",
+          "next": "b2",
+          "parent": "b3",
+          "inputs": {
+            "VALUE": [
+              2,
+              "b0"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "factorial",
+              "result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b2": {
+          "opcode": "data_changevariableby",
+          "next": null,
+          "parent": "b1",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                4,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "i",
+              "i"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b3": {
+          "opcode": "control_repeat",
+          "next": null,
+          "parent": "b4",
+          "inputs": {
+            "TIMES": [
+              2,
+              [
+                12,
+                "n",
+                "n"
+              ]
+            ],
+            "SUBSTACK": [
+              2,
+              "b1"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b4": {
+          "opcode": "event_whenflagclicked",
+          "next": "b3",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "b6229967372e473079438136d6e7f144",
+          "name": "synthetic blank",
+          "bitmapResolution": 1,
+          "md5ext": "b6229967372e473079438136d6e7f144.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "5.0.300",
+    "agent": "scratch-semantic-bridge synthetic fixture"
+  }
+}

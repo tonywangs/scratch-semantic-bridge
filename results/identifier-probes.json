@@ -1,0 +1,10 @@
+{
+  "oracle": "scratch-vm@5.0.300",
+  "experiment": "A synthetic stage variable with the listed ID starts at 2; its green-flag script changes it by 1. Run through scripts/oracle.js.",
+  "observed": [
+    {"id": "constructor", "error": "accum[id].concat is not a function"},
+    {"id": "toString", "error": "accum[id].concat is not a function"},
+    {"id": "hasOwnProperty", "error": "accum[id].concat is not a function"}
+  ],
+  "decision": "Reject variable and block IDs that are own properties of Object.prototype with UNSUPPORTED_IDENTIFIER. Do not count these unsupported inputs as passing differential cases."
+}

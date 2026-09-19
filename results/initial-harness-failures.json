@@ -1,0 +1,29 @@
+{
+  "phase": "Initial headless differential harness validation",
+  "summary": {
+    "total": 170,
+    "passed": 168,
+    "failed": 2
+  },
+  "failures": [
+    {
+      "name": "unicode-variable-and-injection-string",
+      "kind": "edge",
+      "sb3Sha256": "06f9084e34c1332d76622fbea637cda551c02b4a3003183348e308ae8fe3eeae",
+      "status": "fail",
+      "error": {
+        "message": "Cannot read properties of undefined (reading 'value')"
+      }
+    },
+    {
+      "name": "stage-sprite-local-precedence",
+      "kind": "edge",
+      "sb3Sha256": "bd25caab65fdb54666e4b708fa517693216aa0d8484cdfa5d39147daa25be95c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      }
+    }
+  ],
+  "resolution": "Harness now maps original variable IDs through Scratch VM XML sanitization; synthetic sprite layerOrder corrected from 0 to 1. These were oracle lookup and invalid fixture failures, not measured value mismatches."
+}

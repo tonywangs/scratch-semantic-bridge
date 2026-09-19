@@ -1,0 +1,157 @@
+{
+  "observedAtUtc": "2026-09-19T01:24:04.725345+00:00",
+  "command": [
+    "node",
+    "scripts/verify.js"
+  ],
+  "node": "v24.20.0",
+  "npm": "11.19.0",
+  "status": "pass",
+  "unitTests": {
+    "total": 43,
+    "passed": 43,
+    "failed": 0
+  },
+  "differential": {
+    "total": 170,
+    "passed": 170,
+    "failed": 0
+  },
+  "coercionValues": 33,
+  "comparisonPairs": 1089,
+  "installedExamples": [
+    {
+      "name": "factorial",
+      "expected": {
+        "n": 6,
+        "result": 720,
+        "i": 7
+      },
+      "actual": {
+        "steps": 26,
+        "variables": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "n",
+            "name": "n",
+            "initialValue": 6,
+            "value": 6
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "result",
+            "name": "factorial",
+            "initialValue": 1,
+            "value": 720
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "i",
+            "name": "i",
+            "initialValue": 1,
+            "value": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "summation",
+      "expected": {
+        "n": 100,
+        "result": 5050,
+        "i": 101
+      },
+      "actual": {
+        "steps": 302,
+        "variables": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "n",
+            "name": "n",
+            "initialValue": 100,
+            "value": 100
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "result",
+            "name": "sum",
+            "initialValue": 0,
+            "value": 5050
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "i",
+            "name": "i",
+            "initialValue": 1,
+            "value": 101
+          }
+        ]
+      }
+    },
+    {
+      "name": "conditional",
+      "expected": {
+        "input": -7,
+        "result": "negative"
+      },
+      "actual": {
+        "steps": 4,
+        "variables": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "input",
+            "name": "input",
+            "initialValue": -7,
+            "value": -7
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "result",
+            "name": "classification",
+            "initialValue": "",
+            "value": "negative"
+          }
+        ]
+      }
+    }
+  ],
+  "lockfileSha256": "6a679a8824cf7bed401d7481d3d4d579c14542b5bc97c111c5955343d35818d3",
+  "corpusSha256": "7f93198dae1363c8690be408094398ed58eb6a264d64013b97f90a9ab67a5e67",
+  "sourceSha256": {
+    "bin/scratch-bridge.js": "39dca42a5ac6423ab32895592180931c43eea77011f7a668aa2e37d79e820da0",
+    "scripts/asset.js": "ddbb6de826ec99f5c86d64e13c332ed2e87457fc49a2697edaaa5b73aaf52d85",
+    "scripts/differential.js": "1074fd06b322baf5e062c5899961a566e63f07bb2d6f8c5ce06a1d48ad56e61d",
+    "scripts/edge-cases.js": "e9b3e7ba572bc95c44416d3caa472266e16806510a1fd24c7f7606a6f10fdff4",
+    "scripts/fixtures.js": "7dbf49cb2feb422587f615a8098bf3f31af0a6ca3fca2a9197e10c7d00012926",
+    "scripts/oracle.js": "4d8572fa811815c79124d5cf0762d20fbc6b808a715e1095d25f8e403cb140bd",
+    "scripts/programs.js": "362cf1e426521d379f4aa36c4c6c0b53f6cec852b9e3717ba4bcc58438f10c92",
+    "scripts/verify.js": "419cdd36ce5eb8a820abe709c777b1283ff7d728019252e3703f1da00d938e4d",
+    "scripts/zip.js": "001626ba26889a5a2501f858a700b2fa8eeee2d9b9d950efd0b0858f68dfd5e7",
+    "src/archive.js": "792416df1d8ba1ab6ca8b25e65a947a83e7883546f98d9f989b977bbe23c9c6c",
+    "src/compiler.js": "cc685a094a47d8ba2d44ecff41687dabd911333c922e510a91f155103cce3146",
+    "src/errors.js": "27f2100a988ba46a9135963b432402257538e390e4f8da62e36d8a316ef8ada0",
+    "src/identifiers.js": "e543bdb75a7af1e7204102b1a8109ee8c1a24ef0688f871d1e1c0c93f33cb18c",
+    "src/index.js": "210b07e5f0555eb3d1bacf3184f6709dd1fc14873adf06093276b27b3d40f97e",
+    "src/runtime.js": "936883423110befba96ca5273fb337cd85e54689b988e6bbc4dc1ad3b24af7a9",
+    "test/archive.test.js": "7ebb85da549d8bfd9d8f13515a5184327841ca3b599675e8170fa8853b723e76",
+    "test/cli.test.js": "8e7f8becd249238daa73265ae9a5c171be515a3cb72d86f6ce549a1650ab098d",
+    "test/coercion.test.js": "2efc788a7a71c5e30c2f97bc2de31600ffe0c677a105602f94c9f019b1c3fc13",
+    "test/compiler.test.js": "7635e150efe8a6679c3f4045cf69cca8e692a47a2ae1ee23e71499099d0701f3",
+    "test/helpers.js": "1623def954b9b43e9e764acb01f3c895b8dbc351d10ec0975d374692c1292b45"
+  },
+  "unresolvedSupportedSubsetMismatches": [],
+  "limitations": [
+    "Finite synthetic corpus; no equivalence proof.",
+    "Final scalar values only; no graphics, audio, scheduling or concurrency validation.",
+    "No personal projects. Node 22 minimum is declared; recorded checks used Node 24.20.0.",
+    "Reserved identifiers, sanitization collisions, backspace text and malformed graphs are explicitly rejected."
+  ]
+}

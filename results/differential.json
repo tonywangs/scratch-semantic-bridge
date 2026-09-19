@@ -1,0 +1,7799 @@
+{
+  "schemaVersion": 1,
+  "node": "v24.20.0",
+  "scratchVm": "5.0.300",
+  "corpusSha256": "7f93198dae1363c8690be408094398ed58eb6a264d64013b97f90a9ab67a5e67",
+  "lockfileSha256": "6a679a8824cf7bed401d7481d3d4d579c14542b5bc97c111c5955343d35818d3",
+  "oracle": "Scratch VM loadProject and headless turbo scheduler; 20000-tick ceiling; no renderer or storage",
+  "scope": "Final scalar variable values and types only; IEEE exceptional values tagged; scheduler timing is not compared",
+  "cases": [
+    {
+      "name": "factorial",
+      "kind": "example",
+      "sb3Sha256": "cb6be0b9ae60179884c8aa7e146972456bfc2f3a4d9e23b7fa680327a71bd0da",
+      "generatedSteps": 26,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "n",
+          "value": 6
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 720
+        },
+        {
+          "targetIndex": 0,
+          "id": "i",
+          "value": 7
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "n",
+          "value": 6
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 720
+        },
+        {
+          "targetIndex": 0,
+          "id": "i",
+          "value": 7
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "summation",
+      "kind": "example",
+      "sb3Sha256": "ddc48e161548202577777c32f4e370c9262ce652670c0c4a9a98a7b932d90c36",
+      "generatedSteps": 302,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "n",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 5050
+        },
+        {
+          "targetIndex": 0,
+          "id": "i",
+          "value": 101
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "n",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 5050
+        },
+        {
+          "targetIndex": 0,
+          "id": "i",
+          "value": 101
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "conditional",
+      "kind": "example",
+      "sb3Sha256": "0cafc9e73bff34c5bff4bab03a6d70ae84d40633f75f85e5729c412aafa09952",
+      "generatedSteps": 4,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "input",
+          "value": -7
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "negative"
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "input",
+          "value": -7
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "negative"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat--3",
+      "kind": "edge",
+      "sb3Sha256": "eaf2004b1f800220051c65328fee8fcfcfde3a170d6ef87dba54ccebe6c3b539",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat--0.5",
+      "kind": "edge",
+      "sb3Sha256": "12e3b9efdb5469a1af7b1ec18d7f333c5cd9b833dda0353a89e8c8f76b02a438",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-0",
+      "kind": "edge",
+      "sb3Sha256": "105a24f81475c08246b0e8f2cd419c3aeb49a52bbd5b60256f349d90c00e9762",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-0.49",
+      "kind": "edge",
+      "sb3Sha256": "65c024140fc0f2f729f36b0d0843ca836572de01fa205d3f136d6047ef886b8d",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-0.5",
+      "kind": "edge",
+      "sb3Sha256": "ff8dafdf6befcdc5b2d2fd92eadbb5f270350159ad454a871aafb45bca021842",
+      "generatedSteps": 4,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-1.5",
+      "kind": "edge",
+      "sb3Sha256": "9dd92ce0c6ec08d87e16c8f61530c5b76aacc31f0053e5db983dc4d2fa0afab4",
+      "generatedSteps": 6,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-2.5",
+      "kind": "edge",
+      "sb3Sha256": "8e3621ea85bf99e98bf628ef798b717c2ddb613b4fbdf1b9c49004143ff38c61",
+      "generatedSteps": 8,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-\"false\"",
+      "kind": "edge",
+      "sb3Sha256": "a1ca4be8614af89b0301935264a78dcad41a4b289295a52a78db2c8e71a3e39d",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-\" \"",
+      "kind": "edge",
+      "sb3Sha256": "effbb1f15b57b70279ce8f14e5fe3a4264c138961d7625ed4560efb974817c10",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-\"3.5\"",
+      "kind": "edge",
+      "sb3Sha256": "c746c3958e3c3969b1fd8db6c51d5f53bb64935e808b8f0d05d0f04ee48a7923",
+      "generatedSteps": 10,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "repeat-bound-snapshot",
+      "kind": "edge",
+      "sb3Sha256": "1cbe6d1c3cb75373fd1bb338b66b71d9155a5bdfe9857707df94e43d9d1d47d9",
+      "generatedSteps": 11,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "n",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "n",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "nested-until-if",
+      "kind": "edge",
+      "sb3Sha256": "688cbef3bf53b02437de5b6f22e6656c7e7b44f250a38a456bc3b10c95793b0a",
+      "generatedSteps": 24,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 5
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 5
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "empty-boolean",
+      "kind": "edge",
+      "sb3Sha256": "200afd8ecf87259357b30bbd166a4fd899d3aaa11ef9f9fbb2a63fc307709ea6",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "empty-not",
+      "kind": "edge",
+      "sb3Sha256": "e1bab0e4e0bf62a32a5d3f5c5757ee0cd99c9159f92e553f58da04580b832e12",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "numeric-shadow-retains-string",
+      "kind": "edge",
+      "sb3Sha256": "c07e8cf666af577c80261dc1a34ded8d10f29a763a59cfd4a9d46da403ee0e98",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "010"
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "010"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "obscured-primitive-shadow",
+      "kind": "edge",
+      "sb3Sha256": "c962079ddb9ae187a981b330a98c7180c858365e54e0654552c8b3faed18bf81",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "obscured-block-shadow",
+      "kind": "edge",
+      "sb3Sha256": "14910c881192bcc65d616bd6138a470c73be26ac0b3dff4b2617bcab74f6d517",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_divide-0-0",
+      "kind": "edge",
+      "sb3Sha256": "01e88a06d636e8161df7dcaef8abf2905129fc18c66c3aacec23449c9a9ed7c4",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_divide-1-0",
+      "kind": "edge",
+      "sb3Sha256": "ab3ade1f96c11825be121f38534d3b5cd8ff4c71d9f2fcc8776e0f39b3215213",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_divide--1-0",
+      "kind": "edge",
+      "sb3Sha256": "dccf7281e1fdc6f543ea36bae9a5b884e0e4b4c09f5a77a1d51da0ea39280aae",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "-Infinity"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "-Infinity"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_divide--5-3",
+      "kind": "edge",
+      "sb3Sha256": "20c5f5f068ca912378ed4c648b47127f5e7325046d93faf301f318f78f943e01",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1.6666666666666667
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1.6666666666666667
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_divide-5--3",
+      "kind": "edge",
+      "sb3Sha256": "203c36d88289bebecc7a0a29bf4f48369f604e20d7aaa35d00a76f2616c56ae3",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1.6666666666666667
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1.6666666666666667
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_divide-Infinity-3",
+      "kind": "edge",
+      "sb3Sha256": "ffe70c7220882c5aa24564df5e3c1b5833e3098178841b3c03a4cf39ecabe15a",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_mod-0-0",
+      "kind": "edge",
+      "sb3Sha256": "6054be844c50f194ca89bf8f0e41002c104bc29b90992b6e9aabb658bbe834a0",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_mod-1-0",
+      "kind": "edge",
+      "sb3Sha256": "259a04fd31133cac57b05d9d51047f6a6fe6ad59e6ac592d173c2d4e711c6c26",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_mod--1-0",
+      "kind": "edge",
+      "sb3Sha256": "bdf4a2c5c2be0463213c30daa9188897382686b780e82045cf57a3604ee6cd18",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_mod--5-3",
+      "kind": "edge",
+      "sb3Sha256": "b3754a730fd99cb7d6038a011dcb0885cd2aaa35b0381e8149eeca798e92cdb3",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_mod-5--3",
+      "kind": "edge",
+      "sb3Sha256": "f9f108f1a90ca401d748e335d4873d0021333281bc0bcd00914157f30dffb6e7",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "operator_mod-Infinity-3",
+      "kind": "edge",
+      "sb3Sha256": "a5c627139e3a9c841239fb89c4a69acc73c0c3633fccb67298a098a4cd4a8b19",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "compare--0",
+      "kind": "edge",
+      "sb3Sha256": "94b731d51c744e6e67f0c6417d35b4c9d38144452d3b0912022fcab2e81ce8af",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "compare- -0",
+      "kind": "edge",
+      "sb3Sha256": "2357e8e4799a55f85c4b4b0a9adb9bef946be3bfc04ad69208c61e08853f9882",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "compare-Infinity-Infinity",
+      "kind": "edge",
+      "sb3Sha256": "408a7309ff92edab54056ec3e3d8527932bd1520abeefa6481a5b984b69f3195",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "compare-É-é",
+      "kind": "edge",
+      "sb3Sha256": "a840c93c222cdca9a9388481ae5a2939d97c1950aec614420b730534ce308e12",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "compare-İ-i",
+      "kind": "edge",
+      "sb3Sha256": "6558935296a881e07fb02387a96e0eb30edee665c002befe74dcd71072276931",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "compare-你好-你好",
+      "kind": "edge",
+      "sb3Sha256": "b4682105a43b5b121d1d6d9ce0cabf96780f49bc74c0df12a085a0339e224844",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "literal-shadow-block",
+      "kind": "edge",
+      "sb3Sha256": "d2347caaf13d506caf9e67f7a781f89c125e5cefada98b5f8b7ab0f2346f63a3",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "001"
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "001"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "boolean-variable",
+      "kind": "edge",
+      "sb3Sha256": "790190ecc3f2672a015e587f653c346ed1a8357e4587f9a2034ea5109d8d41c5",
+      "generatedSteps": 4,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "yes",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "no",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "yes",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "no",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "unicode-variable-and-injection-string",
+      "kind": "edge",
+      "sb3Sha256": "06f9084e34c1332d76622fbea637cda551c02b4a3003183348e308ae8fe3eeae",
+      "generatedSteps": 2,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "结果\"\\\n",
+          "value": "\";throw new Error(\"injection\");//\n你好 "
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "结果\"\\\n",
+          "value": "\";throw new Error(\"injection\");//\n你好 "
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "stage-sprite-local-precedence",
+      "kind": "edge",
+      "sb3Sha256": "4e0932f0c3337d3a737dae77ba68573efe70b1e624196e68f0e028debec77d53",
+      "generatedSteps": 3,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "shared",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7
+        },
+        {
+          "targetIndex": 1,
+          "id": "shared",
+          "value": 7
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "shared",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7
+        },
+        {
+          "targetIndex": 1,
+          "id": "shared",
+          "value": 7
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590336",
+      "kind": "generated",
+      "seed": 1592590336,
+      "sb3Sha256": "b93849697ac8cdb5eb5faefa3c50c7274bb9558a8092d79f6f144ec9e41e711c",
+      "generatedSteps": 19,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590337",
+      "kind": "generated",
+      "seed": 1592590337,
+      "sb3Sha256": "15318669e04c06ffbaf87cb5beb403e1a1f4ec3f411d0842e3afb08367209d5e",
+      "generatedSteps": 22,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590338",
+      "kind": "generated",
+      "seed": 1592590338,
+      "sb3Sha256": "97225af15f75a2579d61cc27839341f98060be829cfbffeabe83f51e4cde3807",
+      "generatedSteps": 104,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590339",
+      "kind": "generated",
+      "seed": 1592590339,
+      "sb3Sha256": "6cfa22a9a6c2a6567df095ddd72fd9bdd6b1d9ba13e261483f7abff5f2fca7ff",
+      "generatedSteps": 101,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590340",
+      "kind": "generated",
+      "seed": 1592590340,
+      "sb3Sha256": "86179876534a485108feccbba4d45f19b4b2245afc2782aed440186fd16dde52",
+      "generatedSteps": 25,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 32
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 32
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590341",
+      "kind": "generated",
+      "seed": 1592590341,
+      "sb3Sha256": "1be78ad1f3a830e4e61afafce93355ef0da2bb5629b82a815cc38e29cd152105",
+      "generatedSteps": 54,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 11
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 11
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 11
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 11
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590342",
+      "kind": "generated",
+      "seed": 1592590342,
+      "sb3Sha256": "53704c1a37344007f61710514af28dd0c4dc28f7b50b8a8336c2329cf1c6d95a",
+      "generatedSteps": 60,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590343",
+      "kind": "generated",
+      "seed": 1592590343,
+      "sb3Sha256": "bc9053cca84393a04cbb56927f4f880f096d1772eb54a586dcc7de140970e12e",
+      "generatedSteps": 22,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590344",
+      "kind": "generated",
+      "seed": 1592590344,
+      "sb3Sha256": "08ab9b150bfd786f8eb9e9a6738aecae7ba3aafcd9dc99958fc59ff715fd55af",
+      "generatedSteps": 162,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590345",
+      "kind": "generated",
+      "seed": 1592590345,
+      "sb3Sha256": "6c719b9420d4866236a11f14e7a868d05e11d9790dd78db744c3db9379704690",
+      "generatedSteps": 24,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590346",
+      "kind": "generated",
+      "seed": 1592590346,
+      "sb3Sha256": "51e8eb7a76122ecca8e3ecc6336f52aeb1f010a17dddb2329929724c1fdf2e40",
+      "generatedSteps": 37,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": " "
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": " "
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590347",
+      "kind": "generated",
+      "seed": 1592590347,
+      "sb3Sha256": "1f19de2453cb12d07bed277bfc3a9f564838d0d0b6e7f2b045cedb4cfd791a5b",
+      "generatedSteps": 65,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590348",
+      "kind": "generated",
+      "seed": 1592590348,
+      "sb3Sha256": "bfea5c3914f8f075bb770e7b81d3bead403733c2ac17ed2d873f2bbcde1f1765",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590349",
+      "kind": "generated",
+      "seed": 1592590349,
+      "sb3Sha256": "c040de51743245b33fd8227228ae3ba85ca978f041e6204782212e7da91f6105",
+      "generatedSteps": 47,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590350",
+      "kind": "generated",
+      "seed": 1592590350,
+      "sb3Sha256": "a84c9e2b5739e85f9138d7485c9c83cfb32ad84161ee4f8b4fe1d19ba19ef8e2",
+      "generatedSteps": 16,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590351",
+      "kind": "generated",
+      "seed": 1592590351,
+      "sb3Sha256": "50ca30686448233073a0bac124d90b263a872d770ee0a4fafa08bb6cbef9cd64",
+      "generatedSteps": 89,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590352",
+      "kind": "generated",
+      "seed": 1592590352,
+      "sb3Sha256": "546dcff89b6197c34815a622474155f1a5930775d4e8a469cad6ff9e8455799c",
+      "generatedSteps": 90,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590353",
+      "kind": "generated",
+      "seed": 1592590353,
+      "sb3Sha256": "b0f30cde0ed4753529e58cf1ac3ea21aef035b498732d5c4a52ba03d4778fd84",
+      "generatedSteps": 23,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590354",
+      "kind": "generated",
+      "seed": 1592590354,
+      "sb3Sha256": "ad271afb0386fc3662d0a8a1129eb5878fb40f8d1ebba31be7d3178b9e96e11f",
+      "generatedSteps": 28,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590355",
+      "kind": "generated",
+      "seed": 1592590355,
+      "sb3Sha256": "ce090fa25530402aead22022f5d04399d016e4d8c28052c12ab97af4f30f3f55",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590356",
+      "kind": "generated",
+      "seed": 1592590356,
+      "sb3Sha256": "ffdfa35db0a46db61de9452ed43d2c77dfae11970e9ce01147d05f23b8dd33c7",
+      "generatedSteps": 22,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590357",
+      "kind": "generated",
+      "seed": 1592590357,
+      "sb3Sha256": "4d556812d3b9e266aa70747cdd0abff5051af3fefe7223e8e480208f32c3cd38",
+      "generatedSteps": 14,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590358",
+      "kind": "generated",
+      "seed": 1592590358,
+      "sb3Sha256": "92c91940e3979fbe0666307bcdfaf3f6915fada47877f40b92097a1f09ab6015",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "İ"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "İ"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590359",
+      "kind": "generated",
+      "seed": 1592590359,
+      "sb3Sha256": "b8c5cf18cddae04350b73dbe01fa195cbe821f46367e59473bbdbbdff7777ad1",
+      "generatedSteps": 114,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -12.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -12.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590360",
+      "kind": "generated",
+      "seed": 1592590360,
+      "sb3Sha256": "f1cf9fb0eed46656fb1cc6e293f91d005d13e2ed9fa4caac9c02fb4b2969eb6e",
+      "generatedSteps": 11,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590361",
+      "kind": "generated",
+      "seed": 1592590361,
+      "sb3Sha256": "62062e33851396d564c00c14573e08895fe37782408d610908955ef8b7eff5cd",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590362",
+      "kind": "generated",
+      "seed": 1592590362,
+      "sb3Sha256": "c0ce87c9455a2291d44ae64b8bc0ca95398730527f39ba3c42057d5f150641cf",
+      "generatedSteps": 38,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590363",
+      "kind": "generated",
+      "seed": 1592590363,
+      "sb3Sha256": "e43cc67ff932e45bde41e03898b273585cb2e6be1a3c7beaa144b14435662485",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590364",
+      "kind": "generated",
+      "seed": 1592590364,
+      "sb3Sha256": "08b24e3454dafbdde1c597148a454d0f7b24085da657a6e40172b88d8019117e",
+      "generatedSteps": 43,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 7.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590365",
+      "kind": "generated",
+      "seed": 1592590365,
+      "sb3Sha256": "e88700ed819ac20065040891a3dbcedb14ea0c08a2adedf62aa6d77e980ec6f3",
+      "generatedSteps": 11,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590366",
+      "kind": "generated",
+      "seed": 1592590366,
+      "sb3Sha256": "ac718b15f82dcfbd0155849e5b2268ccf1c950494bb8940f44b775b22d7ad693",
+      "generatedSteps": 37,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590367",
+      "kind": "generated",
+      "seed": 1592590367,
+      "sb3Sha256": "e1eeb1e18afb75f2e2e2f52bb98491ba6cdf68a4362de50d2f31c48f32bb3a42",
+      "generatedSteps": 35,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590368",
+      "kind": "generated",
+      "seed": 1592590368,
+      "sb3Sha256": "1d60aaeb4b324ee8b4ccd7ab0b0d422c16790a88d8d5b19a636b1b2852e2714a",
+      "generatedSteps": 65,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590369",
+      "kind": "generated",
+      "seed": 1592590369,
+      "sb3Sha256": "61ce8f656b0be000d5d362a90582bae299e8e2f8cee801ab36f10bafbf57fa25",
+      "generatedSteps": 40,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590370",
+      "kind": "generated",
+      "seed": 1592590370,
+      "sb3Sha256": "ad6f0057a98936558f7edc00ed74a48cc82c6efc97206f806c7fb96e0f64fc6d",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590371",
+      "kind": "generated",
+      "seed": 1592590371,
+      "sb3Sha256": "62517013911959ad783a7d19e14aed2f00b7e20a8c95927f7708d214514141ae",
+      "generatedSteps": 15,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590372",
+      "kind": "generated",
+      "seed": 1592590372,
+      "sb3Sha256": "2885dfd0aee2a3eff02193aef1c4ce01d2b9cd131756279e5a81f9888a35b97c",
+      "generatedSteps": 114,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590373",
+      "kind": "generated",
+      "seed": 1592590373,
+      "sb3Sha256": "17a1ea58a63109b8bfe606836622e3396a4e2750ad9401c095aed4751c18aff9",
+      "generatedSteps": 58,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590374",
+      "kind": "generated",
+      "seed": 1592590374,
+      "sb3Sha256": "dfa11da093fc0c5cc1e991730d204619351bb586c004401d270d983e893dda8f",
+      "generatedSteps": 39,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590375",
+      "kind": "generated",
+      "seed": 1592590375,
+      "sb3Sha256": "46898faa41f03f61e0c8acc3fbc7f2d798e12a2a792281a0bc548cb2566f918a",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590376",
+      "kind": "generated",
+      "seed": 1592590376,
+      "sb3Sha256": "7ea6b2dae99b507919f019dcc5df1bca8856a2fc309c5929299e0f4069b9c241",
+      "generatedSteps": 103,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590377",
+      "kind": "generated",
+      "seed": 1592590377,
+      "sb3Sha256": "1fb0c5d9e3cbb752e9629e3659d47d3e65289225d153e9a2d93a65cf25817438",
+      "generatedSteps": 64,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590378",
+      "kind": "generated",
+      "seed": 1592590378,
+      "sb3Sha256": "3d915146417e5ce14eb08b382e97775adeb85b26cd90a36ab29d4d289af6857e",
+      "generatedSteps": 11,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "İ"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "İ"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590379",
+      "kind": "generated",
+      "seed": 1592590379,
+      "sb3Sha256": "db55fd6c04d91d542073ab8c90f775dabd8a6812c024ea3b381a3d5f4bcf7ead",
+      "generatedSteps": 90,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590380",
+      "kind": "generated",
+      "seed": 1592590380,
+      "sb3Sha256": "ed70c3d38096e4503ce30c94aad9c53b5b515eec3f2a55baa4c7a8ae25d42e39",
+      "generatedSteps": 27,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590381",
+      "kind": "generated",
+      "seed": 1592590381,
+      "sb3Sha256": "948b13674a27b0cce87c27fc46ad615317f4d2da15037df10f85270dbc4895f7",
+      "generatedSteps": 17,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590382",
+      "kind": "generated",
+      "seed": 1592590382,
+      "sb3Sha256": "d3ded03db7dbc85e7bea4207e20e7b20716db2647ccc7c9d9aec61b72d384542",
+      "generatedSteps": 119,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590383",
+      "kind": "generated",
+      "seed": 1592590383,
+      "sb3Sha256": "9b43b5aaa04da23e61f508bd70dc5c39fe636879ae70907ffc0003d6b73144e7",
+      "generatedSteps": 13,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590384",
+      "kind": "generated",
+      "seed": 1592590384,
+      "sb3Sha256": "979f4ec6f48a93954512253dd985759a873c15bdb1a635c23e65431931627479",
+      "generatedSteps": 64,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590385",
+      "kind": "generated",
+      "seed": 1592590385,
+      "sb3Sha256": "c1e872be52c10bf39474e6e24352f1ebe4ea425268beea96f15b812e2bc0a060",
+      "generatedSteps": 15,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590386",
+      "kind": "generated",
+      "seed": 1592590386,
+      "sb3Sha256": "9375f8ac670c6fe0198d660cf0c232b3a226f2c4b68eda0fad8de39c186245f4",
+      "generatedSteps": 24,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590387",
+      "kind": "generated",
+      "seed": 1592590387,
+      "sb3Sha256": "6f8c08c2bceb9f0d5fd5e2d8b0f973acc0e858acd2868baa6a963265d577e60f",
+      "generatedSteps": 16,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590388",
+      "kind": "generated",
+      "seed": 1592590388,
+      "sb3Sha256": "504edfc5377d82f977053589f1610e9f7864cf2c2e5dbb8e414f8f8322ca4106",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590389",
+      "kind": "generated",
+      "seed": 1592590389,
+      "sb3Sha256": "5f62d9aaf65c15ea3419c843aca2144622daa2e543b16acf619dea6871cd83e0",
+      "generatedSteps": 74,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590390",
+      "kind": "generated",
+      "seed": 1592590390,
+      "sb3Sha256": "77813448b0404d23886d3316d2a9d5b80b502a49e75acec82455414dd4001898",
+      "generatedSteps": 100,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590391",
+      "kind": "generated",
+      "seed": 1592590391,
+      "sb3Sha256": "6ea94b2aa88ada0f32b34e399b7f977c53e7bf8561140082cb2d96cbbaac60b5",
+      "generatedSteps": 15,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590392",
+      "kind": "generated",
+      "seed": 1592590392,
+      "sb3Sha256": "a99428695a077229e63666db266f81f4e5d7190a7e59c716879c7b6e18636f5c",
+      "generatedSteps": 45,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 32
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 32
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590393",
+      "kind": "generated",
+      "seed": 1592590393,
+      "sb3Sha256": "95a681c46062d7caf60cc4f4128077dcc95e975a8d1f71955cfbfc6eb0cc993b",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590394",
+      "kind": "generated",
+      "seed": 1592590394,
+      "sb3Sha256": "677780152f1a4b58297f4924b5a7649be2c3a8255912394d65dbd598eb5bfe25",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590395",
+      "kind": "generated",
+      "seed": 1592590395,
+      "sb3Sha256": "adf0ede3fe6725dadb8252723853b9c3c981ce3a6c9a006a96894613dd70b32f",
+      "generatedSteps": 28,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590396",
+      "kind": "generated",
+      "seed": 1592590396,
+      "sb3Sha256": "120c30d84c858bed2ca4f310bbd51730a4283f0c9c1be99b31d950ab920ad18b",
+      "generatedSteps": 43,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 7.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 7.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590397",
+      "kind": "generated",
+      "seed": 1592590397,
+      "sb3Sha256": "aa844ea5e82c113fc243511dc5af99d4a669613bfe9f80cbb6d9fc8947aebf13",
+      "generatedSteps": 10,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590398",
+      "kind": "generated",
+      "seed": 1592590398,
+      "sb3Sha256": "0b401f7fb85e757108b5e0133c74322e2d3f2b76757c0af11cc33bad1f7a3add",
+      "generatedSteps": 198,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-0"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-0"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590399",
+      "kind": "generated",
+      "seed": 1592590399,
+      "sb3Sha256": "a17354b662a9f9b604a8e980c626c88db6483c4f2d19f0818056c3f424a64f6f",
+      "generatedSteps": 42,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590400",
+      "kind": "generated",
+      "seed": 1592590400,
+      "sb3Sha256": "444bc45b38c3fea856305b0fab8a89028babd4db4bffb85f72e1d804650d98e7",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590401",
+      "kind": "generated",
+      "seed": 1592590401,
+      "sb3Sha256": "73c23507b3e871774267ae05ab9d1f749fc10064086a54b9ec2d53d63be9333a",
+      "generatedSteps": 93,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 101.4
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 101.4
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 16
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590402",
+      "kind": "generated",
+      "seed": 1592590402,
+      "sb3Sha256": "b07d689aea8cedccadd0715fe1245f9d19009fc4a4844c3f97eefa93ec438edd",
+      "generatedSteps": 26,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590403",
+      "kind": "generated",
+      "seed": 1592590403,
+      "sb3Sha256": "8fb399d0ddb9e5ccd7eb69500912fcc586d6dc16d50caf85ead1a3022476dbc6",
+      "generatedSteps": 36,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590404",
+      "kind": "generated",
+      "seed": 1592590404,
+      "sb3Sha256": "480ff140055b407615fc2369f0fffc4bca4a78af3eead9223ec707750401c052",
+      "generatedSteps": 25,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 10
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 10
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590405",
+      "kind": "generated",
+      "seed": 1592590405,
+      "sb3Sha256": "3ba9e77d7969d6dcb9c8f7163f4dec2c9967b8b056dba26b94339ba84b50fe8c",
+      "generatedSteps": 23,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 11
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "NaN"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 11
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590406",
+      "kind": "generated",
+      "seed": 1592590406,
+      "sb3Sha256": "a416f86ca0a432652ebc5a3ea914f98c2ddc0e06e17b628c764b3d8a2989108a",
+      "generatedSteps": 12,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590407",
+      "kind": "generated",
+      "seed": 1592590407,
+      "sb3Sha256": "7f525a3f84ec81bf315d340141fa650293ab96f9e20544aa7f06af788e15f8a6",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590408",
+      "kind": "generated",
+      "seed": 1592590408,
+      "sb3Sha256": "77313b3453dea94b3f74aae9dee4afa139eced3a6e8c4452e567d82804978b43",
+      "generatedSteps": 49,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "你好"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590409",
+      "kind": "generated",
+      "seed": 1592590409,
+      "sb3Sha256": "4df2365253d6f9fddb17be4fd225b988e0c4b15dfcae195f8066068883874f8e",
+      "generatedSteps": 229,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590410",
+      "kind": "generated",
+      "seed": 1592590410,
+      "sb3Sha256": "f3778c6b07c8be1c2fb850ed28b1a88b6b50bd57485368c5452519e9a1a04c95",
+      "generatedSteps": 64,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590411",
+      "kind": "generated",
+      "seed": 1592590411,
+      "sb3Sha256": "5868dd4fb04570460a8eb1b93531dc9d11983ab28dc8e477f8dfbba47a161500",
+      "generatedSteps": 64,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590412",
+      "kind": "generated",
+      "seed": 1592590412,
+      "sb3Sha256": "757cd6c6087aa9e25b386ad178ee2206edaca4ddda50a4b1e50b4d5075b77820",
+      "generatedSteps": 44,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590413",
+      "kind": "generated",
+      "seed": 1592590413,
+      "sb3Sha256": "2a6ae78706c4c9892b15beab0442611baaeb4224752afb1c898c8a35e6d74184",
+      "generatedSteps": 29,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590414",
+      "kind": "generated",
+      "seed": 1592590414,
+      "sb3Sha256": "2ba4d97663064e120492a55726a545d5b02a6aaeb263b8fd60c49202c91eaba7",
+      "generatedSteps": 103,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590415",
+      "kind": "generated",
+      "seed": 1592590415,
+      "sb3Sha256": "dac271ac89df71d485cf11a3754887bfc280d4c6c72d4c8c9b3bd5e9896f98c7",
+      "generatedSteps": 26,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590416",
+      "kind": "generated",
+      "seed": 1592590416,
+      "sb3Sha256": "a4deceb88a61f7a65d46ddf6cbcdfadc51b41325e478cd08f2f177f8818b8ff1",
+      "generatedSteps": 16,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590417",
+      "kind": "generated",
+      "seed": 1592590417,
+      "sb3Sha256": "052565ac3414d9b1c8325d88dd53ceec0f010203051d7ae704cd72d33dc5e448",
+      "generatedSteps": 26,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590418",
+      "kind": "generated",
+      "seed": 1592590418,
+      "sb3Sha256": "4651d747aa1a75a38e5b92a038aeb84598177836d6fb3c29797aa0a0177df557",
+      "generatedSteps": 22,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590419",
+      "kind": "generated",
+      "seed": 1592590419,
+      "sb3Sha256": "a5162f59bbe1bd4965e4179e9b1a5d3f6265accbc519e84012049a6d823ec1ed",
+      "generatedSteps": 14,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590420",
+      "kind": "generated",
+      "seed": 1592590420,
+      "sb3Sha256": "ed37576c77113eb44b845bfb070dd83efa03c398e67c0ae9fa843acf00bf166e",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590421",
+      "kind": "generated",
+      "seed": 1592590421,
+      "sb3Sha256": "055602a127349bb724a059954b14c8ba321049b932e16f2e24aa2f8a49542571",
+      "generatedSteps": 20,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590422",
+      "kind": "generated",
+      "seed": 1592590422,
+      "sb3Sha256": "cb52cc691d00a9dc770602996ba6774a81e8b29b2fe5cac340b27158464463de",
+      "generatedSteps": 58,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590423",
+      "kind": "generated",
+      "seed": 1592590423,
+      "sb3Sha256": "f52c915038ea438fe7fba4e64440079db633f33fa43e8924486a50eecb08d12a",
+      "generatedSteps": 22,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590424",
+      "kind": "generated",
+      "seed": 1592590424,
+      "sb3Sha256": "7910c243386978cf72ecf4ddb4dc4e9b9eea4ea94532ac77465308e8c2ece3ca",
+      "generatedSteps": 63,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590425",
+      "kind": "generated",
+      "seed": 1592590425,
+      "sb3Sha256": "51c2780d8c02943c296d92f3e72cfac758af0a60a69771ae72b925532b1e2516",
+      "generatedSteps": 21,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590426",
+      "kind": "generated",
+      "seed": 1592590426,
+      "sb3Sha256": "ef8c00e91706bb2dd4e4cca9a0197a94cd6f74cf1b925cc2c944645d90feeba8",
+      "generatedSteps": 21,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "1e2"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590427",
+      "kind": "generated",
+      "seed": 1592590427,
+      "sb3Sha256": "966798d5f14e36ae22b9b024846c314ba46b0c785c667a0e192e2f463bc19f3d",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "010"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590428",
+      "kind": "generated",
+      "seed": 1592590428,
+      "sb3Sha256": "0e154c58952637bb019228dd87a20a8e8a5d155eef69fb5f4e56f0007773017d",
+      "generatedSteps": 45,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590429",
+      "kind": "generated",
+      "seed": 1592590429,
+      "sb3Sha256": "4eb33eee734582b94f8f6db0d632c2a5f407bc9f485e4c59c3a4c7a71f97f807",
+      "generatedSteps": 81,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590430",
+      "kind": "generated",
+      "seed": 1592590430,
+      "sb3Sha256": "f6e083891b0ed2f8c8a450c646646b921057572026241b21a9ea008f4b034b40",
+      "generatedSteps": 159,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 4.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 4.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590431",
+      "kind": "generated",
+      "seed": 1592590431,
+      "sb3Sha256": "ffb4f96280f9c385e37ca1e70efb7dc6d24923e0084fd01257d5620f8a5f774a",
+      "generatedSteps": 12,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590432",
+      "kind": "generated",
+      "seed": 1592590432,
+      "sb3Sha256": "9003120f13348db6607d5f9463b4411e02d49ac31de3412168caa9b50bd264a7",
+      "generatedSteps": 12,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590433",
+      "kind": "generated",
+      "seed": 1592590433,
+      "sb3Sha256": "13e72eaef7df35a361b7e4cc76a42747f755b1529624e37ce3d98f7df6350305",
+      "generatedSteps": 61,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": {
+            "$number": "-Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590434",
+      "kind": "generated",
+      "seed": 1592590434,
+      "sb3Sha256": "bb141ad3595d899aa5e79102c9488a7a279a7d49d00e6511abc2668d100b5371",
+      "generatedSteps": 24,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590435",
+      "kind": "generated",
+      "seed": 1592590435,
+      "sb3Sha256": "5e604e12270522a1ecf1fd4596903dc83af71a5184c6a0726c10aea0134a918b",
+      "generatedSteps": 14,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590436",
+      "kind": "generated",
+      "seed": 1592590436,
+      "sb3Sha256": "d171cce66142d0c4fdcb321911033bba5cbf925f6a33852afb6fb899f342014c",
+      "generatedSteps": 46,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0.11
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 20
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0.11
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 20
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590437",
+      "kind": "generated",
+      "seed": 1592590437,
+      "sb3Sha256": "98012c200ed12f8595c16a26283e272f4f87250273a0640b803ea52e24989b27",
+      "generatedSteps": 80,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590438",
+      "kind": "generated",
+      "seed": 1592590438,
+      "sb3Sha256": "5a514d373802e506025c4a73e8bb5bbfa23af746b38a93cb35325f5eddd1d637",
+      "generatedSteps": 74,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590439",
+      "kind": "generated",
+      "seed": 1592590439,
+      "sb3Sha256": "0692f35e56b8fd11541cb0b5802a00676805b0fd84d2a5bfca10772bf59d13b4",
+      "generatedSteps": 65,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590440",
+      "kind": "generated",
+      "seed": 1592590440,
+      "sb3Sha256": "542afd344ec26881041328ae18b550a10619af00092867e455a32f79f5777d84",
+      "generatedSteps": 25,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590441",
+      "kind": "generated",
+      "seed": 1592590441,
+      "sb3Sha256": "330dfe45d2057c81af05e315a1257050aa90878cbfb5f7f61920785ebb80dfff",
+      "generatedSteps": 85,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 4
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 4
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590442",
+      "kind": "generated",
+      "seed": 1592590442,
+      "sb3Sha256": "f9b5e64f23cd611ef80c7c54fe28e2f79ff241e308e37b465fa8f819e0b1387d",
+      "generatedSteps": 17,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 10
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 10
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590443",
+      "kind": "generated",
+      "seed": 1592590443,
+      "sb3Sha256": "889f1b224e19abb9a75df3f2d1fb75508c29d2208399f452eeb0b9ed1f87b442",
+      "generatedSteps": 21,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590444",
+      "kind": "generated",
+      "seed": 1592590444,
+      "sb3Sha256": "c5277901c3f21d7a3fa460f27e9f1ea40fcc57ca4812a585583c1e834028fe8e",
+      "generatedSteps": 49,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590445",
+      "kind": "generated",
+      "seed": 1592590445,
+      "sb3Sha256": "c1dee0d17b2d1c079b6725bbae2dfd331d78c2638cabb0d0a4e126803c960815",
+      "generatedSteps": 17,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "false"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590446",
+      "kind": "generated",
+      "seed": 1592590446,
+      "sb3Sha256": "119625eb8aa0b69c071f841582ff2bff6f2dfacd2a1b228bbc083330109dc709",
+      "generatedSteps": 21,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590447",
+      "kind": "generated",
+      "seed": 1592590447,
+      "sb3Sha256": "7406d8132b174d719dd19083ded39ebd14df2d22a7f2cbd740f48701633c83aa",
+      "generatedSteps": 11,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "hello"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": false
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590448",
+      "kind": "generated",
+      "seed": 1592590448,
+      "sb3Sha256": "3e88ed8b3c83885f24f8df063859cc85afbb5ee111991cc08d264c815532c56f",
+      "generatedSteps": 37,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590449",
+      "kind": "generated",
+      "seed": 1592590449,
+      "sb3Sha256": "021733d945c007f2b8436f0c6c8d776edbc11b76b2ab7dfa347d6ef662e4868e",
+      "generatedSteps": 14,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": -2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "-Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590450",
+      "kind": "generated",
+      "seed": 1592590450,
+      "sb3Sha256": "34fd9ea694d7e07c08a74562e59160990dac732e9e2276da97e48303a7bee6ff",
+      "generatedSteps": 12,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "\t"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590451",
+      "kind": "generated",
+      "seed": 1592590451,
+      "sb3Sha256": "2e80a4da055e043e315579db3cfe191991f2eef1a92edf05534c32062e98245e",
+      "generatedSteps": 11,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "NaN"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590452",
+      "kind": "generated",
+      "seed": 1592590452,
+      "sb3Sha256": "0080fa15e14ef06a61d6ac9e3a3173b803fdcf4d79690651a312ce92dac95b3b",
+      "generatedSteps": 171,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-0"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "-0"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 100
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590453",
+      "kind": "generated",
+      "seed": 1592590453,
+      "sb3Sha256": "d32e8f502453869d3b09b4092d656f11aacdd99b861cbd8a6ab436f1a730415c",
+      "generatedSteps": 247,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 101
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 101
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590454",
+      "kind": "generated",
+      "seed": 1592590454,
+      "sb3Sha256": "e592752697d2a201391354616cb25209ef481471732fd7e060f068ed995d9086",
+      "generatedSteps": 14,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": " "
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "true"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": " "
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590455",
+      "kind": "generated",
+      "seed": 1592590455,
+      "sb3Sha256": "ddef752d64daf51a9de66a610cc04f485c21820c44f7691925780d4ce184c054",
+      "generatedSteps": 26,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590456",
+      "kind": "generated",
+      "seed": 1592590456,
+      "sb3Sha256": "226d7c4bd875ddf36a01bbea5ccdfbd90ae55ef91cb5f34793a969665fb6847a",
+      "generatedSteps": 65,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": -1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 4
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590457",
+      "kind": "generated",
+      "seed": 1592590457,
+      "sb3Sha256": "75a4af05ef6c00d1e8f5f6ee25459b1fc6364cf16f7164e8a88eb62a2bb9247a",
+      "generatedSteps": 193,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 1
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590458",
+      "kind": "generated",
+      "seed": 1592590458,
+      "sb3Sha256": "4fbe8a779e148040fca9206ce48b5b7a5442819720eb8b1a6979504ef2c1dc61",
+      "generatedSteps": 18,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "FALSE"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590459",
+      "kind": "generated",
+      "seed": 1592590459,
+      "sb3Sha256": "7205288bdd70d9f60770d9b7ea958ffebdefd79d53b3cc719703e88f0c2a5a58",
+      "generatedSteps": 17,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 10
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "HELLO"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": 10
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "é"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590460",
+      "kind": "generated",
+      "seed": 1592590460,
+      "sb3Sha256": "f9bf3bb8e312ac7c8245c25feced2e16347f9fd473962763927a63b4d49cb2b3",
+      "generatedSteps": 14,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": ""
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "0"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": ""
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590461",
+      "kind": "generated",
+      "seed": 1592590461,
+      "sb3Sha256": "d42c703b452457496222baf89c7ae335e5b23494a126ae283df57465c1719ffd",
+      "generatedSteps": 181,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 2.5
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "0x10"
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 2
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590462",
+      "kind": "generated",
+      "seed": 1592590462,
+      "sb3Sha256": "2e2cc6a67e398de2ccd1a009c1df34ca9d19b4f143b095ddf87eab194dca3e68",
+      "generatedSteps": 12,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": "Infinity"
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": {
+            "$number": "Infinity"
+          }
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 1
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "seed-1592590463",
+      "kind": "generated",
+      "seed": 1592590463,
+      "sb3Sha256": "66e50bec1a7722435280ee16758d0ea829347e5d406ae802d92df101c4469e97",
+      "generatedSteps": 83,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "x",
+          "value": 0
+        },
+        {
+          "targetIndex": 0,
+          "id": "y",
+          "value": true
+        },
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": 2
+        },
+        {
+          "targetIndex": 0,
+          "id": "count",
+          "value": 3
+        }
+      ],
+      "status": "pass"
+    }
+  ],
+  "mismatches": [],
+  "summary": {
+    "total": 170,
+    "passed": 170,
+    "failed": 0
+  }
+}

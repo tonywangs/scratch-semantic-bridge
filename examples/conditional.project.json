@@ -1,0 +1,220 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "input": [
+          "input",
+          -7
+        ],
+        "result": [
+          "classification",
+          ""
+        ]
+      },
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {
+        "b0": {
+          "opcode": "operator_lt",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "OPERAND1": [
+              2,
+              [
+                12,
+                "input",
+                "input"
+              ]
+            ],
+            "OPERAND2": [
+              1,
+              [
+                10,
+                0
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b1": {
+          "opcode": "data_setvariableto",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                "negative"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "classification",
+              "result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b2": {
+          "opcode": "operator_equals",
+          "next": null,
+          "parent": "b5",
+          "inputs": {
+            "OPERAND1": [
+              2,
+              [
+                12,
+                "input",
+                "input"
+              ]
+            ],
+            "OPERAND2": [
+              1,
+              [
+                10,
+                0
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b3": {
+          "opcode": "data_setvariableto",
+          "next": null,
+          "parent": "b5",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                "zero"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "classification",
+              "result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b4": {
+          "opcode": "data_setvariableto",
+          "next": null,
+          "parent": "b5",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                "positive"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "classification",
+              "result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b5": {
+          "opcode": "control_if_else",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "b2"
+            ],
+            "SUBSTACK": [
+              2,
+              "b3"
+            ],
+            "SUBSTACK2": [
+              2,
+              "b4"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b6": {
+          "opcode": "control_if_else",
+          "next": null,
+          "parent": "b7",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "b0"
+            ],
+            "SUBSTACK": [
+              2,
+              "b1"
+            ],
+            "SUBSTACK2": [
+              2,
+              "b5"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b7": {
+          "opcode": "event_whenflagclicked",
+          "next": "b6",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "b6229967372e473079438136d6e7f144",
+          "name": "synthetic blank",
+          "bitmapResolution": 1,
+          "md5ext": "b6229967372e473079438136d6e7f144.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "5.0.300",
+    "agent": "scratch-semantic-bridge synthetic fixture"
+  }
+}

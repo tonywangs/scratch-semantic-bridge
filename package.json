@@ -1,0 +1,32 @@
+{
+  "name": "scratch-semantic-bridge",
+  "version": "0.1.0",
+  "description": "Offline Scratch 3 to readable JavaScript for a checked sequential subset",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "scratch-bridge": "bin/scratch-bridge.js"
+  },
+  "exports": "./src/index.js",
+  "files": [
+    "src",
+    "bin",
+    "examples",
+    "docs",
+    "results",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "fixtures": "node scripts/fixtures.js",
+    "differential": "node scripts/differential.js",
+    "verify": "node scripts/verify.js"
+  },
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "scratch-vm": "5.0.300"
+  }
+}
