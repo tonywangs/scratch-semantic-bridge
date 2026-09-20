@@ -2,7 +2,7 @@
 
 ## Question and baseline
 
-Do generated Node programs produce the same final scalar variable values as
+Do generated Node programs produce the same final scalar values and complete list contents as
 ` scratch-vm@5.0.300 ` for the documented sequential subset? The baseline is the
 actual VM's `loadProject`, green flag, and scheduler, not a second handwritten
 interpreter or just calls to individual block primitives.
@@ -12,7 +12,7 @@ concurrency, and personal projects are not part of this experiment.
 
 ## Inputs and seeds
 
-* Three synthetic examples are preserved as ZIP archives, readable project JSON,
+* Six synthetic examples are preserved as ZIP archives, readable project JSON,
   and independently specified expected final values under `examples/`.
 * `scripts/edge-cases.js` builds 39 targeted projects covering rounding, nested
   control, numeric/text coercion, exceptional numbers, shadow forms, Unicode,
@@ -25,11 +25,29 @@ concurrency, and personal projects are not part of this experiment.
   fractional bounds; each generated project finishes with a repeat-until loop
   whose dedicated counter advances toward a fixed bound. Arithmetic deliberately
   includes strings and zero divisors, so NaN and infinities are meaningful results.
+* `test/fixtures/lists-generated.jsonl` preserves 192 additional list programs,
+  with independent seeds `0x11570000` through `0x115700bf` (290914304–290914495).
+  `scripts/list-programs.js` uses Mulberry32, with 16 operations before a loop,
+  a fixed 1–3 iteration repeat of another 16 operations, and a three-iteration
+  repeat-until loop. Two mutable source lists and an append-only trace list
+  exercise every supported list opcode, primitive contents reporters, dynamic
+  indices, and numeric/string/boolean/Unicode values. The trace retains selected
+  intermediate reads as part of the final state. Programs alternate between
+  stage execution, sprite access to stage lists, and sprite list shadowing.
+* `scripts/list-edge-cases.js` builds 82 targeted programs: 27 index values on
+  empty/nonempty lists, 11 contents/separator cases, 13 search queries, exceptional
+  numbers, two scope cases, and sanitized Unicode IDs. All run through the whole
+  VM loader and scheduler. Random/any indices are excluded from equivalence checks
+  and tested separately as intentional compile/runtime rejections.
+* The sorting example uses six bubble-sort passes over six fixed values; filtering
+  preserves input order and selects positive numbers; aggregation adds four fixed
+  values with Scratch numeric coercion. Their expected scalar/list outputs are
+  specified as constants, independently of the generated code and VM outputs.
 * `scripts/zip.js` writes deterministic stored/deflated ZIPs with a fixed DOS date.
   A deterministic blank SVG is included only for file validity.
 * The verifier checks that the corpus regenerates byte-for-byte, and that example
   archives match their builders. Each differential result records an input ZIP
-  SHA-256; the report also hashes the corpus and npm lockfile.
+  SHA-256; the report also hashes both corpora and the npm lockfile.
 
 ## Execution and comparison
 
@@ -47,15 +65,20 @@ or storage logging is disabled through minilog. The harness never treats a
 load/runtime error or timeout as a passing comparison. An outer process timeout
 in the verifier bounds the complete differential command.
 
-Results compare every input variable by target index and original ID, retaining
+Results compare every input variable and list by target index and original ID, retaining
 value types. IDs are translated through the VM's own sanitization helper only
 when looking up its loaded values. NaN, infinities, and negative zero are tagged
-before comparison, so JSON serialization cannot hide differences. VM tick counts
+before comparison, including within every list item, so JSON serialization cannot
+hide differences. List order and value types are compared without normalization. VM tick counts
 are not compared or claimed as reproducible measurements.
 
 Unit tests separately compare 33 coercion edge values and all 1,089 pairwise
 comparisons against the pinned `Cast` helper. These helper checks supplement the
-whole-program VM comparisons; they do not replace them.
+whole-program VM comparisons; they do not replace them. Deterministic list-index
+coercion is checked for 30 values, five lengths, and both accept-all modes (300
+checks). Separate regression tests cover malformed references, identifier
+collisions, repeated-run isolation, source mappings, list growth, step exhaustion,
+and literal/dynamic random/any diagnostics including empty lists.
 
 ## Commands and evidence
 
@@ -67,7 +90,7 @@ node scripts/verify.js
 
 The command runs the tests and differential checks, packs the real npm package,
 and installs it outside the checkout with an empty npm cache and `--offline`.
-It invokes the installed bin link on all three installed `.sb3` examples, checks
+It invokes the installed bin link on all six installed `.sb3` examples, checks
 the generated modules with `node --check`, runs them, and compares their outputs
 with the independent example expectations. The isolated package has no runtime
 dependencies. This verifies offline package resolution and execution without an
@@ -83,6 +106,7 @@ Run only the differential experiment, or replay one preserved seed:
 ```sh
 node scripts/differential.js
 node scripts/differential.js --case seed-1592590336 --output .verification/replay
+node scripts/differential.js --case list-seed-290914304 --output .verification/list-replay
 ```
 
 Failures write both the exact `.sb3` and readable project JSON to the selected
@@ -105,3 +129,21 @@ Initial harness failures are preserved in
 `results/initial-harness-failures.json`: one lookup used an unsanitized ID and one
 sprite fixture had invalid metadata. They were repaired before the final run.
 The successful result does not count those initial failures as passes.
+
+The first expanded list run passed 255 of 447 cases; 192 cases failed VM loading.
+`results/list-initial-failures.json` preserves every failed row and its input hash,
+and `results/list-initial-inputs.jsonl.gz` preserves every original failing project
+in matching row order. Direct inspection of the pinned parser schema identified
+invalid boolean text primitives and sprite layerOrder 0. The fixture builder now
+uses boolean operator reporters and valid sprite layer order. The compiler also
+rejects saved boolean numeric/text primitives instead of accepting inputs the
+oracle cannot load. The corrected run includes all those cases; none were counted
+as passes until loading and execution succeeded. No value mismatches were observed
+in those initial failures because the VM never returned a final state.
+
+List growth limits intentionally differ from Scratch's silent handling at its
+200,000-item ceiling. Default lists stop at 10,000 items with an explicit error;
+random/any indexing is unsupported even for empty lists. Neither a block-step
+budget nor a per-list item ceiling bounds total memory or string length. These
+resource-limit exclusions are documented in the specification and tested as
+errors, not counted as equivalent VM behavior.

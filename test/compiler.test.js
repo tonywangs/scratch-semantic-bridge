@@ -125,9 +125,9 @@ test('rejects malformed inputs, fields, primitive descriptors and mutations', ()
   const project = simple(); project.targets[0].blocks.b0.fields.EXTRA = ['x']; rejects(project, 'INVALID_FIELD', 'b0');
   delete project.targets[0].blocks.b0.fields.EXTRA; project.targets[0].blocks.b0.mutation = {}; rejects(project, 'UNSUPPORTED_FEATURE', 'b0');
 });
-test('rejects cloud variables, lists, broadcasts and extensions', () => {
+test('rejects cloud variables, broadcasts and extensions', () => {
   const project = simple(); project.targets[0].variables.result.push(true); rejects(project, 'INVALID_VARIABLE');
-  for (const key of ['lists', 'broadcasts']) { const p = simple(); p.targets[0][key] = {x: []}; rejects(p, 'UNSUPPORTED_FEATURE'); }
+  for (const key of ['broadcasts']) { const p = simple(); p.targets[0][key] = {x: []}; rejects(p, 'UNSUPPORTED_FEATURE'); }
   const extended = simple(); extended.extensions = ['pen']; rejects(extended, 'UNSUPPORTED_FEATURE');
 });
 test('conversion limits fail explicitly', () => {

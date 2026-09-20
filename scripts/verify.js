@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {examples, generated} from './programs.js';
+import {listExamples, generatedLists, listSeedStart, listSeedCount} from './list-programs.js';
 import {sb3} from './zip.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -27,14 +28,16 @@ function command(argv, {cwd = root, expected = 0, log = true} = {}) {
 }
 try {
   // Fixture drift is a failure, not an implicit rewrite of the baseline.
-  for (const [name, {project, expected}] of Object.entries(examples())) {
+  for (const [name, {project, expected, expectedLists}] of Object.entries({...examples(), ...listExamples()})) {
     assert.deepEqual(await readFile(`examples/${name}.sb3`), sb3(project));
     assert.deepEqual(JSON.parse(await readFile(`examples/${name}.project.json`)), project);
-    assert.deepEqual(JSON.parse(await readFile(`examples/${name}.expected.json`)), expected);
+    assert.deepEqual(JSON.parse(await readFile(`examples/${name}.expected.json`)), expectedLists ? {variables: expected, lists: expectedLists} : expected);
   }
   const corpus = Array.from({length: 128}, (_, i) => { const seed = 0x5eed0000 + i; return {seed, project: generated(seed)}; });
   assert.equal(await readFile('test/fixtures/generated.jsonl', 'utf8'), corpus.map(c => JSON.stringify(c)).join('\n') + '\n');
-  const tests = command([process.execPath, '--test', 'test/archive.test.js', 'test/coercion.test.js', 'test/compiler.test.js', 'test/cli.test.js']);
+  const listCorpus = Array.from({length: listSeedCount}, (_, i) => { const seed = listSeedStart + i; return {seed, project: generatedLists(seed)}; });
+  assert.equal(await readFile('test/fixtures/lists-generated.jsonl', 'utf8'), listCorpus.map(c => JSON.stringify(c)).join('\n') + '\n');
+  const tests = command([process.execPath, '--test', 'test/archive.test.js', 'test/coercion.test.js', 'test/compiler.test.js', 'test/cli.test.js', 'test/lists.test.js']);
   await writeFile(join(output, 'tests.log'), tests.stdout + tests.stderr);
   command([process.execPath, 'scripts/differential.js', '--output', join(output, 'differential')]);
   const packed = command(['npm', 'pack', '--offline', '--ignore-scripts', '--json', '--pack-destination', temporary], {log: false});
@@ -47,7 +50,7 @@ try {
   const installedPackage = JSON.parse(await readFile(join(installed, 'node_modules/scratch-semantic-bridge/package.json')));
   assert.equal(Object.keys(installedPackage.dependencies ?? {}).length, 0);
   const cli = join(installed, 'node_modules/.bin/scratch-bridge');
-  for (const [name, {expected}] of Object.entries(examples())) {
+  for (const [name, {expected, expectedLists}] of Object.entries({...examples(), ...listExamples()})) {
     // Use the installed package's fixture, from a working directory outside the repository.
     const input = join(installed, 'node_modules/scratch-semantic-bridge/examples', `${name}.sb3`);
     const generatedFile = join(installed, `${name}.mjs`);
@@ -55,8 +58,9 @@ try {
     command([process.execPath, '--check', generatedFile], {cwd: installed});
     const result = JSON.parse(command([process.execPath, generatedFile], {cwd: installed}).stdout);
     assert.deepEqual(Object.fromEntries(result.variables.map(v => [v.id, v.value])), expected);
+    assert.deepEqual(Object.fromEntries(result.lists.map(v => [v.id, v.value])), expectedLists ?? {});
     assert.ok(JSON.parse(await readFile(`${generatedFile}.map.json`)).mappings.length);
-    evidence.installedExamples.push({name, expected, actual: result});
+    evidence.installedExamples.push({name, expected, ...(expectedLists ? {expectedLists} : {}), actual: result});
   }
   evidence.status = 'pass';
   console.log('Verification passed: unit tests, Scratch VM differential corpus, and isolated offline CLI installation.');

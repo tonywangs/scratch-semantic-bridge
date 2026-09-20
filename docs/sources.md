@@ -1,6 +1,7 @@
 # Existing implementations and semantic sources
 
-Inspected for this implementation on 2026-09-19:
+Inspected for the scalar implementation on 2026-09-19 and the list extension on
+2026-09-20:
 
 * [Scratch VM](https://github.com/scratchfoundation/scratch-vm): the actual behavioral
   baseline, pinned here to npm `scratch-vm@5.0.300`. The repository notes its
@@ -34,3 +35,12 @@ are not copied into the installable CLI tarball. The small runtime helpers in
 Synthetic sample programs, corpus generation, compatibility policy, and the
 experiment harness are maintained in this repository. There is no claim that
 Scratch compilation, static analysis, or differential testing is novel.
+
+For list support, the installed `scratch-vm@5.0.300` sources were inspected again:
+`src/blocks/scratch3_data.js` (all list operations and the 200,000-item ceiling),
+`src/util/cast.js` (`toListIndex` and comparisons), and `src/engine/target.js`
+(local-first ID lookup). The resolved `scratch-parser` SB3 schema was also
+inspected after it rejected boolean text primitives in early fixtures. The
+compiler now rejects that encoding and the fixtures use boolean reporters.
+The sb-edit README and TurboWarp compiler explanation linked above were revisited
+for related work; no novelty or performance comparison is claimed.

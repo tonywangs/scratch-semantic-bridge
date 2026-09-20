@@ -6,6 +6,8 @@ import {pathToFileURL} from 'node:url';
 import {compile} from '../src/compiler.js';
 import {readSb3} from '../src/archive.js';
 import {examples, generated} from './programs.js';
+import {listExamples, generatedLists, listSeedStart, listSeedCount} from './list-programs.js';
+import {listEdgeCases} from './list-edge-cases.js';
 import {edgeCases} from './edge-cases.js';
 import {sb3} from './zip.js';
 import {runVm, vmVersion} from './oracle.js';
@@ -18,18 +20,27 @@ export async function differential({output = '.verification/differential', only}
   const corpusBytes = await readFile(new URL('../test/fixtures/generated.jsonl', import.meta.url));
   const corpus = corpusBytes.toString().trim().split('\n').map(line => JSON.parse(line));
   assert.equal(corpus.length, 128);
-  const cases = Object.entries(examples()).map(([name, {project, expected}]) => ({name, project, expected, kind: 'example'}));
+  const cases = Object.entries({...examples(), ...listExamples()}).map(([name, {project, expected, expectedLists}]) => ({name, project, expected, expectedLists, kind: 'example'}));
   cases.push(...edgeCases().map(c => ({...c, kind: 'edge'})));
   cases.push(...corpus.map(({seed, project}, index) => {
     assert.equal(seed, 0x5eed0000 + index);
     assert.deepEqual(project, generated(seed), `Seed ${seed} no longer reproduces its fixture`);
     return {name: `seed-${seed}`, project, seed, kind: 'generated'};
   }));
+  const listCorpusBytes = await readFile(new URL('../test/fixtures/lists-generated.jsonl', import.meta.url));
+  const listCorpus = listCorpusBytes.toString().trim().split('\n').map(line => JSON.parse(line));
+  assert.equal(listCorpus.length, listSeedCount);
+  cases.push(...listEdgeCases().map(c => ({...c, kind: 'list-edge'})));
+  cases.push(...listCorpus.map(({seed, project}, index) => {
+    assert.equal(seed, listSeedStart + index);
+    assert.deepEqual(project, generatedLists(seed), `List seed ${seed} no longer reproduces its fixture`);
+    return {name: `list-seed-${seed}`, project, seed, kind: 'list-generated'};
+  }));
   const report = {
     schemaVersion: 1, node: process.version, scratchVm: vmVersion,
-    corpusSha256: sha(corpusBytes), lockfileSha256: sha(await readFile(new URL('../package-lock.json', import.meta.url))),
+    corpusSha256: sha(corpusBytes), listCorpusSha256: sha(listCorpusBytes), lockfileSha256: sha(await readFile(new URL('../package-lock.json', import.meta.url))),
     oracle: 'Scratch VM loadProject and headless turbo scheduler; 20000-tick ceiling; no renderer or storage',
-    scope: 'Final scalar variable values and types only; IEEE exceptional values tagged; scheduler timing is not compared',
+    scope: 'Final scalar values and complete list contents, with types; IEEE exceptional values tagged; scheduler timing is not compared',
     cases: [], mismatches: []
   };
   for (const item of cases.filter(c => !only || c.name === only)) {
@@ -38,14 +49,18 @@ export async function differential({output = '.verification/differential', only}
     try {
       const {code} = compile(readSb3(archive));
       const {run} = await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
-      const actual = run(), expected = await runVm(project);
+      const actual = run();
       row.generatedSteps = actual.steps;
-      row.actual = canonical(actual.variables); row.expected = expected.variables;
+      row.actual = canonical(actual.variables); row.actualLists = canonical(actual.lists);
+      const expected = await runVm(project);
+      row.expected = expected.variables; row.expectedLists = expected.lists;
       assert.deepEqual(row.actual, row.expected);
+      assert.deepEqual(row.actualLists, row.expectedLists);
       if (item.expected) assert.deepEqual(Object.fromEntries(row.actual.map(v => [v.id, v.value])), item.expected);
+      if (item.expectedLists) assert.deepEqual(Object.fromEntries(row.actualLists.map(v => [v.id, v.value])), item.expectedLists);
       row.status = 'pass';
     } catch (error) {
-      row.status = 'fail'; row.error = {code: error.code, message: error.message};
+      row.status = 'fail'; row.error = {code: error.code, message: error.message ?? String(error)};
       report.mismatches.push(row);
       // Preserve exact mismatching input and both outcomes. No failures are skipped.
       const stem = `failure-${report.mismatches.length}`;

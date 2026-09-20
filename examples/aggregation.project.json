@@ -1,0 +1,225 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "i": [
+          "i",
+          1
+        ],
+        "sum": [
+          "sum",
+          0
+        ],
+        "mean": [
+          "mean",
+          0
+        ]
+      },
+      "lists": {
+        "items": [
+          "measurements",
+          [
+            3,
+            "4",
+            -2,
+            0.5
+          ]
+        ]
+      },
+      "broadcasts": {},
+      "blocks": {
+        "b0": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b4",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "measurements",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b1": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b2",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "i",
+                "i"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "measurements",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b2": {
+          "opcode": "data_changevariableby",
+          "next": "b3",
+          "parent": "b4",
+          "inputs": {
+            "VALUE": [
+              2,
+              "b1"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "sum",
+              "sum"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b3": {
+          "opcode": "data_changevariableby",
+          "next": null,
+          "parent": "b2",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "i",
+              "i"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b4": {
+          "opcode": "control_repeat",
+          "next": "b7",
+          "parent": "b8",
+          "inputs": {
+            "TIMES": [
+              2,
+              "b0"
+            ],
+            "SUBSTACK": [
+              2,
+              "b2"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b5": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b6",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "measurements",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b6": {
+          "opcode": "operator_divide",
+          "next": null,
+          "parent": "b7",
+          "inputs": {
+            "NUM1": [
+              2,
+              [
+                12,
+                "sum",
+                "sum"
+              ]
+            ],
+            "NUM2": [
+              2,
+              "b5"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b7": {
+          "opcode": "data_setvariableto",
+          "next": null,
+          "parent": "b4",
+          "inputs": {
+            "VALUE": [
+              2,
+              "b6"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "mean",
+              "mean"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b8": {
+          "opcode": "event_whenflagclicked",
+          "next": "b4",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "b6229967372e473079438136d6e7f144",
+          "name": "synthetic blank",
+          "bitmapResolution": 1,
+          "md5ext": "b6229967372e473079438136d6e7f144.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "5.0.300",
+    "agent": "scratch-semantic-bridge synthetic fixture"
+  }
+}

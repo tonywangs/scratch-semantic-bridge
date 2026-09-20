@@ -1,0 +1,495 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "i": [
+          "i",
+          1
+        ],
+        "j": [
+          "j",
+          1
+        ],
+        "temp": [
+          "temp",
+          0
+        ]
+      },
+      "lists": {
+        "items": [
+          "numbers",
+          [
+            5,
+            -2,
+            5,
+            0,
+            3,
+            1
+          ]
+        ]
+      },
+      "broadcasts": {},
+      "blocks": {
+        "b0": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b19",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b1": {
+          "opcode": "data_setvariableto",
+          "next": "b17",
+          "parent": "b19",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "j",
+              "j"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b2": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b3",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b3": {
+          "opcode": "operator_subtract",
+          "next": null,
+          "parent": "b17",
+          "inputs": {
+            "NUM1": [
+              2,
+              "b2"
+            ],
+            "NUM2": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b4": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b7",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "j",
+                "j"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b5": {
+          "opcode": "operator_add",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "NUM1": [
+              2,
+              [
+                12,
+                "j",
+                "j"
+              ]
+            ],
+            "NUM2": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b6": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b7",
+          "inputs": {
+            "INDEX": [
+              2,
+              "b5"
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b7": {
+          "opcode": "operator_gt",
+          "next": null,
+          "parent": "b15",
+          "inputs": {
+            "OPERAND1": [
+              2,
+              "b4"
+            ],
+            "OPERAND2": [
+              2,
+              "b6"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b8": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b9",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "j",
+                "j"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b9": {
+          "opcode": "data_setvariableto",
+          "next": "b12",
+          "parent": "b15",
+          "inputs": {
+            "VALUE": [
+              2,
+              "b8"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "temp",
+              "temp"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b10": {
+          "opcode": "operator_add",
+          "next": null,
+          "parent": "b11",
+          "inputs": {
+            "NUM1": [
+              2,
+              [
+                12,
+                "j",
+                "j"
+              ]
+            ],
+            "NUM2": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b11": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b12",
+          "inputs": {
+            "INDEX": [
+              2,
+              "b10"
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b12": {
+          "opcode": "data_replaceitemoflist",
+          "next": "b14",
+          "parent": "b9",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "j",
+                "j"
+              ]
+            ],
+            "ITEM": [
+              2,
+              "b11"
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b13": {
+          "opcode": "operator_add",
+          "next": null,
+          "parent": "b14",
+          "inputs": {
+            "NUM1": [
+              2,
+              [
+                12,
+                "j",
+                "j"
+              ]
+            ],
+            "NUM2": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b14": {
+          "opcode": "data_replaceitemoflist",
+          "next": null,
+          "parent": "b12",
+          "inputs": {
+            "INDEX": [
+              2,
+              "b13"
+            ],
+            "ITEM": [
+              2,
+              [
+                12,
+                "temp",
+                "temp"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "numbers",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b15": {
+          "opcode": "control_if",
+          "next": "b16",
+          "parent": "b17",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "b7"
+            ],
+            "SUBSTACK": [
+              2,
+              "b9"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b16": {
+          "opcode": "data_changevariableby",
+          "next": null,
+          "parent": "b15",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "j",
+              "j"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b17": {
+          "opcode": "control_repeat",
+          "next": "b18",
+          "parent": "b1",
+          "inputs": {
+            "TIMES": [
+              2,
+              "b3"
+            ],
+            "SUBSTACK": [
+              2,
+              "b15"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b18": {
+          "opcode": "data_changevariableby",
+          "next": null,
+          "parent": "b17",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "i",
+              "i"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b19": {
+          "opcode": "control_repeat",
+          "next": null,
+          "parent": "b20",
+          "inputs": {
+            "TIMES": [
+              2,
+              "b0"
+            ],
+            "SUBSTACK": [
+              2,
+              "b1"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b20": {
+          "opcode": "event_whenflagclicked",
+          "next": "b19",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "b6229967372e473079438136d6e7f144",
+          "name": "synthetic blank",
+          "bitmapResolution": 1,
+          "md5ext": "b6229967372e473079438136d6e7f144.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "5.0.300",
+    "agent": "scratch-semantic-bridge synthetic fixture"
+  }
+}

@@ -53,3 +53,29 @@ test('CLI errors are machine-readable and leave no partial output', async () => 
     assert.equal(await readFile(output, 'utf8'), 'keep');
   } finally { await rm(dir, {recursive: true, force: true}); }
 });
+
+test('CLI list limits and computed-index errors retain responsible block IDs', async () => {
+  const {ListProgram} = await import('../scripts/list-programs.js');
+  const dir = await mkdtemp(join(tmpdir(), 'bridge-list-cli-'));
+  try {
+    const p = new ListProgram({items: ['items', [1, 2]]}); const id = p.add(p.literal(3));
+    const input = join(dir, 'growth.sb3'); await writeFile(input, sb3(p.finish([id])));
+    const checked = invoke([input, '--check', '--max-list-length', '2']);
+    assert.equal(checked.status, 0); assert.equal(JSON.parse(checked.stdout).lists[0].id, 'items');
+    const output = join(dir, 'growth.mjs');
+    assert.equal(invoke([input, '-o', output, '--max-list-length', '2']).status, 0);
+    const run = spawnSync(process.execPath, [output], {encoding: 'utf8', timeout: 5000});
+    assert.equal(run.status, 1); assert.equal(JSON.parse(run.stderr).code, 'LIST_LIMIT'); assert.equal(JSON.parse(run.stderr).blockId, id);
+    const initial = invoke([input, '--check', '--max-list-length', '1']);
+    assert.equal(initial.status, 1); assert.equal(JSON.parse(initial.stderr).code, 'LIST_LIMIT');
+    const invalid = invoke([input, '--check', '--max-list-length', '200001']);
+    assert.equal(invalid.status, 1); assert.equal(JSON.parse(invalid.stderr).code, 'INVALID_LIMIT');
+    const q = new ListProgram({items: ['items', []]}, {index: ['index', 'any']}); const qid = q.remove(q.variable('index'));
+    const dynamic = join(dir, 'dynamic.sb3'), generated = join(dir, 'dynamic.mjs');
+    await writeFile(dynamic, sb3(q.finish([qid])));
+    assert.equal(invoke([dynamic, '-o', generated]).status, 0);
+    const error = spawnSync(process.execPath, [generated], {encoding: 'utf8', timeout: 5000});
+    assert.equal(error.status, 1);
+    assert.deepEqual(JSON.parse(error.stderr), {code: 'UNSUPPORTED_LIST_INDEX', message: 'Unsupported list index: any', targetIndex: 0, targetName: 'Stage', blockId: qid});
+  } finally { await rm(dir, {recursive: true, force: true}); }
+});

@@ -1,6 +1,6 @@
 {
   "name": "scratch-semantic-bridge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Offline Scratch 3 to readable JavaScript for a checked sequential subset",
   "type": "module",
   "engines": {

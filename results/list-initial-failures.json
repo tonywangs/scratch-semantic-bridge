@@ -1,0 +1,2118 @@
+{
+  "phase": "Initial list corpus validation, 2026-09-20",
+  "summary": {
+    "total": 447,
+    "passed": 255,
+    "failed": 192
+  },
+  "scratchVm": "5.0.300",
+  "failures": [
+    {
+      "name": "list-index-0-true",
+      "kind": "list-edge",
+      "sb3Sha256": "c2fac36f0952428eab80131161601b8c75f5e7389d4444d08237d884ff349c2f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 1
+    },
+    {
+      "name": "list-index-0-false",
+      "kind": "list-edge",
+      "sb3Sha256": "2086efc99402489fb43cb1da303077ed7fc33a5a0c989bca70f3d9c57d23c394",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 2
+    },
+    {
+      "name": "list-index-3-true",
+      "kind": "list-edge",
+      "sb3Sha256": "e4271c255372398ebf1bd466b3cbdeb440535a7ba4a68078eacf916331af56de",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 3
+    },
+    {
+      "name": "list-index-3-false",
+      "kind": "list-edge",
+      "sb3Sha256": "d9d049d315dce0bb0bfaed9cc33018c1890e971ec6ff94a51ce540aaa2b14aab",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 4
+    },
+    {
+      "name": "list-search-5",
+      "kind": "list-edge",
+      "sb3Sha256": "8f8e17f48da78f025f05798098e631eb7cd22781814eb43078d993d01c326ce3",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 5
+    },
+    {
+      "name": "list-search-6",
+      "kind": "list-edge",
+      "sb3Sha256": "8ac848a11e837a0445ff7887721ab1548234edbdc027cc5579ab39be40a17d7e",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 6
+    },
+    {
+      "name": "list-scope-stage",
+      "kind": "list-edge",
+      "sb3Sha256": "d8c5d593f3afd8db315692e76b211da293db8529d96d0ef5f5756db39f206e8c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 7
+    },
+    {
+      "name": "list-scope-shadow",
+      "kind": "list-edge",
+      "sb3Sha256": "763c0128a04813124089d0dc6d8a9d41f6a9219d463715e512c77c8c0974b7f1",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 8
+    },
+    {
+      "name": "list-seed-290914304",
+      "kind": "list-generated",
+      "seed": 290914304,
+      "sb3Sha256": "d6824e40927b9912c89c986495fe6500d5e593531321725e11e2620639652dbd",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 9
+    },
+    {
+      "name": "list-seed-290914305",
+      "kind": "list-generated",
+      "seed": 290914305,
+      "sb3Sha256": "07db957ba986c3bd65a337f08220e5103eb0c626e66589f6bd2103e1e853d138",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 10
+    },
+    {
+      "name": "list-seed-290914306",
+      "kind": "list-generated",
+      "seed": 290914306,
+      "sb3Sha256": "536c6879c066122fbcaf7a0fa78229ce5e0d7667abd2c6b19b4c1d18fe33ccda",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 11
+    },
+    {
+      "name": "list-seed-290914307",
+      "kind": "list-generated",
+      "seed": 290914307,
+      "sb3Sha256": "2d9f199e78632e41a1417194c276e7f9e9ec907b4120cced215d8188f1667e96",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 12
+    },
+    {
+      "name": "list-seed-290914308",
+      "kind": "list-generated",
+      "seed": 290914308,
+      "sb3Sha256": "5fe3afe54540b554608760bd4192e220b1084345f7ee373aa8745e8713272c8e",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 13
+    },
+    {
+      "name": "list-seed-290914309",
+      "kind": "list-generated",
+      "seed": 290914309,
+      "sb3Sha256": "3abc4759aab18fa4417fc2312091e8339d0a9d89b417cea90746dfd132c45c0d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 14
+    },
+    {
+      "name": "list-seed-290914310",
+      "kind": "list-generated",
+      "seed": 290914310,
+      "sb3Sha256": "ccec04da46847e14aa344afa05608507f78123ef80ef9a949923844365b09476",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 15
+    },
+    {
+      "name": "list-seed-290914311",
+      "kind": "list-generated",
+      "seed": 290914311,
+      "sb3Sha256": "aa7585b562f749b31670d5226afc0d9f13b61e3bbc63b608d85425566ff2b220",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 16
+    },
+    {
+      "name": "list-seed-290914312",
+      "kind": "list-generated",
+      "seed": 290914312,
+      "sb3Sha256": "ce46a0713326553dae9a5220e27aaaac45a89a2f32189a9d1835449e31ff598c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 17
+    },
+    {
+      "name": "list-seed-290914313",
+      "kind": "list-generated",
+      "seed": 290914313,
+      "sb3Sha256": "9485fb25f63bed9f97afc0c41e4ccd8c53e91456fe78e4a056c28402399bb8f3",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 18
+    },
+    {
+      "name": "list-seed-290914314",
+      "kind": "list-generated",
+      "seed": 290914314,
+      "sb3Sha256": "e514b99c827bca44b69f0d3741fdd04028bc2a966b8945784150d5a1e92efb4c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 19
+    },
+    {
+      "name": "list-seed-290914315",
+      "kind": "list-generated",
+      "seed": 290914315,
+      "sb3Sha256": "a173988812155929005d4d5c2091fb415d2c1d1a5e875ae26f1e7dd8b067d100",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 20
+    },
+    {
+      "name": "list-seed-290914316",
+      "kind": "list-generated",
+      "seed": 290914316,
+      "sb3Sha256": "0722d875cfaeae4fcb1b35ee7f4156af0b234e9e459e874c9b819ad6e8e4b2f5",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 21
+    },
+    {
+      "name": "list-seed-290914317",
+      "kind": "list-generated",
+      "seed": 290914317,
+      "sb3Sha256": "63c0b8dce42f6e266e27103d8271fc8db60755b571e78a9f85983eb40076f4f7",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 22
+    },
+    {
+      "name": "list-seed-290914318",
+      "kind": "list-generated",
+      "seed": 290914318,
+      "sb3Sha256": "d5f9f3e138a1934a32698760b7a069d55030ed2b8927a047ebc32d9b6d26f689",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 23
+    },
+    {
+      "name": "list-seed-290914319",
+      "kind": "list-generated",
+      "seed": 290914319,
+      "sb3Sha256": "4fff1b4fac3effe8599332cf719bc029082f1976a5715d1524846575dc2e23c8",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 24
+    },
+    {
+      "name": "list-seed-290914320",
+      "kind": "list-generated",
+      "seed": 290914320,
+      "sb3Sha256": "37489a06cb9a2b23960e7f9e9646d9c5e716191dc4950b7b2330afa5d2f9f1f6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 25
+    },
+    {
+      "name": "list-seed-290914321",
+      "kind": "list-generated",
+      "seed": 290914321,
+      "sb3Sha256": "427bc83d138290f95d392953d22c9874264df6034f3c26d5dd08bf56f64d742b",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 26
+    },
+    {
+      "name": "list-seed-290914322",
+      "kind": "list-generated",
+      "seed": 290914322,
+      "sb3Sha256": "5092574a6274a568d416ce139db86ef305df231d8d1d7aa39d58b2dd90477a2b",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 27
+    },
+    {
+      "name": "list-seed-290914323",
+      "kind": "list-generated",
+      "seed": 290914323,
+      "sb3Sha256": "fe338d2eda6cc3586c1c23ee17df693dcedd05f89d9ce0e065337706826ff6cb",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 28
+    },
+    {
+      "name": "list-seed-290914324",
+      "kind": "list-generated",
+      "seed": 290914324,
+      "sb3Sha256": "484d42f2b609ccce0f385d9d0055a164600c7b5d01359c8012533cdd1b1b7e6a",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 29
+    },
+    {
+      "name": "list-seed-290914325",
+      "kind": "list-generated",
+      "seed": 290914325,
+      "sb3Sha256": "5595a1a9776b89eb395b9b3c0ec472c326f986ba64637e2bece897d3d039d6ed",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 30
+    },
+    {
+      "name": "list-seed-290914326",
+      "kind": "list-generated",
+      "seed": 290914326,
+      "sb3Sha256": "00e0f86f2f0ee0993495e60306645ad98de082e495c1bc208899f80502beca9f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 31
+    },
+    {
+      "name": "list-seed-290914327",
+      "kind": "list-generated",
+      "seed": 290914327,
+      "sb3Sha256": "fbb4bba36e12c2c28543d379a1fafe80b542c3b43598fcd4606cbd598736e0c6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 32
+    },
+    {
+      "name": "list-seed-290914328",
+      "kind": "list-generated",
+      "seed": 290914328,
+      "sb3Sha256": "e6457c94cdafcf225a4908b8c43257a3ebf1ab6817be24d1a86b514eb4cca7dc",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 33
+    },
+    {
+      "name": "list-seed-290914329",
+      "kind": "list-generated",
+      "seed": 290914329,
+      "sb3Sha256": "df9c3cb3f771f65e111fed3579ccc750f8b6028876055ced2b9560320de6a947",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 34
+    },
+    {
+      "name": "list-seed-290914330",
+      "kind": "list-generated",
+      "seed": 290914330,
+      "sb3Sha256": "93158f5d7f1f8a9e8760ab9d49a0c74ddde0a57d9d0f434206c9e5ec60fb895a",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 35
+    },
+    {
+      "name": "list-seed-290914331",
+      "kind": "list-generated",
+      "seed": 290914331,
+      "sb3Sha256": "b5be1adb55a61e688aa106c2f99c33e8a7e9a3b60b979966fa8a99577598be23",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 36
+    },
+    {
+      "name": "list-seed-290914332",
+      "kind": "list-generated",
+      "seed": 290914332,
+      "sb3Sha256": "99290f7e7c13b89be83411d360748704edfa3249b306ea287ade97784c05b2b6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 37
+    },
+    {
+      "name": "list-seed-290914333",
+      "kind": "list-generated",
+      "seed": 290914333,
+      "sb3Sha256": "56d45adf0f6edf60b3c7df4168904542376670f869c167d373ac21a38d93819b",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 38
+    },
+    {
+      "name": "list-seed-290914334",
+      "kind": "list-generated",
+      "seed": 290914334,
+      "sb3Sha256": "2bc231ad3d91d4e02f305c5bc4d8e80069c87b3c501501d8163ef3bc83dab9ed",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 39
+    },
+    {
+      "name": "list-seed-290914335",
+      "kind": "list-generated",
+      "seed": 290914335,
+      "sb3Sha256": "64fbdfb80765207589e0d788ad7387f47ac4b7ec85c2798ecb28bfebf9e94d28",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 40
+    },
+    {
+      "name": "list-seed-290914336",
+      "kind": "list-generated",
+      "seed": 290914336,
+      "sb3Sha256": "5fba7540f33e9046965321e728b168420ed1b7a5cd595b1549bb7c4dff083c3a",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 41
+    },
+    {
+      "name": "list-seed-290914337",
+      "kind": "list-generated",
+      "seed": 290914337,
+      "sb3Sha256": "fed4595cdc41b26ea1affca376f29cb105c766320f865357bf920f0614c6b497",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 42
+    },
+    {
+      "name": "list-seed-290914338",
+      "kind": "list-generated",
+      "seed": 290914338,
+      "sb3Sha256": "0a9a61042819525ce20e05b7eef1c6b84e36b8a0d93ec6bd0c2f90c5211bbb77",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 43
+    },
+    {
+      "name": "list-seed-290914339",
+      "kind": "list-generated",
+      "seed": 290914339,
+      "sb3Sha256": "8667084a06de0a5af0ea65d2704ca5685ca00bbcb8774f27b8ad61a075f869fa",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 44
+    },
+    {
+      "name": "list-seed-290914340",
+      "kind": "list-generated",
+      "seed": 290914340,
+      "sb3Sha256": "b0f6658df333ef085ad5cea9fe6d09ae36add4e5836e1e00a10ecb9a4ac29b7e",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 45
+    },
+    {
+      "name": "list-seed-290914341",
+      "kind": "list-generated",
+      "seed": 290914341,
+      "sb3Sha256": "e881dbc2853f87d128b44bd78dceeb87c00835aa29538bcaec7489b45e8a9a53",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 46
+    },
+    {
+      "name": "list-seed-290914342",
+      "kind": "list-generated",
+      "seed": 290914342,
+      "sb3Sha256": "80d28d3880dfe609c265356b5fd6af881bbc6d5484710f64f9e390a6547454e6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 47
+    },
+    {
+      "name": "list-seed-290914343",
+      "kind": "list-generated",
+      "seed": 290914343,
+      "sb3Sha256": "c3e177dc0a8502d9084bafdb4d1124de82c9328a8a7a02793be43d8afe04e3cf",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 48
+    },
+    {
+      "name": "list-seed-290914344",
+      "kind": "list-generated",
+      "seed": 290914344,
+      "sb3Sha256": "3adad60c9e52cb09950ec2090cb8e0d55d4e9a35e63a6ba46883cb11da76c574",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 49
+    },
+    {
+      "name": "list-seed-290914345",
+      "kind": "list-generated",
+      "seed": 290914345,
+      "sb3Sha256": "45def3f708c75f6a825ecf2984be106229bea543b0177988ba9ba43f8c074685",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 50
+    },
+    {
+      "name": "list-seed-290914346",
+      "kind": "list-generated",
+      "seed": 290914346,
+      "sb3Sha256": "b1479bd00c422165d458dc2b7ad5b41f7210985e379c748168aae58d058d18aa",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 51
+    },
+    {
+      "name": "list-seed-290914347",
+      "kind": "list-generated",
+      "seed": 290914347,
+      "sb3Sha256": "54e9240295b3d5b2814dfcae78ee52c0c9fdd1f931e565ab4bec18b440aab6b6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 52
+    },
+    {
+      "name": "list-seed-290914348",
+      "kind": "list-generated",
+      "seed": 290914348,
+      "sb3Sha256": "e40bcbec5ea4a1f75bf21fc4666afb81d340cb6fc60657ae41b1a2ddcd46678d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 53
+    },
+    {
+      "name": "list-seed-290914349",
+      "kind": "list-generated",
+      "seed": 290914349,
+      "sb3Sha256": "485f53518fff6d4996c923d9023ed36b481caa19f1999245395cafc36c82ecd6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 54
+    },
+    {
+      "name": "list-seed-290914350",
+      "kind": "list-generated",
+      "seed": 290914350,
+      "sb3Sha256": "45095dc1c3a5af72c36c0b7f666011058ecb2f817e89f77abf2acdc49c0d88f1",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 55
+    },
+    {
+      "name": "list-seed-290914351",
+      "kind": "list-generated",
+      "seed": 290914351,
+      "sb3Sha256": "f768b4a0737a6a6e81a7d816c3ca4b0424d79608350be10de1a134d6c2a48bbf",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 56
+    },
+    {
+      "name": "list-seed-290914352",
+      "kind": "list-generated",
+      "seed": 290914352,
+      "sb3Sha256": "10464f2d20bcf9f461c04d0e6f67da485675a9c361c51011fab03eb2033d8085",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 57
+    },
+    {
+      "name": "list-seed-290914353",
+      "kind": "list-generated",
+      "seed": 290914353,
+      "sb3Sha256": "b754156197dc4850c1f7b5e0b9b6cd3a174135e6bc8ae8d7461eb1b11dcc2fc4",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 58
+    },
+    {
+      "name": "list-seed-290914354",
+      "kind": "list-generated",
+      "seed": 290914354,
+      "sb3Sha256": "af8fa991378c6b0a8f45386fd95ccadbdca4d44ddba4fc445c404ce5ce6228e1",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 59
+    },
+    {
+      "name": "list-seed-290914355",
+      "kind": "list-generated",
+      "seed": 290914355,
+      "sb3Sha256": "b36053d442ef4da0ccad7e37987f682eda19009bd816abbbb7a7fe563270558b",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 60
+    },
+    {
+      "name": "list-seed-290914357",
+      "kind": "list-generated",
+      "seed": 290914357,
+      "sb3Sha256": "cab01f4737781629abb69c37b90ddec895f5f242d4604488c04e75f7a15ebb61",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 61
+    },
+    {
+      "name": "list-seed-290914358",
+      "kind": "list-generated",
+      "seed": 290914358,
+      "sb3Sha256": "65a5f644fccdae05ffac9f3975c5ab6a83a4c040a49b6262ebdf0ab0ed4a2183",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 62
+    },
+    {
+      "name": "list-seed-290914359",
+      "kind": "list-generated",
+      "seed": 290914359,
+      "sb3Sha256": "3017d63f92263c668af5052005fdbe0b52ac400d90eade23c0e6cb5c675b7c44",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 63
+    },
+    {
+      "name": "list-seed-290914360",
+      "kind": "list-generated",
+      "seed": 290914360,
+      "sb3Sha256": "6d91d0faa1294cba4ad1d66b6c9648d97d2b868cfbdb14493ca2d488e10c4d4d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 64
+    },
+    {
+      "name": "list-seed-290914361",
+      "kind": "list-generated",
+      "seed": 290914361,
+      "sb3Sha256": "969b8e022d34c33d63da13499f2b61038c33361ace86cb9b148fda725cd08b89",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 65
+    },
+    {
+      "name": "list-seed-290914362",
+      "kind": "list-generated",
+      "seed": 290914362,
+      "sb3Sha256": "e01d3ab9a84d18cb4e102db913670f15f7efcb3bb247d3e1c977428b8e12f220",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 66
+    },
+    {
+      "name": "list-seed-290914363",
+      "kind": "list-generated",
+      "seed": 290914363,
+      "sb3Sha256": "0b6fda66c8511904962b4fa02ad355cffe304a5a1033e30d7d0e087a44636368",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 67
+    },
+    {
+      "name": "list-seed-290914364",
+      "kind": "list-generated",
+      "seed": 290914364,
+      "sb3Sha256": "987b042d498d5cd2a7538080804727394b84a8d8c89d039a71a976740b5d14b4",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 68
+    },
+    {
+      "name": "list-seed-290914365",
+      "kind": "list-generated",
+      "seed": 290914365,
+      "sb3Sha256": "edd7ea473336dc1459dd962c51f3a2870e54333ac57c4ff1c80895ce6aec5d41",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 69
+    },
+    {
+      "name": "list-seed-290914366",
+      "kind": "list-generated",
+      "seed": 290914366,
+      "sb3Sha256": "08d63346bb6276244ae5ddd9087e7afcdac74ebf26b2920dd07953aff749806f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 70
+    },
+    {
+      "name": "list-seed-290914367",
+      "kind": "list-generated",
+      "seed": 290914367,
+      "sb3Sha256": "02050dabfc11b827997f059b0ed4774ae6d3e93712d33453dcbb7f64f389e02d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 71
+    },
+    {
+      "name": "list-seed-290914368",
+      "kind": "list-generated",
+      "seed": 290914368,
+      "sb3Sha256": "5f462e3b3e49f2278b4e165771fb7c497d399544bb30e105be3ba5f3c4393474",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 72
+    },
+    {
+      "name": "list-seed-290914369",
+      "kind": "list-generated",
+      "seed": 290914369,
+      "sb3Sha256": "9970ac98714ad6c880197826a6c4c5c33063963ddff3dc30c31590b87efea15b",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 73
+    },
+    {
+      "name": "list-seed-290914370",
+      "kind": "list-generated",
+      "seed": 290914370,
+      "sb3Sha256": "eec88d8c383ed7eda487c1aea0a0cf3fe2a7057c04f49a249b77a425f558b157",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 74
+    },
+    {
+      "name": "list-seed-290914371",
+      "kind": "list-generated",
+      "seed": 290914371,
+      "sb3Sha256": "6080467e13e36ac2fd58b06b95f5d2928340932fb7eec5b629ed129608e52c87",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 75
+    },
+    {
+      "name": "list-seed-290914372",
+      "kind": "list-generated",
+      "seed": 290914372,
+      "sb3Sha256": "a7d285ff9fd41f8bee3c2150a3c8d005a47f4c59b87b548b89d77f0ea6e5f093",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 76
+    },
+    {
+      "name": "list-seed-290914373",
+      "kind": "list-generated",
+      "seed": 290914373,
+      "sb3Sha256": "702d6832444d789f56da589172f9bf5d4642d31b8e79dfa62e13dce267d5df13",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 77
+    },
+    {
+      "name": "list-seed-290914374",
+      "kind": "list-generated",
+      "seed": 290914374,
+      "sb3Sha256": "7d95efa5bb7bc8f01769471a2b9315d83e8e618c04af6ba3d43681b6073de838",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 78
+    },
+    {
+      "name": "list-seed-290914375",
+      "kind": "list-generated",
+      "seed": 290914375,
+      "sb3Sha256": "71dd5ce3e77ee451938e6c142bf3506525d5a89df03703c7c9a2b693e7892e80",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 79
+    },
+    {
+      "name": "list-seed-290914376",
+      "kind": "list-generated",
+      "seed": 290914376,
+      "sb3Sha256": "b93eb5a979a01cce2ff31e54cd08ebdaac633b07181ab485eb2135b2aeeaa26d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 80
+    },
+    {
+      "name": "list-seed-290914377",
+      "kind": "list-generated",
+      "seed": 290914377,
+      "sb3Sha256": "4f734b3f316d3d2d8de5a92b8be3bfe01d056f6558bee4da7db2674f90d1c629",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 81
+    },
+    {
+      "name": "list-seed-290914378",
+      "kind": "list-generated",
+      "seed": 290914378,
+      "sb3Sha256": "83320d7696a199d2fc26c0c5356f7a66b491b6bae2e1f809b0434e2ac5614105",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 82
+    },
+    {
+      "name": "list-seed-290914379",
+      "kind": "list-generated",
+      "seed": 290914379,
+      "sb3Sha256": "ed85be1527ab5e5f3889dfabfc40f66394f26264489c6100ee9fae7d9cd30eac",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 83
+    },
+    {
+      "name": "list-seed-290914380",
+      "kind": "list-generated",
+      "seed": 290914380,
+      "sb3Sha256": "13a012850d231a342672e9d9ce03544653b1f40825038e078c357381bd3c26de",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 84
+    },
+    {
+      "name": "list-seed-290914381",
+      "kind": "list-generated",
+      "seed": 290914381,
+      "sb3Sha256": "a5dd5980c5a48635652378fa26e495799da5be275e32815d4aa87d21ef44f4af",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 85
+    },
+    {
+      "name": "list-seed-290914382",
+      "kind": "list-generated",
+      "seed": 290914382,
+      "sb3Sha256": "79f37115674f48b43d241f518edf8192b52f187d42b5305f3c73b1704db8f489",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 86
+    },
+    {
+      "name": "list-seed-290914383",
+      "kind": "list-generated",
+      "seed": 290914383,
+      "sb3Sha256": "ec866dac525cb194c40f0fae2a3ed9d95da5d6e47c6d301952a429f811b3cf3c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 87
+    },
+    {
+      "name": "list-seed-290914384",
+      "kind": "list-generated",
+      "seed": 290914384,
+      "sb3Sha256": "99d875aa97a24b6059237de77192f48b14c7ad576ea22daa0cb737d5591afeee",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 88
+    },
+    {
+      "name": "list-seed-290914385",
+      "kind": "list-generated",
+      "seed": 290914385,
+      "sb3Sha256": "ec691e5934eda0b55b6659843eb9c5383050211c2037d3aa7d2ffb2d9224dbe6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 89
+    },
+    {
+      "name": "list-seed-290914386",
+      "kind": "list-generated",
+      "seed": 290914386,
+      "sb3Sha256": "b34db6cf10fafcc138f04e0a4312d8d4057d8ff5bc3e75f574c4f336b8e6ff5f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 90
+    },
+    {
+      "name": "list-seed-290914387",
+      "kind": "list-generated",
+      "seed": 290914387,
+      "sb3Sha256": "6e533ab383ac45e178e659534d2f8a8c003407ceef6ba5403e5d966e4a405319",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 91
+    },
+    {
+      "name": "list-seed-290914388",
+      "kind": "list-generated",
+      "seed": 290914388,
+      "sb3Sha256": "00f703cbddd821aac956b7bc5508e9bcd08e7c34dbc9f65a95210309f581c3c5",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 92
+    },
+    {
+      "name": "list-seed-290914389",
+      "kind": "list-generated",
+      "seed": 290914389,
+      "sb3Sha256": "30d44101a9185e0834b151a505143d0de683e98aae3d34f9a6da669181545b83",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 93
+    },
+    {
+      "name": "list-seed-290914390",
+      "kind": "list-generated",
+      "seed": 290914390,
+      "sb3Sha256": "c7ad067491730654e2ceb21d6a2ec49efdee3b99ce28d020af9555201b94a966",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 94
+    },
+    {
+      "name": "list-seed-290914391",
+      "kind": "list-generated",
+      "seed": 290914391,
+      "sb3Sha256": "ab07614575636870cd69258595df20532bf51f5febf35a0ceeb7a0c3cdaf3046",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 95
+    },
+    {
+      "name": "list-seed-290914392",
+      "kind": "list-generated",
+      "seed": 290914392,
+      "sb3Sha256": "6854b3cc7be5393720cc577a1adc00f73f78ffbcf8a0f65d9f08bd4532f2de56",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 96
+    },
+    {
+      "name": "list-seed-290914393",
+      "kind": "list-generated",
+      "seed": 290914393,
+      "sb3Sha256": "863015c2b89b993640427a09ae97a4837e1caefd565b6a2dee6500f13c0774aa",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 97
+    },
+    {
+      "name": "list-seed-290914394",
+      "kind": "list-generated",
+      "seed": 290914394,
+      "sb3Sha256": "64d3518cad45abf378fffc25bd1914e8c45ab4caa75561e628c7ef36fd89b068",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 98
+    },
+    {
+      "name": "list-seed-290914395",
+      "kind": "list-generated",
+      "seed": 290914395,
+      "sb3Sha256": "752c5e55338fcc9dd4111c0f420cb58d65094fb1570600df0eabccf8294358db",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 99
+    },
+    {
+      "name": "list-seed-290914396",
+      "kind": "list-generated",
+      "seed": 290914396,
+      "sb3Sha256": "e407be4b27031872ef9e525c3ac033fa6339cba506ca44217d7d2a298d914bee",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 100
+    },
+    {
+      "name": "list-seed-290914397",
+      "kind": "list-generated",
+      "seed": 290914397,
+      "sb3Sha256": "4a347c9fdd36c05420fbab5c4b207edcf67067e38c4e0f168e8ea05af136cc9d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 101
+    },
+    {
+      "name": "list-seed-290914398",
+      "kind": "list-generated",
+      "seed": 290914398,
+      "sb3Sha256": "e636577cc66a176e1e06daa24b8bfb3a0f216db06f2f73a1d143fee5ffe5ab8e",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 102
+    },
+    {
+      "name": "list-seed-290914399",
+      "kind": "list-generated",
+      "seed": 290914399,
+      "sb3Sha256": "844415ea1c516a764c9330b5332de9d6b8118f4c80374b7b6ba45ebd541817f2",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 103
+    },
+    {
+      "name": "list-seed-290914400",
+      "kind": "list-generated",
+      "seed": 290914400,
+      "sb3Sha256": "17072fd45666b241cf14ca4ea82cba1858a77d547b3e0d88249e1c1d95b917f6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 104
+    },
+    {
+      "name": "list-seed-290914401",
+      "kind": "list-generated",
+      "seed": 290914401,
+      "sb3Sha256": "e5320034d8242edeabf76a64c201479731ed4cb5f2ed037735c058c16a13286f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 105
+    },
+    {
+      "name": "list-seed-290914402",
+      "kind": "list-generated",
+      "seed": 290914402,
+      "sb3Sha256": "844861f29137fbc7b1cb4d1ff4b164296840d6b881be3be5232946b3820ab29d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 106
+    },
+    {
+      "name": "list-seed-290914403",
+      "kind": "list-generated",
+      "seed": 290914403,
+      "sb3Sha256": "5150dbfd0bcbc0870884e79c45e6c43d3857388e0aa34555dc1fe14309e3a07a",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 107
+    },
+    {
+      "name": "list-seed-290914405",
+      "kind": "list-generated",
+      "seed": 290914405,
+      "sb3Sha256": "c8f7358bdae8802ea87b4b0f5780afde06ab04e57c90784bc62be5249c3c5a65",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 108
+    },
+    {
+      "name": "list-seed-290914406",
+      "kind": "list-generated",
+      "seed": 290914406,
+      "sb3Sha256": "1a389f3a567371ff0c2b305cab3578a99589fe4e78d2898b551b10fd9e6199a6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 109
+    },
+    {
+      "name": "list-seed-290914407",
+      "kind": "list-generated",
+      "seed": 290914407,
+      "sb3Sha256": "3ad5060bf4bf304ac1d3c5ce183cba311805dba94cc84560d89f926b4b10d15d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 110
+    },
+    {
+      "name": "list-seed-290914408",
+      "kind": "list-generated",
+      "seed": 290914408,
+      "sb3Sha256": "b3c326db83495581e355dd91c9084f0d46755c7a0b7c9d176a52c1d53f9bf90e",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 111
+    },
+    {
+      "name": "list-seed-290914409",
+      "kind": "list-generated",
+      "seed": 290914409,
+      "sb3Sha256": "426fe56751fb6aaf04bb434f3ce868d562da38a6a18cb2a14131ff2a6f3da0bf",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 112
+    },
+    {
+      "name": "list-seed-290914410",
+      "kind": "list-generated",
+      "seed": 290914410,
+      "sb3Sha256": "5d6f7adf2a188997750e1e8eac41b52da6299a32e62e7416da0fb1646a06fa49",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 113
+    },
+    {
+      "name": "list-seed-290914411",
+      "kind": "list-generated",
+      "seed": 290914411,
+      "sb3Sha256": "2f4a9e7fe75204360838cd0b0c08c6a38c8cc828a2fbe3b345c5c752ea896f4a",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 114
+    },
+    {
+      "name": "list-seed-290914412",
+      "kind": "list-generated",
+      "seed": 290914412,
+      "sb3Sha256": "686d66f2539af798cfb8b6a75da2258865962dab904dc370ae5eb656ad1a2134",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 115
+    },
+    {
+      "name": "list-seed-290914414",
+      "kind": "list-generated",
+      "seed": 290914414,
+      "sb3Sha256": "d4a5a84472712b90e17f0fd62727aeb5e1b12532a17741b7e0c2ae27411aedb0",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 116
+    },
+    {
+      "name": "list-seed-290914415",
+      "kind": "list-generated",
+      "seed": 290914415,
+      "sb3Sha256": "fac1733438c74fec95daa2f17e1efe1a3f84be762b9584e746291bf2c41a0bf7",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 117
+    },
+    {
+      "name": "list-seed-290914416",
+      "kind": "list-generated",
+      "seed": 290914416,
+      "sb3Sha256": "28f39e1f3ea7240f3880dc850e1b71ebc4d7b641851b309db82cb95c0badae4f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 118
+    },
+    {
+      "name": "list-seed-290914417",
+      "kind": "list-generated",
+      "seed": 290914417,
+      "sb3Sha256": "f6eaba2a7f2c8530afb4628d610f00a32712ff9ae602e3a554e8fab5380f514d",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 119
+    },
+    {
+      "name": "list-seed-290914418",
+      "kind": "list-generated",
+      "seed": 290914418,
+      "sb3Sha256": "cc84f3faa318febf109ca26b724effabbcf7d05980b250cbb67673ef5328bc7f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 120
+    },
+    {
+      "name": "list-seed-290914419",
+      "kind": "list-generated",
+      "seed": 290914419,
+      "sb3Sha256": "f81131831a75428388c604d172964b5a828b4cc81ae24b15c972e30586d8f1d7",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 121
+    },
+    {
+      "name": "list-seed-290914420",
+      "kind": "list-generated",
+      "seed": 290914420,
+      "sb3Sha256": "bc0e3b45c56b4ee4d05706a3ab619cec3fc6dc63e5aa54b2e8fbab46dfaef25f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 122
+    },
+    {
+      "name": "list-seed-290914421",
+      "kind": "list-generated",
+      "seed": 290914421,
+      "sb3Sha256": "b3ff06bbfa79f84c817f9be3c0e93214f3c5e8b34138acb350a6860930105c5f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 123
+    },
+    {
+      "name": "list-seed-290914422",
+      "kind": "list-generated",
+      "seed": 290914422,
+      "sb3Sha256": "c839ac267266f9c2e9783ca2c5630cc54cc95fa442b3debb4b7b239aa0b7f6f2",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 124
+    },
+    {
+      "name": "list-seed-290914423",
+      "kind": "list-generated",
+      "seed": 290914423,
+      "sb3Sha256": "fd928307d98a1825b67384ab831452c868d02c509a4f52914b47a5c1379ef813",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 125
+    },
+    {
+      "name": "list-seed-290914424",
+      "kind": "list-generated",
+      "seed": 290914424,
+      "sb3Sha256": "be143557ea531551f0f40514cff471146588bee5013f2877f358119cbabbce9e",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 126
+    },
+    {
+      "name": "list-seed-290914425",
+      "kind": "list-generated",
+      "seed": 290914425,
+      "sb3Sha256": "4c68df3e5aa9e5f3a22671b62082ae713122b59eba250fced9e9b4d6b40e2cc0",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 127
+    },
+    {
+      "name": "list-seed-290914426",
+      "kind": "list-generated",
+      "seed": 290914426,
+      "sb3Sha256": "86712348b7f235d8987149cc4e3ea83f62dc6983957d6210c42561d69dec016f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 128
+    },
+    {
+      "name": "list-seed-290914427",
+      "kind": "list-generated",
+      "seed": 290914427,
+      "sb3Sha256": "d0bd3e308800cb7e48dbf2a2bf64d6af35109b9935ea9c9854929d3df928b308",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 129
+    },
+    {
+      "name": "list-seed-290914428",
+      "kind": "list-generated",
+      "seed": 290914428,
+      "sb3Sha256": "5e04676b167cbb8d0a3c2f62db51fa1a948978d29e7a9544199a59410c8931b2",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 130
+    },
+    {
+      "name": "list-seed-290914429",
+      "kind": "list-generated",
+      "seed": 290914429,
+      "sb3Sha256": "d3150a950c2da2b94737ae91cebcbe563f00e35579d0b41b6d0ce28279e3a4e0",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 131
+    },
+    {
+      "name": "list-seed-290914430",
+      "kind": "list-generated",
+      "seed": 290914430,
+      "sb3Sha256": "335b12097cb1871f6b74b44f2674acef1b761b72f8d7e69282778871bd37f782",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 132
+    },
+    {
+      "name": "list-seed-290914431",
+      "kind": "list-generated",
+      "seed": 290914431,
+      "sb3Sha256": "8921c4daaa86cd0ac08046a3bdf09e112f05ae605cbb25a2991065169f29fcd2",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 133
+    },
+    {
+      "name": "list-seed-290914432",
+      "kind": "list-generated",
+      "seed": 290914432,
+      "sb3Sha256": "cc2c45c2dd2e4d9a54bdbc5c43556a2cb7031da8c9c88a7d5a4098a34df6bb37",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 134
+    },
+    {
+      "name": "list-seed-290914433",
+      "kind": "list-generated",
+      "seed": 290914433,
+      "sb3Sha256": "d5e2c1ccb4b7c6723ac877b0cba15a062c8c44920c1143c9ec97521ed04fa8f8",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 135
+    },
+    {
+      "name": "list-seed-290914434",
+      "kind": "list-generated",
+      "seed": 290914434,
+      "sb3Sha256": "6fb36f0d4387fbda7078bc7b66e0731bcee4474bc43884c74d5eb5949b260bdb",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 136
+    },
+    {
+      "name": "list-seed-290914435",
+      "kind": "list-generated",
+      "seed": 290914435,
+      "sb3Sha256": "5c6d238324a5dbaf8cd0f57de70fd02b5d86c0b53f6d3c198350f926dd69d57b",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 137
+    },
+    {
+      "name": "list-seed-290914436",
+      "kind": "list-generated",
+      "seed": 290914436,
+      "sb3Sha256": "2478a72dfb84c2fffa443a680db6b019acaf0fee297cdad5d97849c58b89577c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 138
+    },
+    {
+      "name": "list-seed-290914437",
+      "kind": "list-generated",
+      "seed": 290914437,
+      "sb3Sha256": "04a948eab7aa770dfd67c4ed7982f9eff623d05ab693f63be34baa5b360bc7d5",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 139
+    },
+    {
+      "name": "list-seed-290914438",
+      "kind": "list-generated",
+      "seed": 290914438,
+      "sb3Sha256": "c4f4e0fe1ee9ba74f82fc615ddf7c778d4819b70b7185b7afdc579c1fffe95ea",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 140
+    },
+    {
+      "name": "list-seed-290914439",
+      "kind": "list-generated",
+      "seed": 290914439,
+      "sb3Sha256": "1b7bc5d05bfef7a3c83bcee81507f127819ec4cfeafe9b2f3e0ed395d1a06cd2",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 141
+    },
+    {
+      "name": "list-seed-290914440",
+      "kind": "list-generated",
+      "seed": 290914440,
+      "sb3Sha256": "28d1b2385305a04d66ef202ba54e01f121d3801908c3530e6bfa171ee80c6e02",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 142
+    },
+    {
+      "name": "list-seed-290914441",
+      "kind": "list-generated",
+      "seed": 290914441,
+      "sb3Sha256": "6ee99083dbd83e297bea6a7f303d15af0ff0149b5af8c59319821e472776b621",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 143
+    },
+    {
+      "name": "list-seed-290914442",
+      "kind": "list-generated",
+      "seed": 290914442,
+      "sb3Sha256": "e82ff1c223e61e8a12613abebecac3fcf23cfa9705ec7a774b6d3c2dd76fffea",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 144
+    },
+    {
+      "name": "list-seed-290914444",
+      "kind": "list-generated",
+      "seed": 290914444,
+      "sb3Sha256": "c20d6ce60436c362f6d514a697c502dbf237c71b2334876efdd7563dd96cc344",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 145
+    },
+    {
+      "name": "list-seed-290914445",
+      "kind": "list-generated",
+      "seed": 290914445,
+      "sb3Sha256": "25fcb63c91e46ef30ec1e2baf643b0e556c17785e9e59995d5e08358146a09d0",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 146
+    },
+    {
+      "name": "list-seed-290914447",
+      "kind": "list-generated",
+      "seed": 290914447,
+      "sb3Sha256": "6cb2f9f5a098eeb6e698df34a259a20f50f00783ffd54191a51d66acae672882",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 147
+    },
+    {
+      "name": "list-seed-290914448",
+      "kind": "list-generated",
+      "seed": 290914448,
+      "sb3Sha256": "4c2168fc4d055418594866658d7a060e7e72be952e053a561330a4adb53d0733",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 148
+    },
+    {
+      "name": "list-seed-290914449",
+      "kind": "list-generated",
+      "seed": 290914449,
+      "sb3Sha256": "40a8af0d6c6306176cf9b4f65427e5ec2f05fa75f2ec1aa3779b81ffb89968d9",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 149
+    },
+    {
+      "name": "list-seed-290914450",
+      "kind": "list-generated",
+      "seed": 290914450,
+      "sb3Sha256": "980632b4de290f97bca28fb14f40a67039ca695e81c934378a0e4c1caf55fffc",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 150
+    },
+    {
+      "name": "list-seed-290914451",
+      "kind": "list-generated",
+      "seed": 290914451,
+      "sb3Sha256": "ca96942fa5508768e1f6526ebebd6d549d5724db4da977a19fe5b97862ae9027",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 151
+    },
+    {
+      "name": "list-seed-290914452",
+      "kind": "list-generated",
+      "seed": 290914452,
+      "sb3Sha256": "aa73b5d4e610d266132d0fca82300bbd4ae62b950d17725f3044231eb813b4e8",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 152
+    },
+    {
+      "name": "list-seed-290914453",
+      "kind": "list-generated",
+      "seed": 290914453,
+      "sb3Sha256": "78dc2d1779a4129b1d05936e6c87d587815ed88fb609d443f0b32323662933d7",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 153
+    },
+    {
+      "name": "list-seed-290914454",
+      "kind": "list-generated",
+      "seed": 290914454,
+      "sb3Sha256": "99f68ea1d0ec9d77982631e3dd75ec5ef7e9d6489bf49d106e965a3a35cbe1d1",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 154
+    },
+    {
+      "name": "list-seed-290914455",
+      "kind": "list-generated",
+      "seed": 290914455,
+      "sb3Sha256": "793f72ff9b1e7c74283a5942cc9a14b4aeaf59b356e338ee295c7aed4eae25c9",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 155
+    },
+    {
+      "name": "list-seed-290914456",
+      "kind": "list-generated",
+      "seed": 290914456,
+      "sb3Sha256": "9107704da3d35fa33b6ff837eaef8bb4ca7e7ac49b1763d2c6680110190e7abe",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 156
+    },
+    {
+      "name": "list-seed-290914457",
+      "kind": "list-generated",
+      "seed": 290914457,
+      "sb3Sha256": "cb99136da20721fcc63699ce33768e395579c54e51ec2bf12d98bd04ecad9daa",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 157
+    },
+    {
+      "name": "list-seed-290914458",
+      "kind": "list-generated",
+      "seed": 290914458,
+      "sb3Sha256": "92e68d1e67bfa1b90ebde6dd1e73cebc99bdc71b142db856d13f77842a536738",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 158
+    },
+    {
+      "name": "list-seed-290914459",
+      "kind": "list-generated",
+      "seed": 290914459,
+      "sb3Sha256": "fefa53cf4c7c9cf9179291ab23c8b2e0b9e90226885a74dabd7c46d1f51576c6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 159
+    },
+    {
+      "name": "list-seed-290914460",
+      "kind": "list-generated",
+      "seed": 290914460,
+      "sb3Sha256": "7c61b9feb02d7ed336d3629a4922095cf390b06d4b9aee50841cc1a6c2623e65",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 160
+    },
+    {
+      "name": "list-seed-290914461",
+      "kind": "list-generated",
+      "seed": 290914461,
+      "sb3Sha256": "03748b8970c3720e5b80ffee65f667d6cd2233107446f41759d5a4ca76a3f7f9",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 161
+    },
+    {
+      "name": "list-seed-290914462",
+      "kind": "list-generated",
+      "seed": 290914462,
+      "sb3Sha256": "03bafe1b701000170f648fa4ad7c2235e696f56d9fed67fecfd8f0912e32fefc",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 162
+    },
+    {
+      "name": "list-seed-290914463",
+      "kind": "list-generated",
+      "seed": 290914463,
+      "sb3Sha256": "15903dba61f38b95f38c89bbdbfdd2dedd7a03c72d76ad1e2657a819fee6f0c6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 163
+    },
+    {
+      "name": "list-seed-290914464",
+      "kind": "list-generated",
+      "seed": 290914464,
+      "sb3Sha256": "c631090924f904fe0ad557a72a295dbae1f2b2ed2f7ccae58685330acc396afc",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 164
+    },
+    {
+      "name": "list-seed-290914465",
+      "kind": "list-generated",
+      "seed": 290914465,
+      "sb3Sha256": "b12f0cd6659e7a7d8316c6b65ec73d3b6a9d20e135da697517a255bf734bb562",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 165
+    },
+    {
+      "name": "list-seed-290914466",
+      "kind": "list-generated",
+      "seed": 290914466,
+      "sb3Sha256": "1ab2f1310c3bbcbf85157fab100f545d5f819c1b79db57085246b3b2aea07dc4",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 166
+    },
+    {
+      "name": "list-seed-290914467",
+      "kind": "list-generated",
+      "seed": 290914467,
+      "sb3Sha256": "67b83b4cfa394fa5d522d25c693eb116ab5e3353c0ddb64e64c319e971d51b36",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 167
+    },
+    {
+      "name": "list-seed-290914468",
+      "kind": "list-generated",
+      "seed": 290914468,
+      "sb3Sha256": "031b45755eb33f1c2801394c737c12805c19b2fc53a97de493d99a0e14787de2",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 168
+    },
+    {
+      "name": "list-seed-290914469",
+      "kind": "list-generated",
+      "seed": 290914469,
+      "sb3Sha256": "49729baba2e9602bcfff4edca0011ff7583cfc411e5ea34545be678bcfb2ed16",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 169
+    },
+    {
+      "name": "list-seed-290914471",
+      "kind": "list-generated",
+      "seed": 290914471,
+      "sb3Sha256": "5ca9fffe226931a4c4990bd4190042c104b75a2de430f58f000c8b5f39446bb8",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 170
+    },
+    {
+      "name": "list-seed-290914472",
+      "kind": "list-generated",
+      "seed": 290914472,
+      "sb3Sha256": "446968fb68d7a9d3567126859d6f74d7aeba13496ea9c87044fb801893b436fd",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 171
+    },
+    {
+      "name": "list-seed-290914474",
+      "kind": "list-generated",
+      "seed": 290914474,
+      "sb3Sha256": "f72edd70bd82206ed1f3bbc98b3f11097f5a9341a4801e9c8e1841400e326afd",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 172
+    },
+    {
+      "name": "list-seed-290914475",
+      "kind": "list-generated",
+      "seed": 290914475,
+      "sb3Sha256": "c76a2e969690d047eaf3015a0ef303dc0ff7023149ebd29e5bd74755a0b93062",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 173
+    },
+    {
+      "name": "list-seed-290914476",
+      "kind": "list-generated",
+      "seed": 290914476,
+      "sb3Sha256": "94916b723349669b73c169a23a8de5292e1403bc3e455288991b780ff075a3bd",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 174
+    },
+    {
+      "name": "list-seed-290914477",
+      "kind": "list-generated",
+      "seed": 290914477,
+      "sb3Sha256": "23c47590dc83b780d4d773b5862f166b8bdebeefa7d23d35a64e40387e8fcedb",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 175
+    },
+    {
+      "name": "list-seed-290914478",
+      "kind": "list-generated",
+      "seed": 290914478,
+      "sb3Sha256": "887c53c113621eb59801231fae15696e6b1ddde017f7889746e2b4f3c8d56acd",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 176
+    },
+    {
+      "name": "list-seed-290914479",
+      "kind": "list-generated",
+      "seed": 290914479,
+      "sb3Sha256": "af46f814739f1f9b3ad6d61965c9a881d71b801393c3b612b2e3113ae24ac347",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 177
+    },
+    {
+      "name": "list-seed-290914480",
+      "kind": "list-generated",
+      "seed": 290914480,
+      "sb3Sha256": "427ed51a7082c927d5c305158efbd9c7528165849770e2dd06b38eab21cc4465",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 178
+    },
+    {
+      "name": "list-seed-290914481",
+      "kind": "list-generated",
+      "seed": 290914481,
+      "sb3Sha256": "a6bd1d91737db99c4837dd19d599ffb3e6c2ae19789d685e21783cbde95b998c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 179
+    },
+    {
+      "name": "list-seed-290914482",
+      "kind": "list-generated",
+      "seed": 290914482,
+      "sb3Sha256": "1d4d67d93cb4b7848ab968dc814997d3e0b28262690c5c4e1af9d45e5ca26f58",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 180
+    },
+    {
+      "name": "list-seed-290914483",
+      "kind": "list-generated",
+      "seed": 290914483,
+      "sb3Sha256": "a20c242e2d399dd29cddfc77fd2ac5430827ec990217ee301ddde6edd91af3ff",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 181
+    },
+    {
+      "name": "list-seed-290914484",
+      "kind": "list-generated",
+      "seed": 290914484,
+      "sb3Sha256": "cea2d10d112f4f6decad3a4d3ac2e3445367d28c8c705584946feefb1ea3017c",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 182
+    },
+    {
+      "name": "list-seed-290914485",
+      "kind": "list-generated",
+      "seed": 290914485,
+      "sb3Sha256": "726999fc6a1f33f2674b2bf2febddfb99fd93ec7c3bd9a2b372c8ab57448f697",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 183
+    },
+    {
+      "name": "list-seed-290914486",
+      "kind": "list-generated",
+      "seed": 290914486,
+      "sb3Sha256": "6d9dd09aad885d570ad1aef14f34e9ce1a561db78bf15ba4918cff075f888855",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 184
+    },
+    {
+      "name": "list-seed-290914487",
+      "kind": "list-generated",
+      "seed": 290914487,
+      "sb3Sha256": "53f6365049176edfd37bf53469dab3e81f5c7e3b3992c6bbf31666aabf4c122f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 185
+    },
+    {
+      "name": "list-seed-290914488",
+      "kind": "list-generated",
+      "seed": 290914488,
+      "sb3Sha256": "7527b572301642ef8e4cd3c8b4b6bf0bb909c691720b64044a5d398d05e87570",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 186
+    },
+    {
+      "name": "list-seed-290914489",
+      "kind": "list-generated",
+      "seed": 290914489,
+      "sb3Sha256": "e0237babda2429cfac9198889b9ccb0153d52bf045fac4c9b334a57597017ce9",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 187
+    },
+    {
+      "name": "list-seed-290914490",
+      "kind": "list-generated",
+      "seed": 290914490,
+      "sb3Sha256": "60528cb6b97b0d06090e86ac6628e91cc2bdd6d4aad275de61f50d8afc42565f",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 188
+    },
+    {
+      "name": "list-seed-290914492",
+      "kind": "list-generated",
+      "seed": 290914492,
+      "sb3Sha256": "b0758f386845faeba8b7394bdce22cb7fac0617c9c84a6a863e44e141015f293",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 189
+    },
+    {
+      "name": "list-seed-290914493",
+      "kind": "list-generated",
+      "seed": 290914493,
+      "sb3Sha256": "aa5d1fa55f8e9eca29a5425fc983ce1147107e6476bea62101fc9635d57e04d6",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 190
+    },
+    {
+      "name": "list-seed-290914494",
+      "kind": "list-generated",
+      "seed": 290914494,
+      "sb3Sha256": "0f2e2716d2459966b8aa3fa926f4d497f704df1f89f18e8dfe0cd677addbb52a",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 191
+    },
+    {
+      "name": "list-seed-290914495",
+      "kind": "list-generated",
+      "seed": 290914495,
+      "sb3Sha256": "c66b0d1628e2486bdee764508cb2313ea778065d417849ca3a7cbf50a0b9ddfa",
+      "status": "fail",
+      "error": {
+        "message": "Non-ascii character in FixedAsciiString"
+      },
+      "inputLine": 192
+    }
+  ],
+  "resolution": "The pinned VM loader rejected malformed synthetic fixtures: boolean values in numeric/text literal descriptors and sprite layerOrder 0. ListProgram now emits boolean operator reporters for boolean literal requests and assigns sprite layerOrder >= 1. Compiler now rejects boolean saved numeric/text literals; saved scalar and list initial values may still be booleans. All 192 failed cases are rerun in the final corpus; no cases are skipped. These were loader failures, not observed value mismatches.",
+  "inputArchive": "list-initial-inputs.jsonl.gz",
+  "inputArchiveFormat": "gzip-compressed UTF-8 JSONL; line N contains the original failed project for failure row N (one-based)"
+}

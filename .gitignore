@@ -1,3 +1,5 @@
 node_modules/
 *.tgz
 .verification/
+*.log
+!results/tests.log

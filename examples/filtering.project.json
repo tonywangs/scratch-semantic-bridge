@@ -1,0 +1,281 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "i": [
+          "i",
+          1
+        ],
+        "result": [
+          "count",
+          0
+        ]
+      },
+      "lists": {
+        "items": [
+          "input",
+          [
+            -3,
+            0,
+            2,
+            7,
+            -1,
+            4
+          ]
+        ],
+        "selected": [
+          "positive values",
+          []
+        ]
+      },
+      "broadcasts": {},
+      "blocks": {
+        "b0": {
+          "opcode": "data_deletealloflist",
+          "next": "b8",
+          "parent": "b11",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "positive values",
+              "selected"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b1": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b8",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "input",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b2": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b3",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "i",
+                "i"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "input",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b3": {
+          "opcode": "operator_gt",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "OPERAND1": [
+              2,
+              "b2"
+            ],
+            "OPERAND2": [
+              1,
+              [
+                10,
+                0
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b4": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b5",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "i",
+                "i"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "input",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b5": {
+          "opcode": "data_addtolist",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "ITEM": [
+              2,
+              "b4"
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "positive values",
+              "selected"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b6": {
+          "opcode": "control_if",
+          "next": "b7",
+          "parent": "b8",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "b3"
+            ],
+            "SUBSTACK": [
+              2,
+              "b5"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b7": {
+          "opcode": "data_changevariableby",
+          "next": null,
+          "parent": "b6",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "i",
+              "i"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b8": {
+          "opcode": "control_repeat",
+          "next": "b10",
+          "parent": "b0",
+          "inputs": {
+            "TIMES": [
+              2,
+              "b1"
+            ],
+            "SUBSTACK": [
+              2,
+              "b6"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b9": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b10",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "positive values",
+              "selected"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b10": {
+          "opcode": "data_setvariableto",
+          "next": null,
+          "parent": "b8",
+          "inputs": {
+            "VALUE": [
+              2,
+              "b9"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "count",
+              "result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b11": {
+          "opcode": "event_whenflagclicked",
+          "next": "b0",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "b6229967372e473079438136d6e7f144",
+          "name": "synthetic blank",
+          "bitmapResolution": 1,
+          "md5ext": "b6229967372e473079438136d6e7f144.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "5.0.300",
+    "agent": "scratch-semantic-bridge synthetic fixture"
+  }
+}

@@ -21,6 +21,10 @@ export async function runVm(project, maxTicks = 20000) {
     if (vm.runtime.threads.length) throw new Error(`Scratch VM exceeded ${maxTicks} scheduler ticks`);
     return {
       ticks,
+      lists: project.targets.flatMap((target, targetIndex) => {
+        const loaded = vm.runtime.targets.filter(t => t.isOriginal)[targetIndex];
+        return Object.keys(target.lists ?? {}).map(id => ({targetIndex, id, value: loaded.variables[StringUtil.replaceUnsafeChars(id)].value.map(encodeValue)}));
+      }),
       variables: project.targets.flatMap((target, targetIndex) => {
         const loaded = vm.runtime.targets.filter(t => t.isOriginal)[targetIndex];
         return Object.keys(target.variables).map(id => ({targetIndex, id, value: encodeValue(loaded.variables[StringUtil.replaceUnsafeChars(id)].value)}));
