@@ -8,7 +8,9 @@ import {readSb3} from '../src/archive.js';
 import {examples, generated} from './programs.js';
 import {listExamples, generatedLists, listSeedStart, listSeedCount} from './list-programs.js';
 import {listEdgeCases} from './list-edge-cases.js';
+import {procedureEdgeCases} from './procedure-edge-cases.js';
 import {edgeCases} from './edge-cases.js';
+import {procedureExamples, generatedProcedures, procedureSeedStart, procedureSeedCount} from './procedure-programs.js';
 import {sb3} from './zip.js';
 import {runVm, vmVersion} from './oracle.js';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -20,7 +22,7 @@ export async function differential({output = '.verification/differential', only}
   const corpusBytes = await readFile(new URL('../test/fixtures/generated.jsonl', import.meta.url));
   const corpus = corpusBytes.toString().trim().split('\n').map(line => JSON.parse(line));
   assert.equal(corpus.length, 128);
-  const cases = Object.entries({...examples(), ...listExamples()}).map(([name, {project, expected, expectedLists}]) => ({name, project, expected, expectedLists, kind: 'example'}));
+  const cases = Object.entries({...examples(), ...listExamples(), ...procedureExamples()}).map(([name, {project, expected, expectedLists}]) => ({name, project, expected, expectedLists, kind: 'example'}));
   cases.push(...edgeCases().map(c => ({...c, kind: 'edge'})));
   cases.push(...corpus.map(({seed, project}, index) => {
     assert.equal(seed, 0x5eed0000 + index);
@@ -36,9 +38,18 @@ export async function differential({output = '.verification/differential', only}
     assert.deepEqual(project, generatedLists(seed), `List seed ${seed} no longer reproduces its fixture`);
     return {name: `list-seed-${seed}`, project, seed, kind: 'list-generated'};
   }));
+  const procedureCorpusBytes = await readFile(new URL('../test/fixtures/procedures-generated.jsonl', import.meta.url));
+  const procedureCorpus = procedureCorpusBytes.toString().trim().split('\n').map(line => JSON.parse(line));
+  assert.equal(procedureCorpus.length, procedureSeedCount);
+  cases.push(...procedureEdgeCases().map(c => ({...c, kind: 'procedure-edge'})));
+  cases.push(...procedureCorpus.map(({seed, project}, index) => {
+    assert.equal(seed, procedureSeedStart + index);
+    assert.deepEqual(project, generatedProcedures(seed), `Procedure seed ${seed} no longer reproduces its fixture`);
+    return {name: `procedure-seed-${seed}`, project, seed, kind: 'procedure-generated'};
+  }));
   const report = {
     schemaVersion: 1, node: process.version, scratchVm: vmVersion,
-    corpusSha256: sha(corpusBytes), listCorpusSha256: sha(listCorpusBytes), lockfileSha256: sha(await readFile(new URL('../package-lock.json', import.meta.url))),
+    procedureCorpusSha256: sha(procedureCorpusBytes), corpusSha256: sha(corpusBytes), listCorpusSha256: sha(listCorpusBytes), lockfileSha256: sha(await readFile(new URL('../package-lock.json', import.meta.url))),
     oracle: 'Scratch VM loadProject and headless turbo scheduler; 20000-tick ceiling; no renderer or storage',
     scope: 'Final scalar values and complete list contents, with types; IEEE exceptional values tagged; scheduler timing is not compared',
     cases: [], mismatches: []
@@ -47,7 +58,9 @@ export async function differential({output = '.verification/differential', only}
     const {name, project, seed, kind} = item;
     const archive = sb3(project), row = {name, kind, ...(seed === undefined ? {} : {seed}), sb3Sha256: sha(archive)};
     try {
-      const {code} = compile(readSb3(archive));
+      const compiled = compile(readSb3(archive));
+      assert.deepEqual(compiled, compile(readSb3(archive)), 'Generated code and mappings must be deterministic');
+      const {code} = compiled;
       const {run} = await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
       const actual = run();
       row.generatedSteps = actual.steps;

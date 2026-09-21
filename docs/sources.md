@@ -44,3 +44,17 @@ inspected after it rejected boolean text primitives in early fixtures. The
 compiler now rejects that encoding and the fixtures use boolean reporters.
 The sb-edit README and TurboWarp compiler explanation linked above were revisited
 for related work; no novelty or performance comparison is claimed.
+
+For custom procedure support (2026-09-21), the installed lockfile-pinned sources
+were inspected: `src/blocks/scratch3_procedures.js` (defaults, missing definitions,
+and argument reporters), `src/engine/thread.js` (parameter frame isolation),
+`src/engine/blocks.js` (target-local definitions and parameter metadata),
+`src/engine/execute.js` (input evaluation and absent inputs), and
+`src/serialization/sb3.js` (prototype/field/input encoding). The public
+[procedure implementation](https://github.com/scratchfoundation/scratch-vm/blob/develop/src/blocks/scratch3_procedures.js)
+and [TurboWarp compiler explanation](https://docs.turbowarp.org/how) were also
+revisited. The installed version remains the behavioral authority; no new
+compiler technique or performance advantage is claimed. In particular, direct
+inspection and a failing VM comparison established that an empty procedure
+socket uses its definition default, unlike a regular empty Boolean operator
+socket. The preserved negative result is documented in the experiment protocol.

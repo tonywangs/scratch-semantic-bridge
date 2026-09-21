@@ -1,6 +1,7 @@
 import {fail, positiveLimit} from './errors.js';
 import {createRuntime, encodeValue} from './runtime.js';
 import {normalizedVariableId} from './identifiers.js';
+import {argumentOpcodes, procedureMetadata, validateCallGraph} from './procedures.js';
 
 const arithmetic = {operator_add: '+', operator_subtract: '-', operator_multiply: '*', operator_divide: '/'};
 const comparisons = {operator_lt: '<', operator_equals: '===', operator_gt: '>'};
@@ -15,9 +16,9 @@ const listReporters = {
   data_lengthoflist: ['listLength'], data_listcontainsitem: ['listContains', 'ITEM'],
   data_listcontents: ['listContents']
 };
-const statements = new Set([...Object.keys(listStatements), 'data_setvariableto', 'data_changevariableby', 'control_repeat', 'control_repeat_until', 'control_if', 'control_if_else']);
-const reporters = new Set([...Object.keys(listReporters), ...Object.keys(arithmetic), ...Object.keys(comparisons), ...literals, 'operator_mod', 'operator_round', 'operator_and', 'operator_or', 'operator_not', 'data_variable']);
-export const SUPPORTED_OPCODES = Object.freeze(['event_whenflagclicked', ...statements, ...reporters].sort());
+const statements = new Set(['procedures_call', ...Object.keys(listStatements), 'data_setvariableto', 'data_changevariableby', 'control_repeat', 'control_repeat_until', 'control_if', 'control_if_else']);
+const reporters = new Set([...argumentOpcodes, ...Object.keys(listReporters), ...Object.keys(arithmetic), ...Object.keys(comparisons), ...literals, 'operator_mod', 'operator_round', 'operator_and', 'operator_or', 'operator_not', 'data_variable']);
+export const SUPPORTED_OPCODES = Object.freeze(['event_whenflagclicked', 'procedures_definition', 'procedures_prototype', ...statements, ...reporters].sort());
 const own = (object, key) => Object.hasOwn(object, key);
 const record = x => x !== null && typeof x === 'object' && !Array.isArray(x);
 const safeText = x => typeof x === 'string' && !x.includes('\b');
@@ -30,6 +31,8 @@ const quote = value => {
 };
 
 export function compile(project, options = {}) {
+  const maxCallDepth = positiveLimit(options.maxCallDepth ?? 64, 'maxCallDepth');
+  if (maxCallDepth > 256) fail('INVALID_LIMIT', 'maxCallDepth cannot exceed 256');
   const maxSteps = positiveLimit(options.maxSteps ?? 100000, 'maxSteps');
   const maxBlocks = positiveLimit(options.maxBlocks ?? 10000, 'maxBlocks');
   const maxDepth = positiveLimit(options.maxDepth ?? 128, 'maxDepth');
@@ -72,18 +75,24 @@ export function compile(project, options = {}) {
       if (!id || !safeText(id) || !record(b) || typeof b.opcode !== 'string' || !record(b.inputs) || !record(b.fields) || typeof b.topLevel !== 'boolean' || typeof b.shadow !== 'boolean' || !(b.next === null || typeof b.next === 'string') || !(b.parent === null || typeof b.parent === 'string')) fail('INVALID_BLOCK', 'Malformed block record', at);
       if (Object.hasOwn(Object.prototype, id)) fail('UNSUPPORTED_IDENTIFIER', `Scratch VM cannot reliably preserve the reserved block ID: ${id}`, at);
       if (!SUPPORTED_OPCODES.includes(b.opcode)) fail('UNSUPPORTED_OPCODE', `Unsupported opcode: ${b.opcode}`, at);
-      if (b.mutation !== undefined) fail('UNSUPPORTED_FEATURE', 'Block mutations are unsupported', at);
+      if (b.mutation !== undefined && !['procedures_call', 'procedures_prototype'].includes(b.opcode)) fail('UNSUPPORTED_FEATURE', 'Block mutations are unsupported', at);
       if (b.opcode === 'event_whenflagclicked') {
         if (!b.topLevel || b.parent !== null || b.shadow) fail('INVALID_BLOCK', 'Green flag must be a non-shadow root', at);
         hats.push({ti, id});
+      } else if (b.opcode === 'procedures_definition') {
+        if (!b.topLevel || b.parent !== null || b.shadow) fail('INVALID_PROCEDURE', 'Procedure definition must be a non-shadow root', at);
       } else if (b.topLevel) fail('EXTRA_SCRIPT', 'Only one green-flag script is accepted; detached blocks are rejected', at);
     }
   });
   if (hats.length !== 1) fail('SCRIPT_COUNT', `Expected one green-flag script; found ${hats.length}`, hats.length ? {targetIndex: hats.at(-1).ti, targetName: project.targets[hats.at(-1).ti].name, blockId: hats.at(-1).id} : {});
-  const {ti, id: hat} = hats[0], target = project.targets[ti], blocks = target.blocks;
+  const {ti: entryTi, id: hat} = hats[0];
+  let ti = entryTi, target = project.targets[ti], blocks = target.blocks;
+  const selectTarget = index => { ti = index; target = project.targets[index]; blocks = target.blocks; };
+  const procedures = [], procedureScopes = project.targets.map(() => new Map());
+  let currentProcedure = null;
   const location = id => ({targetIndex: ti, targetName: target.name, blockId: id});
   const error = (code, message, id) => fail(code, message, location(id));
-  const seen = new Set(), active = new Set();
+  let seen = new Set(), active = new Set();
   function enter(id, parent, depth, kind) {
     if (depth > maxDepth) error('DEPTH_LIMIT', 'Block nesting exceeds maxDepth', id);
     if (!own(blocks, id)) error('MISSING_BLOCK', `Referenced block does not exist: ${id}`, parent ?? id);
@@ -156,7 +165,13 @@ export function compile(project, options = {}) {
   function expression(id, parent, depth) {
     const b = enter(id, parent, depth, 'reporter'), op = b.opcode;
     let node;
-    if (literals.has(op)) {
+    if (argumentOpcodes.includes(op)) {
+      shape(b, id, [], ['VALUE']);
+      const field = b.fields.VALUE;
+      if (!Array.isArray(field) || field.length !== 1 || !safeText(field[0])) error('INVALID_FIELD', 'Argument VALUE must contain one text name', id);
+      const slot = currentProcedure?.names.indexOf(field[0]) ?? -1;
+      node = slot < 0 ? {type: 'literal', value: 0} : {type: 'argument', slot};
+    } else if (literals.has(op)) {
       const field = op === 'text' ? 'TEXT' : 'NUM';
       shape(b, id, [], [field]);
       if (!Array.isArray(b.fields[field]) || b.fields[field].length !== 1 || !scalar(b.fields[field][0]) || typeof b.fields[field][0] === 'boolean') error('INVALID_FIELD', 'Literal field must contain one scalar', id);
@@ -179,7 +194,23 @@ export function compile(project, options = {}) {
     while (id !== null) {
       const b = enter(id, previous, depth, 'statement'), op = b.opcode;
       const node = {id, op};
-      if (own(listStatements, op)) {
+      if (op === 'procedures_call') {
+        const metadata = procedureMetadata(b, location(id));
+        shape(b, id, metadata.ids);
+        const procedure = procedureScopes[ti].get(metadata.code);
+        if (procedure && (metadata.ids.length !== procedure.ids.length || metadata.ids.some((arg, i) => arg !== procedure.ids[i]))) error('INVALID_PROCEDURE', 'Call argumentids must match its target-local definition in order', id);
+        // Missing definitions still evaluate supplied reporter inputs, as the VM does.
+        node.args = metadata.ids.map((arg, i) => {
+          const socket = b.inputs[arg];
+          // The VM does not populate args for an empty socket, even a Boolean
+          // socket. It therefore uses the definition default, not false.
+          if (!own(b.inputs, arg) || (Array.isArray(socket) && socket.length === 2 && socket[0] === 2 && socket[1] === null)) return {type: 'literal', value: procedure ? procedure.defaults[i] : 0};
+          return input(b, arg, id, depth);
+        });
+        node.procedure = procedure;
+        node.code = metadata.code;
+        if (procedure && currentProcedure) currentProcedure.calls.push({procedure, location: location(id)});
+      } else if (own(listStatements, op)) {
         Object.assign(node, listNode(b, id, depth, listStatements[op]));
       } else if (op.startsWith('data_')) {
         shape(b, id, ['VALUE'], ['VARIABLE']);
@@ -196,15 +227,56 @@ export function compile(project, options = {}) {
     for (const id of chain) active.delete(id);
     return nodes;
   }
-  const root = enter(hat, null, 0, 'hat');
-  shape(root, hat, []);
-  const program = sequence(root.next, hat, 1);
-  active.delete(hat);
+  // Index prototypes first so calls may precede definitions in saved block order.
   project.targets.forEach((t, index) => {
-    for (const id of Object.keys(t.blocks)) if (index !== ti || !seen.has(id)) fail('UNREACHABLE_BLOCK', 'Block is outside the one supported script', {targetIndex: index, targetName: t.name, blockId: id});
+    selectTarget(index);
+    for (const [id, b] of Object.entries(blocks)) {
+      if (b.opcode !== 'procedures_definition') continue;
+      shape(b, id, ['custom_block']);
+      const descriptor = b.inputs.custom_block;
+      if (!Array.isArray(descriptor) || descriptor.length !== 2 || descriptor[0] !== 1 || typeof descriptor[1] !== 'string') error('INVALID_PROCEDURE', 'Definition needs custom_block: [1, prototypeId]', id);
+      const prototypeId = descriptor[1], prototype = blocks[prototypeId];
+      if (!prototype || prototype.opcode !== 'procedures_prototype' || !prototype.shadow || prototype.topLevel || prototype.next !== null || prototype.parent !== id) error('INVALID_PROCEDURE', 'Definition needs an attached shadow prototype with no next block', id);
+      const metadata = procedureMetadata(prototype, location(prototypeId), true);
+      if (procedureScopes[ti].has(metadata.code)) error('AMBIGUOUS_PROCEDURE', `Duplicate target-local definition for ${quote(metadata.code)}`, id);
+      const procedure = {...metadata, ti, id, prototypeId, parameterBlocks: [], calls: [], functionName: `procedure${procedures.length}`};
+      procedures.push(procedure); procedureScopes[ti].set(metadata.code, procedure);
+    }
   });
+  let program;
+  project.targets.forEach((t, index) => {
+    selectTarget(index); seen = new Set(); active = new Set();
+    for (const procedure of procedureScopes[ti].values()) {
+      currentProcedure = procedure;
+      const definition = enter(procedure.id, null, 0, 'definition');
+      const prototype = enter(procedure.prototypeId, procedure.id, 1, 'prototype');
+      shape(prototype, procedure.prototypeId, procedure.ids);
+      for (const [i, arg] of procedure.ids.entries()) {
+        const socket = prototype.inputs[arg];
+        if (!Array.isArray(socket) || socket.length !== 2 || socket[0] !== 1 || typeof socket[1] !== 'string') error('INVALID_PROCEDURE', `Prototype needs shadow reporter for ${quote(arg)}`, procedure.prototypeId);
+        const id = socket[1], b = enter(id, procedure.prototypeId, 2, 'reporter');
+        shape(b, id, [], ['VALUE']);
+        const expectedOpcode = procedure.types[i] === 'b' ? 'argument_reporter_boolean' : 'argument_reporter_string_number';
+        if (!b.shadow || b.opcode !== expectedOpcode || !Array.isArray(b.fields.VALUE) || b.fields.VALUE.length !== 1 || b.fields.VALUE[0] !== procedure.names[i]) error('INVALID_PROCEDURE', 'Prototype reporter must match its parameter name and placeholder type', id);
+        procedure.parameterBlocks.push(id); active.delete(id);
+      }
+      active.delete(procedure.prototypeId);
+      procedure.body = sequence(definition.next, procedure.id, 1);
+      active.delete(procedure.id);
+    }
+    currentProcedure = null;
+    if (ti === entryTi) {
+      const root = enter(hat, null, 0, 'hat');
+      shape(root, hat, []);
+      program = sequence(root.next, hat, 1);
+      active.delete(hat);
+    }
+    for (const id of Object.keys(blocks)) if (!seen.has(id)) error('UNREACHABLE_BLOCK', 'Block is outside the supported script and procedure definitions', id);
+  });
+  validateCallGraph(procedures);
+  selectTarget(entryTi);
 
-  const lines = ['// Generated by scratch-semantic-bridge. Embedded runtime: AGPL-3.0-only.', '// Run with Node; conversion did not execute this project.', "import {pathToFileURL} from 'node:url';", '', createRuntime.toString(), '', encodeValue.toString(), '', `export const variableMetadata = ${quote(variables)};`, `export const listMetadata = ${quote(lists)};`, `export function run({maxSteps = ${maxSteps}, maxListLength = ${maxListLength}} = {}) {`, `  const rt = createRuntime(maxSteps, ${ti}, ${quote(target.name)}, maxListLength);`, `  const v = ${quote(variables.map(v => v.initialValue))};`, `  const l = ${quote(lists.map(v => v.initialValue))};`, `  for (const list of l) rt.listCapacity(list.length);`].flatMap(line => line.split('\n'));
+  const lines = ['// Generated by scratch-semantic-bridge. Embedded runtime: AGPL-3.0-only.', '// Run with Node; conversion did not execute this project.', "import {pathToFileURL} from 'node:url';", '', createRuntime.toString(), '', encodeValue.toString(), '', `export const variableMetadata = ${quote(variables)};`, `export const listMetadata = ${quote(lists)};`, `export function run({maxSteps = ${maxSteps}, maxListLength = ${maxListLength}, maxCallDepth = ${maxCallDepth}} = {}) {`, `  const rt = createRuntime(maxSteps, ${ti}, ${quote(target.name)}, maxListLength, maxCallDepth);`, `  const v = ${quote(variables.map(v => v.initialValue))};`, `  const l = ${quote(lists.map(v => v.initialValue))};`, `  for (const list of l) rt.listCapacity(list.length);`].flatMap(line => line.split('\n'));
   const mappings = [];
   let indent = 1, serial = 0;
   const emit = (line, id, kind = 'statement') => {
@@ -215,6 +287,7 @@ export function compile(project, options = {}) {
   function expr(node) {
     let result;
     if (node.type === 'literal') result = quote(node.value);
+    else if (node.type === 'argument') result = `arg${node.slot}`;
     else if (node.type === 'variable') result = `v[${node.slot}]`;
     else if (node.type === 'list') result = listCall(node);
     else {
@@ -239,6 +312,12 @@ export function compile(project, options = {}) {
   function generate(nodes) {
     for (const n of nodes) {
       tick(n.id);
+      if (n.op === 'procedures_call') {
+        const args = n.args.map(expr);
+        if (n.procedure) emit(`${n.procedure.functionName}(${[quote(n.id), ...args].join(', ')});`, n.id);
+        else emit(`// Missing definition: ${quote(n.code)} (no-op).`, n.id);
+        continue;
+      }
       if (n.op === 'control_repeat_until') {
         emit('while (true) {', n.id); indent++;
         tick(n.id);
@@ -265,6 +344,17 @@ export function compile(project, options = {}) {
       }
     }
   }
+  for (const procedure of procedures) {
+    selectTarget(procedure.ti);
+    emit(`// Procedure ${quote(procedure.code)}; parameters ${quote(procedure.names)}`);
+    emit(`function ${procedure.functionName}(${['callBlockId', ...procedure.ids.map((_, i) => `arg${i}`)].join(', ')}) {`, procedure.id, 'definition');
+    for (const [id, kind] of [[procedure.prototypeId, 'prototype'], ...procedure.parameterBlocks.map(id => [id, 'parameter'])]) mappings.push({generatedLine: lines.length, ...location(id), kind});
+    indent++;
+    emit('rt.enterCall(callBlockId);');
+    emit('try {'); indent++; tick(procedure.id); generate(procedure.body); indent--;
+    emit('} finally { rt.leaveCall(); }'); indent--; emit('}');
+  }
+  selectTarget(entryTi);
   tick(hat); generate(program);
   emit('return {steps: rt.steps, variables: variableMetadata.map((meta, slot) => ({...meta, value: encodeValue(v[slot])})), lists: listMetadata.map((meta, slot) => ({...meta, initialValue: [...meta.initialValue], value: l[slot].map(encodeValue)}))};');
   indent = 0; emit('}');

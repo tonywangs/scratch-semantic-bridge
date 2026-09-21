@@ -7,8 +7,8 @@ Scratch block IDs.
 
 This is a sequential logic tool, not a replacement for the Scratch player. It
 accepts exactly one green-flag script across the project, scalar variables, lists,
-arithmetic, comparisons, boolean operations, conditionals, and loops with an
-execution budget. Unsupported blocks are errors, including disconnected ones.
+arithmetic, comparisons, boolean operations, conditionals, loops, and nonrecursive
+custom procedures with arguments. Execution has a shared step budget and a call-depth limit. Unsupported blocks are errors, including disconnected ones.
 
 ## Quick start
 
@@ -27,7 +27,7 @@ To install the CLI from a local package, without fetching dependencies:
 
 ```sh
 npm pack --offline --ignore-scripts
-npm install --offline --ignore-scripts --no-audit --no-fund --prefix /tmp/bridge-install ./scratch-semantic-bridge-0.2.0.tgz
+npm install --offline --ignore-scripts --no-audit --no-fund --prefix /tmp/bridge-install ./scratch-semantic-bridge-0.3.0.tgz
 /tmp/bridge-install/node_modules/.bin/scratch-bridge examples/summation.sb3 -o /tmp/summation.mjs
 node /tmp/summation.mjs
 ```
@@ -38,7 +38,7 @@ can write to if your environment restricts the default cache.
 ## CLI
 
 ```text
-scratch-bridge INPUT.sb3 -o OUTPUT.mjs [--max-steps N] [--max-list-length N]
+scratch-bridge INPUT.sb3 -o OUTPUT.mjs [--max-steps N] [--max-list-length N] [--max-call-depth N]
 scratch-bridge INPUT.sb3 --check
 scratch-bridge --help
 ```
@@ -74,6 +74,17 @@ explicitly, including runtime-computed values. The default list limit is 10,000
 items; `--max-list-length N` changes it up to 200,000. Growth beyond the limit
 throws an error rather than silently truncating as Scratch does at its ceiling.
 
+Custom procedures become ordinary JavaScript functions with comments identifying
+Scratch names and parameters, and source mappings for definitions, calls and
+argument reporters. Nested calls have isolated parameters; omitted or explicitly
+empty sockets use definition defaults. Procedure lookup is target-local. Missing
+definitions are no-ops, as in the pinned VM. Recursion, duplicate definitions and
+malformed metadata reject with block-level diagnostics. Both warp settings are
+accepted only for sequential final-state behavior; scheduling is not modeled.
+Use `--max-call-depth N` (default 64, ceiling 256) when converting, or
+`run({maxCallDepth: N})` in generated modules. See the
+[procedure contract](docs/specification.md#custom-procedures) for exact boundaries.
+
 Errors go to stderr as JSON with a nonzero exit code. Block errors include the
 target index, target name, and block ID; archive and project-level errors may not
 have a block location. Existing outputs are never overwritten.
@@ -91,12 +102,15 @@ Their archives include a blank SVG to satisfy Scratch's costume requirement.
 | [sorting.sb3](examples/sorting.sb3) | Bubble sort with duplicates and a negative value | `[-2, 0, 1, 3, 5, 5]` |
 | [filtering.sb3](examples/filtering.sb3) | Select positive input values | `[2, 7, 4]`, count `3` |
 | [aggregation.sb3](examples/aggregation.sb3) | Sum and mean of `[3, "4", -2, 0.5]` | Sum `5.5`, mean `1.375` |
+| [procedure-filtering.sb3](examples/procedure-filtering.sb3) | Reusable threshold filter calls a Boolean-gated append procedure; run with default then threshold 3 | Selected `[7, 4]`, count `2` |
+| [procedure-aggregation.sb3](examples/procedure-aggregation.sb3) | Weighted aggregation calls an accumulator; default weight 1 then weight 2 | Totals `[5.5, 11]` |
+| [procedure-sorting.sb3](examples/procedure-sorting.sb3) | Zero-argument sort calls a two-argument swap; sorting twice is idempotent | `[-2, 0, 1, 3, 5, 5]` |
 
-Try the list workflow directly:
+Try the procedure workflow directly:
 
 ```sh
-node bin/scratch-bridge.js examples/sorting.sb3 -o /tmp/sorting.mjs
-node /tmp/sorting.mjs
+node bin/scratch-bridge.js examples/procedure-sorting.sb3 -o /tmp/procedure-sorting.mjs
+node /tmp/procedure-sorting.mjs
 ```
 
 The result's `lists` array includes the sorted list and its original target/ID.
@@ -119,7 +133,7 @@ npm ci --ignore-scripts --no-audit --no-fund
 
 Then one command covers unit tests, differential execution, package creation,
 isolated installation with an empty npm cache in offline mode, and execution of
-all six examples from that installed package:
+all nine examples from that installed package:
 
 ```sh
 node scripts/verify.js
@@ -135,7 +149,7 @@ transitive dependencies are not installed for CLI users.
 
 Read the [supported-opcode and execution-model specification](docs/specification.md)
 before converting other projects. Graphics, sound, broadcasts, clones,
-extensions, procedures, random/time-dependent operations, and concurrent scripts
+extensions, recursive procedures, random/time-dependent operations, and concurrent scripts
 are outside the supported subset. Assets and monitors do not participate in the
 result. No personal Scratch projects have been tested.
 

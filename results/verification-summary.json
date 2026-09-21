@@ -1,5 +1,5 @@
 {
-  "observedAtUtc": "2026-09-20T09:32:22.345Z",
+  "observedAtUtc": "2026-09-21T01:14:14.784Z",
   "command": [
     "node",
     "scripts/verify.js"
@@ -8,25 +8,28 @@
   "npm": "11.19.0",
   "status": "pass",
   "unitTests": {
-    "total": 64,
-    "passed": 64,
+    "total": 101,
+    "passed": 101,
     "failed": 0
   },
   "differential": {
-    "total": 447,
-    "passed": 447,
+    "total": 660,
+    "passed": 660,
     "failed": 0
   },
   "differentialGroups": {
-    "example": 6,
+    "example": 9,
     "edge": 39,
     "generated": 128,
     "list-edge": 82,
-    "list-generated": 192
+    "list-generated": 192,
+    "procedure-edge": 18,
+    "procedure-generated": 192
   },
   "coercionValues": 33,
   "comparisonPairs": 1089,
   "listIndexChecks": 300,
+  "deterministicArtifactComparisons": 660,
   "installedExamples": [
     {
       "name": "factorial",
@@ -347,43 +350,259 @@
           }
         ]
       }
+    },
+    {
+      "name": "procedure-filtering",
+      "expected": {
+        "i": 7,
+        "count": 2
+      },
+      "expectedLists": {
+        "items": [
+          -3,
+          0,
+          2,
+          7,
+          -1,
+          4
+        ],
+        "selected": [
+          7,
+          4
+        ]
+      },
+      "actual": {
+        "steps": 147,
+        "variables": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "i",
+            "name": "i",
+            "initialValue": 0,
+            "value": 7
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "count",
+            "name": "count",
+            "initialValue": 0,
+            "value": 2
+          }
+        ],
+        "lists": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "items",
+            "name": "input",
+            "initialValue": [
+              -3,
+              0,
+              2,
+              7,
+              -1,
+              4
+            ],
+            "value": [
+              -3,
+              0,
+              2,
+              7,
+              -1,
+              4
+            ]
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "selected",
+            "name": "selected",
+            "initialValue": [],
+            "value": [
+              7,
+              4
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "procedure-aggregation",
+      "expected": {
+        "i": 5,
+        "sum": 11
+      },
+      "expectedLists": {
+        "items": [
+          3,
+          "4",
+          -2,
+          0.5
+        ],
+        "totals": [
+          5.5,
+          11
+        ]
+      },
+      "actual": {
+        "steps": 95,
+        "variables": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "i",
+            "name": "i",
+            "initialValue": 0,
+            "value": 5
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "sum",
+            "name": "sum",
+            "initialValue": 0,
+            "value": 11
+          }
+        ],
+        "lists": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "items",
+            "name": "measurements",
+            "initialValue": [
+              3,
+              "4",
+              -2,
+              0.5
+            ],
+            "value": [
+              3,
+              "4",
+              -2,
+              0.5
+            ]
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "totals",
+            "name": "totals",
+            "initialValue": [],
+            "value": [
+              5.5,
+              11
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "procedure-sorting",
+      "expected": {
+        "j": 6,
+        "temp": 3
+      },
+      "expectedLists": {
+        "items": [
+          -2,
+          0,
+          1,
+          3,
+          5,
+          5
+        ]
+      },
+      "actual": {
+        "steps": 585,
+        "variables": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "j",
+            "name": "j",
+            "initialValue": 0,
+            "value": 6
+          },
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "temp",
+            "name": "temp",
+            "initialValue": 0,
+            "value": 3
+          }
+        ],
+        "lists": [
+          {
+            "targetIndex": 0,
+            "targetName": "Stage",
+            "id": "items",
+            "name": "numbers",
+            "initialValue": [
+              5,
+              -2,
+              5,
+              0,
+              3,
+              1
+            ],
+            "value": [
+              -2,
+              0,
+              1,
+              3,
+              5,
+              5
+            ]
+          }
+        ]
+      }
     }
   ],
   "networkPolicy": "npm pack and installation use --offline; installed package has no dependencies; conversion and generated modules use only Node builtins",
-  "lockfileSha256": "ec770a194c13dac4a612f63094ff4ef8cc798fe78e58cf84c822e5091a4fb0ed",
+  "lockfileSha256": "0492b09bbb0765631e3e5302f9b1db0af5818db69e00b003347cb88788a3a58e",
   "corpusSha256": "7f93198dae1363c8690be408094398ed58eb6a264d64013b97f90a9ab67a5e67",
   "listCorpusSha256": "ba0939b045856cdc1aa44992f2f361da4ac831a837fafaa6993e584b64994264",
+  "procedureCorpusSha256": "a9bbcab24b5852979f56a41dfeff1a6d359e323c0cc23bc4789ccfbbb9229a9d",
   "sourceSha256": {
     "src/archive.js": "792416df1d8ba1ab6ca8b25e65a947a83e7883546f98d9f989b977bbe23c9c6c",
-    "src/compiler.js": "956a604f4eef448931f163f1dc82aca805ca2e3379881d8c409a164f6b85308a",
+    "src/compiler.js": "657218c853b460c208d133dafca8680db6a6efbd2ed2697ce085edcd5d075607",
     "src/errors.js": "27f2100a988ba46a9135963b432402257538e390e4f8da62e36d8a316ef8ada0",
     "src/identifiers.js": "e543bdb75a7af1e7204102b1a8109ee8c1a24ef0688f871d1e1c0c93f33cb18c",
     "src/index.js": "210b07e5f0555eb3d1bacf3184f6709dd1fc14873adf06093276b27b3d40f97e",
-    "src/runtime.js": "d4f205228053b28253174f26ea36a5f59af4d6a6a7268a3e2d2d8a903f344475",
+    "src/procedures.js": "71148a3552f15b183725a3b8dd88ff0d0e94d5e21f004c6c05f642bfb05d8df4",
+    "src/runtime.js": "ceee719d069489eaed210720019d60ab11d24cd0d4d20bde9ec15c49a65f8e0a",
     "scripts/asset.js": "ddbb6de826ec99f5c86d64e13c332ed2e87457fc49a2697edaaa5b73aaf52d85",
-    "scripts/differential.js": "62bab3109cdff27e2f976744347e96b8a0f91a51887d73360ac305d4944df27a",
+    "scripts/differential.js": "38811ae23d33c48e58deaefddb2ba5d5bef13aa4d2fa080e0931ce8288e781c0",
     "scripts/edge-cases.js": "e9b3e7ba572bc95c44416d3caa472266e16806510a1fd24c7f7606a6f10fdff4",
-    "scripts/fixtures.js": "14fbdc7b0198f563732cd438c258ab47e485b535ca0d5319ff8c427d8df48e55",
+    "scripts/fixtures.js": "d9583894b3838e202050ea8cc2f7ec89828afdc9b7700633d6533a7b71ff48a3",
     "scripts/list-edge-cases.js": "8bf396e59904848b5659729154957aa24e156aa9a79ee2b594c6ba71643a7b93",
     "scripts/list-programs.js": "9525f98e72b7ef5eede973c1cfe886914e11d57cf1076b174ef08cd64495c4b3",
     "scripts/oracle.js": "7c9449a28bc320f103c5d7ce565973a09f9593459570830e02b650dbf23aaba3",
+    "scripts/procedure-edge-cases.js": "355c9ffe09f4bf064c79a3f057d3d30c6d8ccd476e6d25f76aaf8462e6664685",
+    "scripts/procedure-programs.js": "555b6b3b6fbeec92688ddcda656d09bb2e15e54a54802e8289733ed046b72a96",
     "scripts/programs.js": "362cf1e426521d379f4aa36c4c6c0b53f6cec852b9e3717ba4bcc58438f10c92",
-    "scripts/verify.js": "558cb9fa00738e6fd4bb4c9ee4b2eba45f5bd85af155d28ca0f6070aa9a3a641",
+    "scripts/verify.js": "7ab4fb13d3d1c817dceee2c2667116b5bf1c699c255e7efedc5f1a0f369b97bb",
     "scripts/zip.js": "001626ba26889a5a2501f858a700b2fa8eeee2d9b9d950efd0b0858f68dfd5e7",
-    "bin/scratch-bridge.js": "55ab3a1e36e0eb0501dc30930e4676ba6da4f7f4463e2cf6e0757d19d08ca1e1",
+    "bin/scratch-bridge.js": "470384aef26b2b8a3559e6c8b4ac94fecc81eb28275f0277c66b5430ee00c41b",
     "test/archive.test.js": "7ebb85da549d8bfd9d8f13515a5184327841ca3b599675e8170fa8853b723e76",
     "test/cli.test.js": "2eda7408249c85f2c2b6911c65153d3dfba93bcc1d38ebbd36482e0b4b155237",
     "test/coercion.test.js": "2efc788a7a71c5e30c2f97bc2de31600ffe0c677a105602f94c9f019b1c3fc13",
     "test/compiler.test.js": "a822de974891d37da6e4703f9932cb38889fdf7155ac0a46f20f2344d35b7ad5",
     "test/helpers.js": "1623def954b9b43e9e764acb01f3c895b8dbc351d10ec0975d374692c1292b45",
-    "test/lists.test.js": "a80991f8cae2394964b4a80fab4c7a44c88ff5bf495b27567f0454ad03fe5df2"
+    "test/lists.test.js": "a80991f8cae2394964b4a80fab4c7a44c88ff5bf495b27567f0454ad03fe5df2",
+    "test/procedures.test.js": "8ad719657d48170ebc3555697657644b81e6d26806ae30236e11ab070dd9562a"
   },
   "unresolvedSupportedSubsetMismatches": [],
   "limitations": [
-    "Finite synthetic corpus; no general Scratch compatibility or equivalence proof.",
-    "Final scalar values and lists only; graphics, audio, timing, concurrency, and personal projects remain unvalidated.",
-    "Random/any list indices explicitly rejected; list growth and step limits intentionally depart from Scratch.",
-    "Per-list item limits do not bound string size or aggregate process memory.",
+    "Finite synthetic corpus; no proof of general Scratch compatibility or equivalence.",
+    "Sequential final scalar values and lists only; scheduling, concurrency, recursion, graphics, sound, and real personal projects remain outside scope.",
+    "Strict procedure metadata and identifier validation intentionally accept less than Scratch VM.",
+    "Call-depth, step and list-size limits intentionally depart from Scratch; random/any list indices reject.",
+    "List-size limits do not bound string lengths or aggregate process memory.",
     "Node 22 minimum is declared; recorded checks used Node 24.20.0.",
     "Offline installation uses an empty npm cache and --offline; no OS network isolation was used."
   ]

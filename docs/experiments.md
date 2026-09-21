@@ -12,7 +12,7 @@ concurrency, and personal projects are not part of this experiment.
 
 ## Inputs and seeds
 
-* Six synthetic examples are preserved as ZIP archives, readable project JSON,
+* Nine synthetic examples are preserved as ZIP archives, readable project JSON,
   and independently specified expected final values under `examples/`.
 * `scripts/edge-cases.js` builds 39 targeted projects covering rounding, nested
   control, numeric/text coercion, exceptional numbers, shadow forms, Unicode,
@@ -39,6 +39,27 @@ concurrency, and personal projects are not part of this experiment.
   numbers, two scope cases, and sanitized Unicode IDs. All run through the whole
   VM loader and scheduler. Random/any indices are excluded from equivalence checks
   and tested separately as intentional compile/runtime rejections.
+* `test/fixtures/procedures-generated.jsonl` preserves 192 procedure programs,
+  with independent Mulberry32 seeds `0xc0110000`–`0xc01100bf` (3222339584–3222339775).
+  `scripts/procedure-programs.js` generates 3–6 parameterized procedures and one
+  zero-argument leaf. Edges go only to a higher-index procedure, making the graph
+  acyclic. Each body mutates scalars/lists, records parameters before and after
+  nested calls, branches on Boolean parameters and makes bounded 1–2 iteration
+  calls. Some calls omit arguments to exercise defaults; shared parameter names
+  test isolation. The entry script calls the root twice. Programs alternate stage
+  execution, sprite access to stage lists, and sprite-local list shadowing. Warp
+  flags, values, graph edges and counts vary by seed. These are small synthetic
+  DAGs, not an exhaustive sample of arbitrary procedure graphs.
+* `scripts/procedure-edge-cases.js` preserves 18 targeted builders: parameter
+  isolation through nested and zero-argument calls, five Boolean socket forms
+  under both warp settings, raw defaults and empty sockets, value snapshots,
+  repeated empty procedures, Unicode/identifier collisions, missing definitions,
+  and same-named definitions across targets. Expected outputs for these cases and
+  the three procedure examples are specified separately from either runtime.
+* Procedure examples demonstrate a threshold filter calling a Boolean-gated
+  append, a weighted aggregation calling an accumulator, and a zero-argument sort
+  calling a parameterized swap. They exercise repeated calls and defaults and
+  retain independently specified final scalar and complete list expectations.
 * The sorting example uses six bubble-sort passes over six fixed values; filtering
   preserves input order and selects positive numbers; aggregation adds four fixed
   values with Scratch numeric coercion. Their expected scalar/list outputs are
@@ -47,7 +68,7 @@ concurrency, and personal projects are not part of this experiment.
   A deterministic blank SVG is included only for file validity.
 * The verifier checks that the corpus regenerates byte-for-byte, and that example
   archives match their builders. Each differential result records an input ZIP
-  SHA-256; the report also hashes both corpora and the npm lockfile.
+  SHA-256; the report also hashes all three corpora and the npm lockfile.
 
 ## Execution and comparison
 
@@ -72,13 +93,19 @@ before comparison, including within every list item, so JSON serialization canno
 hide differences. List order and value types are compared without normalization. VM tick counts
 are not compared or claimed as reproducible measurements.
 
-Unit tests separately compare 33 coercion edge values and all 1,089 pairwise
+Every differential case is compiled twice and the complete code and map must
+match exactly. Unit tests separately compare 33 coercion edge values and all 1,089 pairwise
 comparisons against the pinned `Cast` helper. These helper checks supplement the
 whole-program VM comparisons; they do not replace them. Deterministic list-index
 coercion is checked for 30 values, five lengths, and both accept-all modes (300
 checks). Separate regression tests cover malformed references, identifier
 collisions, repeated-run isolation, source mappings, list growth, step exhaustion,
-and literal/dynamic random/any diagnostics including empty lists.
+and literal/dynamic random/any diagnostics including empty lists. Procedure tests
+also cover recursion (including dead branches and unused procedures), malformed
+metadata, duplicate definitions, stale call IDs, unsupported bodies, all mapped
+procedure block kinds, runtime parameter reset, call-depth enforcement across
+400-definition acyclic graphs, and shared step/list budgets. Limit/rejection
+checks intentionally do not claim equivalent behavior to the VM.
 
 ## Commands and evidence
 
@@ -90,7 +117,7 @@ node scripts/verify.js
 
 The command runs the tests and differential checks, packs the real npm package,
 and installs it outside the checkout with an empty npm cache and `--offline`.
-It invokes the installed bin link on all six installed `.sb3` examples, checks
+It invokes the installed bin link on all nine installed `.sb3` examples, checks
 the generated modules with `node --check`, runs them, and compares their outputs
 with the independent example expectations. The isolated package has no runtime
 dependencies. This verifies offline package resolution and execution without an
@@ -107,6 +134,7 @@ Run only the differential experiment, or replay one preserved seed:
 node scripts/differential.js
 node scripts/differential.js --case seed-1592590336 --output .verification/replay
 node scripts/differential.js --case list-seed-290914304 --output .verification/list-replay
+node scripts/differential.js --case procedure-seed-3222339584 --output .verification/procedure-replay
 ```
 
 Failures write both the exact `.sb3` and readable project JSON to the selected
@@ -147,3 +175,15 @@ random/any indexing is unsupported even for empty lists. Neither a block-step
 budget nor a per-list item ceiling bounds total memory or string length. These
 resource-limit exclusions are documented in the specification and tested as
 errors, not counted as equivalent VM behavior.
+
+The first procedure differential run passed 658 of 660 cases. Two **value
+mismatches** occurred for explicit empty Boolean sockets `[2, null]` with a true
+saved default, under both warp settings: the compiler returned false while the
+VM used true. These were compiler errors, not invalid fixtures. The VM's input
+execution cache omits an argument when the socket has no block, causing the
+procedure primitive to use its definition default. Call compilation now handles
+empty sockets this way for every parameter type. The exact two failing inputs
+and both outcomes are retained in `results/procedure-initial-inputs.jsonl.gz` and
+`results/procedure-initial-failures.json`. Regression expectations cover missing,
+empty, Boolean, text and numeric inputs. Both initial failures were rerun and
+passed after the fix; none were skipped or relabeled as successful initial runs.

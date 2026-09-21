@@ -1,0 +1,525 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "i": [
+          "i",
+          0
+        ],
+        "count": [
+          "count",
+          0
+        ]
+      },
+      "lists": {
+        "items": [
+          "input",
+          [
+            -3,
+            0,
+            2,
+            7,
+            -1,
+            4
+          ]
+        ],
+        "selected": [
+          "selected",
+          []
+        ]
+      },
+      "broadcasts": {},
+      "blocks": {
+        "b0": {
+          "opcode": "argument_reporter_string_number",
+          "next": null,
+          "parent": "b2",
+          "inputs": {},
+          "fields": {
+            "VALUE": [
+              "value"
+            ]
+          },
+          "shadow": true,
+          "topLevel": false
+        },
+        "b1": {
+          "opcode": "argument_reporter_boolean",
+          "next": null,
+          "parent": "b2",
+          "inputs": {},
+          "fields": {
+            "VALUE": [
+              "keep?"
+            ]
+          },
+          "shadow": true,
+          "topLevel": false
+        },
+        "b2": {
+          "opcode": "procedures_prototype",
+          "next": null,
+          "parent": "b3",
+          "inputs": {
+            "input0": [
+              1,
+              "b0"
+            ],
+            "input1": [
+              1,
+              "b1"
+            ]
+          },
+          "fields": {},
+          "shadow": true,
+          "topLevel": false,
+          "mutation": {
+            "tagName": "mutation",
+            "children": [],
+            "proccode": "keep %s if %b",
+            "argumentids": "[\"input0\",\"input1\"]",
+            "warp": "false",
+            "argumentnames": "[\"value\",\"keep?\"]",
+            "argumentdefaults": "[\"\",false]"
+          }
+        },
+        "b3": {
+          "opcode": "procedures_definition",
+          "next": "b7",
+          "parent": null,
+          "inputs": {
+            "custom_block": [
+              1,
+              "b2"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 300,
+          "y": 80
+        },
+        "b4": {
+          "opcode": "argument_reporter_boolean",
+          "next": null,
+          "parent": "b7",
+          "inputs": {},
+          "fields": {
+            "VALUE": [
+              "keep?"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b5": {
+          "opcode": "argument_reporter_string_number",
+          "next": null,
+          "parent": "b6",
+          "inputs": {},
+          "fields": {
+            "VALUE": [
+              "value"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b6": {
+          "opcode": "data_addtolist",
+          "next": null,
+          "parent": "b7",
+          "inputs": {
+            "ITEM": [
+              2,
+              "b5"
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "selected",
+              "selected"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b7": {
+          "opcode": "control_if",
+          "next": null,
+          "parent": "b3",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "b4"
+            ],
+            "SUBSTACK": [
+              2,
+              "b6"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b8": {
+          "opcode": "argument_reporter_string_number",
+          "next": null,
+          "parent": "b9",
+          "inputs": {},
+          "fields": {
+            "VALUE": [
+              "threshold"
+            ]
+          },
+          "shadow": true,
+          "topLevel": false
+        },
+        "b9": {
+          "opcode": "procedures_prototype",
+          "next": null,
+          "parent": "b10",
+          "inputs": {
+            "input0": [
+              1,
+              "b8"
+            ]
+          },
+          "fields": {},
+          "shadow": true,
+          "topLevel": false,
+          "mutation": {
+            "tagName": "mutation",
+            "children": [],
+            "proccode": "filter above %n",
+            "argumentids": "[\"input0\"]",
+            "warp": "false",
+            "argumentnames": "[\"threshold\"]",
+            "argumentdefaults": "[0]"
+          }
+        },
+        "b10": {
+          "opcode": "procedures_definition",
+          "next": "b11",
+          "parent": null,
+          "inputs": {
+            "custom_block": [
+              1,
+              "b9"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 300,
+          "y": 220
+        },
+        "b11": {
+          "opcode": "data_deletealloflist",
+          "next": "b12",
+          "parent": "b10",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "selected",
+              "selected"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b12": {
+          "opcode": "data_setvariableto",
+          "next": "b20",
+          "parent": "b11",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "i",
+              "i"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b13": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b20",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "input",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b14": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b18",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "i",
+                "i"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "input",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b15": {
+          "opcode": "data_itemoflist",
+          "next": null,
+          "parent": "b17",
+          "inputs": {
+            "INDEX": [
+              2,
+              [
+                12,
+                "i",
+                "i"
+              ]
+            ]
+          },
+          "fields": {
+            "LIST": [
+              "input",
+              "items"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b16": {
+          "opcode": "argument_reporter_string_number",
+          "next": null,
+          "parent": "b17",
+          "inputs": {},
+          "fields": {
+            "VALUE": [
+              "threshold"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b17": {
+          "opcode": "operator_gt",
+          "next": null,
+          "parent": "b18",
+          "inputs": {
+            "OPERAND1": [
+              2,
+              "b15"
+            ],
+            "OPERAND2": [
+              2,
+              "b16"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b18": {
+          "opcode": "procedures_call",
+          "next": "b19",
+          "parent": "b20",
+          "inputs": {
+            "input0": [
+              2,
+              "b14"
+            ],
+            "input1": [
+              2,
+              "b17"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false,
+          "mutation": {
+            "tagName": "mutation",
+            "children": [],
+            "proccode": "keep %s if %b",
+            "argumentids": "[\"input0\",\"input1\"]",
+            "warp": "false"
+          }
+        },
+        "b19": {
+          "opcode": "data_changevariableby",
+          "next": null,
+          "parent": "b18",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                1
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "i",
+              "i"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b20": {
+          "opcode": "control_repeat",
+          "next": "b22",
+          "parent": "b12",
+          "inputs": {
+            "TIMES": [
+              2,
+              "b13"
+            ],
+            "SUBSTACK": [
+              2,
+              "b18"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b21": {
+          "opcode": "data_lengthoflist",
+          "next": null,
+          "parent": "b22",
+          "inputs": {},
+          "fields": {
+            "LIST": [
+              "selected",
+              "selected"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b22": {
+          "opcode": "data_setvariableto",
+          "next": null,
+          "parent": "b20",
+          "inputs": {
+            "VALUE": [
+              2,
+              "b21"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "count",
+              "count"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b23": {
+          "opcode": "procedures_call",
+          "next": "b24",
+          "parent": "b25",
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": false,
+          "mutation": {
+            "tagName": "mutation",
+            "children": [],
+            "proccode": "filter above %n",
+            "argumentids": "[\"input0\"]",
+            "warp": "false"
+          }
+        },
+        "b24": {
+          "opcode": "procedures_call",
+          "next": null,
+          "parent": "b23",
+          "inputs": {
+            "input0": [
+              1,
+              [
+                10,
+                3
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false,
+          "mutation": {
+            "tagName": "mutation",
+            "children": [],
+            "proccode": "filter above %n",
+            "argumentids": "[\"input0\"]",
+            "warp": "false"
+          }
+        },
+        "b25": {
+          "opcode": "event_whenflagclicked",
+          "next": "b23",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "b6229967372e473079438136d6e7f144",
+          "name": "synthetic blank",
+          "bitmapResolution": 1,
+          "md5ext": "b6229967372e473079438136d6e7f144.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "5.0.300",
+    "agent": "scratch-semantic-bridge synthetic fixture"
+  }
+}

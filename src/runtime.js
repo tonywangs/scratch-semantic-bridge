@@ -1,13 +1,23 @@
 // Embedded in generated modules: no project strings are interpreted as code.
-export function createRuntime(maxSteps, targetIndex, targetName, maxListLength = 10000) {
+export function createRuntime(maxSteps, targetIndex, targetName, maxListLength = 10000, maxCallDepth = 64) {
   if (!Number.isSafeInteger(maxSteps) || maxSteps < 1) {
     throw Object.assign(new Error('maxSteps must be a positive safe integer'), {code: 'INVALID_LIMIT'});
   }
   if (!Number.isSafeInteger(maxListLength) || maxListLength < 1 || maxListLength > 200000) {
     throw Object.assign(new Error('maxListLength must be an integer from 1 to 200000'), {code: 'INVALID_LIMIT'});
   }
-  let steps = 0;
+  if (!Number.isSafeInteger(maxCallDepth) || maxCallDepth < 1 || maxCallDepth > 256) {
+    throw Object.assign(new Error('maxCallDepth must be an integer from 1 to 256'), {code: 'INVALID_LIMIT'});
+  }
+  let steps = 0, callDepth = 0;
   return {
+    enterCall(blockId) {
+      if (callDepth >= maxCallDepth) throw Object.assign(new Error(`Execution exceeded ${maxCallDepth} procedure calls in depth`), {
+        code: 'CALL_DEPTH_LIMIT', targetIndex, targetName, blockId
+      });
+      callDepth++;
+    },
+    leaveCall() { callDepth--; },
     tick(blockId) {
       if (++steps > maxSteps) throw Object.assign(new Error(`Execution exceeded ${maxSteps} steps`), {
         code: 'STEP_LIMIT', targetIndex, targetName, blockId

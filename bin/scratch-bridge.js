@@ -11,6 +11,7 @@ Writes a standalone Node ES module and OUTPUT.mjs.map.json.
 Existing files are never overwritten.
 
 Options:
+  --max-call-depth N     Maximum nested procedure calls (64; ceiling 256)
   --max-list-length N    Maximum items per list (10000; ceiling 200000)
   --max-steps N           Default execution budget (100000)
   --max-archive-bytes N   Maximum compressed input (16777216)
@@ -31,7 +32,7 @@ try {
         if (used.has(arg)) bad(`Repeated option: ${arg}`);
         used.add(arg);
         if (arg === '--check') { check = true; continue; }
-        const keys = {'--max-steps': 'maxSteps', '--max-list-length': 'maxListLength', '--max-archive-bytes': 'maxArchiveBytes', '--max-project-bytes': 'maxProjectBytes'};
+        const keys = {'--max-call-depth': 'maxCallDepth', '--max-steps': 'maxSteps', '--max-list-length': 'maxListLength', '--max-archive-bytes': 'maxArchiveBytes', '--max-project-bytes': 'maxProjectBytes'};
         if (arg !== '-o' && !Object.hasOwn(keys, arg)) bad(`Unknown option: ${arg}`);
         const value = args[++i];
         if (value === undefined) bad(`Missing value for ${arg}`);
@@ -46,8 +47,8 @@ try {
     if (!input || (!check && !output) || (check && output)) bad(help.trim());
     if (output && !output.endsWith('.mjs')) bad('Output must have .mjs extension');
     if (output && [output, `${output}.map.json`].some(p => resolve(p) === resolve(input))) bad('Output must differ from input');
-    const project = await loadSb3(input, Object.fromEntries(Object.entries(options).filter(([key]) => !['maxSteps', 'maxListLength'].includes(key))));
-    const result = compile(project, {maxSteps: options.maxSteps, maxListLength: options.maxListLength});
+    const project = await loadSb3(input, Object.fromEntries(Object.entries(options).filter(([key]) => !['maxSteps', 'maxListLength', 'maxCallDepth'].includes(key))));
+    const result = compile(project, {maxCallDepth: options.maxCallDepth, maxSteps: options.maxSteps, maxListLength: options.maxListLength});
     if (check) console.log(JSON.stringify({compatible: true, variables: result.variables, lists: result.lists, mappedLines: result.map.mappings.length}));
     else {
       const mapPath = `${output}.map.json`;

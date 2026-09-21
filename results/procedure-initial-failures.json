@@ -1,0 +1,107 @@
+{
+  "node": "v24.20.0",
+  "scratchVm": "5.0.300",
+  "summary": {
+    "total": 660,
+    "passed": 658,
+    "failed": 2
+  },
+  "scope": "Final scalar values and complete list contents, with types; IEEE exceptional values tagged; scheduler timing is not compared",
+  "mismatches": [
+    {
+      "name": "procedure-boolean-null-warp-false",
+      "kind": "procedure-edge",
+      "sb3Sha256": "60ab4f88542fd84695cc022024e868bf9efd0e66c850fd2d86069ce2e38cbb67",
+      "generatedSteps": 10,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "no"
+        }
+      ],
+      "actualLists": [
+        {
+          "targetIndex": 0,
+          "id": "items",
+          "value": [
+            false,
+            false
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "yes"
+        }
+      ],
+      "expectedLists": [
+        {
+          "targetIndex": 0,
+          "id": "items",
+          "value": [
+            true,
+            true
+          ]
+        }
+      ],
+      "status": "fail",
+      "error": {
+        "code": "ERR_ASSERTION",
+        "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      id: 'result',\n      targetIndex: 0,\n+     value: 'no'\n-     value: 'yes'\n    }\n  ]\n"
+      }
+    },
+    {
+      "name": "procedure-boolean-null-warp-true",
+      "kind": "procedure-edge",
+      "sb3Sha256": "0c7c4104fc698b7fd15dcb66d03713015b6faf296a38626d558f4c20f25b1a6b",
+      "generatedSteps": 10,
+      "actual": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "no"
+        }
+      ],
+      "actualLists": [
+        {
+          "targetIndex": 0,
+          "id": "items",
+          "value": [
+            false,
+            false
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "targetIndex": 0,
+          "id": "result",
+          "value": "yes"
+        }
+      ],
+      "expectedLists": [
+        {
+          "targetIndex": 0,
+          "id": "items",
+          "value": [
+            true,
+            true
+          ]
+        }
+      ],
+      "status": "fail",
+      "error": {
+        "code": "ERR_ASSERTION",
+        "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      id: 'result',\n      targetIndex: 0,\n+     value: 'no'\n-     value: 'yes'\n    }\n  ]\n"
+      }
+    }
+  ],
+  "resolution": "Empty procedure sockets [2,null] leave the VM argument absent and use the definition default. Fixed call compilation; retained the exact failing synthetic inputs in procedure-initial-inputs.jsonl.gz.",
+  "lockfileSha256": "ec770a194c13dac4a612f63094ff4ef8cc798fe78e58cf84c822e5091a4fb0ed",
+  "corpusSha256": "7f93198dae1363c8690be408094398ed58eb6a264d64013b97f90a9ab67a5e67",
+  "listCorpusSha256": "ba0939b045856cdc1aa44992f2f361da4ac831a837fafaa6993e584b64994264",
+  "procedureCorpusSha256": "a9bbcab24b5852979f56a41dfeff1a6d359e323c0cc23bc4789ccfbbb9229a9d"
+}
