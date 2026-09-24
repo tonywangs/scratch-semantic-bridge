@@ -27,7 +27,7 @@ To install the CLI from a local package, without fetching dependencies:
 
 ```sh
 npm pack --offline --ignore-scripts
-npm install --offline --ignore-scripts --no-audit --no-fund --prefix /tmp/bridge-install ./scratch-semantic-bridge-0.3.0.tgz
+npm install --offline --ignore-scripts --no-audit --no-fund --prefix /tmp/bridge-install ./scratch-semantic-bridge-0.4.0.tgz
 /tmp/bridge-install/node_modules/.bin/scratch-bridge examples/summation.sb3 -o /tmp/summation.mjs
 node /tmp/summation.mjs
 ```
@@ -40,12 +40,31 @@ can write to if your environment restricts the default cache.
 ```text
 scratch-bridge INPUT.sb3 -o OUTPUT.mjs [--max-steps N] [--max-list-length N] [--max-call-depth N]
 scratch-bridge INPUT.sb3 --check
+scratch-bridge inspect INPUT.sb3|INPUT.json [--json]
 scratch-bridge --help
 ```
 
 `--check` validates the entire supported graph and returns compatibility metadata
 without writing files or running blocks. It does not prove that a loop terminates.
 `--max-archive-bytes N` and `--max-project-bytes N` adjust input limits.
+
+Inspect a project before converting it:
+
+```sh
+node bin/scratch-bridge.js inspect examples/procedure-sorting.sb3
+node bin/scratch-bridge.js inspect examples/procedure-sorting.project.json --json
+node bin/scratch-bridge.js inspect examples/factorial.sb3 --max-blocks 1 --json
+```
+
+The last example exits 2 with an incomplete report. Inspection aggregates
+structural blockers and separately checks scripts, including unused procedures.
+Reports distinguish entry scripts, transitively called procedures, uncalled
+procedures, disconnected blocks, and unanalyzed content. Structural reachability
+**does not imply execution**. A compatible report means this converter's front end
+accepts the project under the reported settings; it is not a claim of general
+Scratch compatibility. JSON reports are deterministic, versioned, and bounded.
+No assets, literals, variable values, or procedure bodies are copied into them.
+See [inspection semantics, exit codes, and limits](docs/inspection.md).
 
 Run the generated module with Node, or import it:
 
@@ -85,7 +104,7 @@ Use `--max-call-depth N` (default 64, ceiling 256) when converting, or
 `run({maxCallDepth: N})` in generated modules. See the
 [procedure contract](docs/specification.md#custom-procedures) for exact boundaries.
 
-Errors go to stderr as JSON with a nonzero exit code. Block errors include the
+Conversion errors go to stderr as JSON with a nonzero exit code. Inspection findings go to stdout; its exit codes are documented separately. Block errors include the
 target index, target name, and block ID; archive and project-level errors may not
 have a block location. Existing outputs are never overwritten.
 

@@ -187,3 +187,26 @@ and both outcomes are retained in `results/procedure-initial-inputs.jsonl.gz` an
 `results/procedure-initial-failures.json`. Regression expectations cover missing,
 empty, Boolean, text and numeric inputs. Both initial failures were rerun and
 passed after the fix; none were skipped or relabeled as successful initial runs.
+
+## Inspection experiment
+
+`node scripts/verify.js` also runs `test/inspect.test.js` and
+`scripts/verify-inspection.js`. The latter evaluates 24 explicit mutation kinds
+across 24 xorshift32 seeds starting at `0x1a5e0000` (576 cases), retaining each seed,
+kind, input SHA-256, report SHA-256/size, and independently specified expected
+findings in `.verification/inspection.json`. `scripts/inspection-cases.js`
+reconstructs every input. Expected diagnoses are authored with each mutation;
+neither the inspector nor compiler supplies expected outcomes. Every compatible
+case is additionally compiled with identical defaults. The existing 512 supported
+seeded inputs are also inspected and compiled; pre-change hashes protect generated
+code, maps, and metadata. No original corpus or behavioral baseline was relaxed.
+
+Inspection is explicitly nonexecuting. An infinite-loop fixture is accepted by
+the installed inspector without hanging. Installed runs use read-only Node
+permissions plus an API guard, and hash input bytes before and after inspection.
+Malformed JSON/archive, unsupported content, archive/block/output limit exhaustion,
+a 1,200-statement chain, and 400 disconnected unknown operations are included.
+Three separate processes per workload record GNU time elapsed seconds and peak
+RSS (KiB), report sizes and stable hashes. Startup and cache effects are included;
+no warm/cold-cache control or performance comparison is claimed. Fresh evidence
+is saved under `.verification/`, separate from the checked-in observed snapshot.

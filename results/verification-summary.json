@@ -1,5 +1,5 @@
 {
-  "observedAtUtc": "2026-09-21T01:14:14.784Z",
+  "observedAtUtc": "2026-09-24T07:26:58.046042+00:00",
   "command": [
     "node",
     "scripts/verify.js"
@@ -8,8 +8,8 @@
   "npm": "11.19.0",
   "status": "pass",
   "unitTests": {
-    "total": 101,
-    "passed": 101,
+    "total": 133,
+    "passed": 133,
     "failed": 0
   },
   "differential": {
@@ -563,36 +563,43 @@
     }
   ],
   "networkPolicy": "npm pack and installation use --offline; installed package has no dependencies; conversion and generated modules use only Node builtins",
-  "lockfileSha256": "0492b09bbb0765631e3e5302f9b1db0af5818db69e00b003347cb88788a3a58e",
+  "lockfileSha256": "0d81cab1ebb18e23b3bba787393d0c1a41fa27861c67fd4e01401858221b5c95",
   "corpusSha256": "7f93198dae1363c8690be408094398ed58eb6a264d64013b97f90a9ab67a5e67",
   "listCorpusSha256": "ba0939b045856cdc1aa44992f2f361da4ac831a837fafaa6993e584b64994264",
   "procedureCorpusSha256": "a9bbcab24b5852979f56a41dfeff1a6d359e323c0cc23bc4789ccfbbb9229a9d",
   "sourceSha256": {
-    "src/archive.js": "792416df1d8ba1ab6ca8b25e65a947a83e7883546f98d9f989b977bbe23c9c6c",
-    "src/compiler.js": "657218c853b460c208d133dafca8680db6a6efbd2ed2697ce085edcd5d075607",
-    "src/errors.js": "27f2100a988ba46a9135963b432402257538e390e4f8da62e36d8a316ef8ada0",
-    "src/identifiers.js": "e543bdb75a7af1e7204102b1a8109ee8c1a24ef0688f871d1e1c0c93f33cb18c",
-    "src/index.js": "210b07e5f0555eb3d1bacf3184f6709dd1fc14873adf06093276b27b3d40f97e",
-    "src/procedures.js": "71148a3552f15b183725a3b8dd88ff0d0e94d5e21f004c6c05f642bfb05d8df4",
-    "src/runtime.js": "ceee719d069489eaed210720019d60ab11d24cd0d4d20bde9ec15c49a65f8e0a",
+    "bin/scratch-bridge.js": "6b48941dc63c164cea0509e79dbfa535164f637c62682d09d200d6bd4e39c916",
     "scripts/asset.js": "ddbb6de826ec99f5c86d64e13c332ed2e87457fc49a2697edaaa5b73aaf52d85",
     "scripts/differential.js": "38811ae23d33c48e58deaefddb2ba5d5bef13aa4d2fa080e0931ce8288e781c0",
     "scripts/edge-cases.js": "e9b3e7ba572bc95c44416d3caa472266e16806510a1fd24c7f7606a6f10fdff4",
     "scripts/fixtures.js": "d9583894b3838e202050ea8cc2f7ec89828afdc9b7700633d6533a7b71ff48a3",
+    "scripts/inspection-cases.js": "b04ace589d366ca4101cada249ee0278fea1a129b961e057dfbcf2f783f2434c",
+    "scripts/inspection-expectations.js": "c50cdfb575324795c13ea80ff491aff53ac978b2e1d8889417e072ef0391eb20",
     "scripts/list-edge-cases.js": "8bf396e59904848b5659729154957aa24e156aa9a79ee2b594c6ba71643a7b93",
     "scripts/list-programs.js": "9525f98e72b7ef5eede973c1cfe886914e11d57cf1076b174ef08cd64495c4b3",
     "scripts/oracle.js": "7c9449a28bc320f103c5d7ce565973a09f9593459570830e02b650dbf23aaba3",
     "scripts/procedure-edge-cases.js": "355c9ffe09f4bf064c79a3f057d3d30c6d8ccd476e6d25f76aaf8462e6664685",
     "scripts/procedure-programs.js": "555b6b3b6fbeec92688ddcda656d09bb2e15e54a54802e8289733ed046b72a96",
     "scripts/programs.js": "362cf1e426521d379f4aa36c4c6c0b53f6cec852b9e3717ba4bcc58438f10c92",
-    "scripts/verify.js": "7ab4fb13d3d1c817dceee2c2667116b5bf1c699c255e7efedc5f1a0f369b97bb",
+    "scripts/verify-inspection.js": "a5597fad7f5c478c40885901b012fc4a2a8053d349a8a79e7003f8a33868e62d",
+    "scripts/verify.js": "9abf9ba7d4f021338fa5deb70eae965718dcc2cbf67c95e91153a57949893090",
     "scripts/zip.js": "001626ba26889a5a2501f858a700b2fa8eeee2d9b9d950efd0b0858f68dfd5e7",
-    "bin/scratch-bridge.js": "470384aef26b2b8a3559e6c8b4ac94fecc81eb28275f0277c66b5430ee00c41b",
+    "src/archive.js": "792416df1d8ba1ab6ca8b25e65a947a83e7883546f98d9f989b977bbe23c9c6c",
+    "src/compiler.js": "61d75f1f0b585a4fe90b180ca1f3437738a0847c023adbf7d631df12063f73a8",
+    "src/errors.js": "27f2100a988ba46a9135963b432402257538e390e4f8da62e36d8a316ef8ada0",
+    "src/identifiers.js": "e543bdb75a7af1e7204102b1a8109ee8c1a24ef0688f871d1e1c0c93f33cb18c",
+    "src/index.js": "15c3345539316892ce649351ba4b78aeed1861b0e37ab1f002ef739ee1fad255",
+    "src/inspect.js": "2a3e78ef9082ef1bd8c38a9f7d74da81480eafb731de98b3aba3ec9b101b7dc3",
+    "src/inspection-cli.js": "64da9c27aa28651354255d1494a865f3818a88844f963ac54ace3ee46759dff5",
+    "src/inspection-report.js": "4984fff4f8478c8933989795d8a04f6298728ffb09660496111c68f995c9c436",
+    "src/procedures.js": "71148a3552f15b183725a3b8dd88ff0d0e94d5e21f004c6c05f642bfb05d8df4",
+    "src/runtime.js": "ceee719d069489eaed210720019d60ab11d24cd0d4d20bde9ec15c49a65f8e0a",
     "test/archive.test.js": "7ebb85da549d8bfd9d8f13515a5184327841ca3b599675e8170fa8853b723e76",
     "test/cli.test.js": "2eda7408249c85f2c2b6911c65153d3dfba93bcc1d38ebbd36482e0b4b155237",
     "test/coercion.test.js": "2efc788a7a71c5e30c2f97bc2de31600ffe0c677a105602f94c9f019b1c3fc13",
     "test/compiler.test.js": "a822de974891d37da6e4703f9932cb38889fdf7155ac0a46f20f2344d35b7ad5",
     "test/helpers.js": "1623def954b9b43e9e764acb01f3c895b8dbc351d10ec0975d374692c1292b45",
+    "test/inspect.test.js": "6d72d8d7e8ee304bb54668707af1ccc833d4189f1d63144c74a8b9a1e3a271c9",
     "test/lists.test.js": "a80991f8cae2394964b4a80fab4c7a44c88ff5bf495b27567f0454ad03fe5df2",
     "test/procedures.test.js": "8ad719657d48170ebc3555697657644b81e6d26806ae30236e11ab070dd9562a"
   },
@@ -604,6 +611,23 @@
     "Call-depth, step and list-size limits intentionally depart from Scratch; random/any list indices reject.",
     "List-size limits do not bound string lengths or aggregate process memory.",
     "Node 22 minimum is declared; recorded checks used Node 24.20.0.",
-    "Offline installation uses an empty npm cache and --offline; no OS network isolation was used."
-  ]
+    "Offline installation uses an empty npm cache and --offline; no OS network isolation was used.",
+    "Inspection reports semantic regions as unanalyzed after the first compiler error per isolated script; discovered diagnostics are not exhaustive.",
+    "Structural reachability is not execution; accepted inspection does not guarantee runtime success or general Scratch compatibility.",
+    "Inspection has explicit input, graph, validation and report bounds, not an OS memory quota.",
+    "Installed inspection measurement uses Linux GNU time, read-only Node permissions and network API guards, not kernel network isolation."
+  ],
+  "inspection": {
+    "status": "pass",
+    "fixtures": {
+      "total": 576,
+      "compatible": 96,
+      "expectationsPassed": 576
+    },
+    "workloads": 11,
+    "malformedRecordSmokeCases": 1024,
+    "preChangeArtifactHashCases": 512,
+    "evidence": "results/inspection.json"
+  },
+  "preChangeArtifactBaselineSha256": "86478415696eceef705abf1e4f895f72eaded56126b38c1e6921ca12c5b23db7"
 }

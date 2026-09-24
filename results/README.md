@@ -1,12 +1,16 @@
 # Observed verification results
 
-The procedure milestone was verified on 2026-09-21 using Node 24.20.0, npm 11.19.0,
+The inspection milestone was verified on 2026-09-24 using Node 24.20.0, npm 11.19.0,
 and Scratch VM 5.0.300. These are executed checks, not estimates.
 
 | Check | Observed result |
 | --- | --- |
-| Unit, archive, compiler, coercion, list, procedure, and CLI tests | 101 passed, 0 failed |
+| Unit, archive, compiler, coercion, list, procedure, inspection, and CLI tests | 133 passed, 0 failed |
 | Full-program VM differential checks | 660 passed, 0 failed |
+| Independent inspection expectations | 576 passed (24 mutation kinds × 24 seeds; 96 compatible) |
+| Fixed-seed malformed-record smoke checks | 1,024 completed without an uncaught exception or false incomplete acceptance |
+| Pre-change generated artifact hashes | All 512 retained seeded programs unchanged |
+| Installed inspection workloads | 11 workloads × 3 runs; repeat report hashes identical |
 | Retained scalar seeded programs | 128 passed, seeds `0x5eed0000`–`0x5eed007f` |
 | Retained list seeded programs | 192 passed, seeds `0x11570000`–`0x115700bf` |
 | New procedure seeded programs | 192 passed, seeds `0xc0110000`–`0xc01100bf` |
@@ -30,6 +34,28 @@ hashes. [tests.log](tests.log) is actual test output. [differential.json](differ
 preserves each input hash, seed where applicable, final scalar values and complete
 lists from both executions, and all mismatch rows (none in the successful run).
 Unit-test durations are incidental, not performance measurements.
+
+
+[inspection.json](inspection.json) preserves each seeded input/report hash, expected
+finding, and all installed CLI measurement repetitions. Fixtures are reconstructed
+by `scripts/inspection-cases.js`; no private data is used. In this observed run,
+installed inspection elapsed times ranged from 0.15 to 0.38 seconds and maximum
+RSS from 61,312 to 78,540 KiB across these workloads (Node startup included).
+The 1,200-statement workload emitted 157,092 report bytes. Its deliberately
+output-limited variant emitted 3,228 bytes, flagged incomplete, and exited 2.
+All three hashes matched per workload, and the equivalent supported JSON and SB3
+inputs produced identical reports. These are small synthetic workload observations,
+not worst-case bounds or a comparison with other implementations.
+
+Inspection does not execute a project: an infinite loop was inspected successfully
+under the installed CLI's execution/network API guard and read-only filesystem
+permissions. The 576 expected-outcome cases include independent simultaneous
+errors, cycles, dangling references, duplicate definitions, malformed procedure
+metadata, Unicode IDs, missing definitions, and disconnected unsupported content.
+A malformed metadata reachability edge case found during review is covered by a
+regression: unresolved paths are marked `unanalyzed`, not declared uncalled.
+Inspection deliberately marks failed script validation as incomplete because the
+compiler stops at the first semantic error within that script.
 
 The first procedure run passed 658 of 660 cases. Two comparisons exposed a
 compiler error: explicit empty Boolean procedure sockets used false instead of

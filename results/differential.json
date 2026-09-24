@@ -5,7 +5,7 @@
   "procedureCorpusSha256": "a9bbcab24b5852979f56a41dfeff1a6d359e323c0cc23bc4789ccfbbb9229a9d",
   "corpusSha256": "7f93198dae1363c8690be408094398ed58eb6a264d64013b97f90a9ab67a5e67",
   "listCorpusSha256": "ba0939b045856cdc1aa44992f2f361da4ac831a837fafaa6993e584b64994264",
-  "lockfileSha256": "0492b09bbb0765631e3e5302f9b1db0af5818db69e00b003347cb88788a3a58e",
+  "lockfileSha256": "0d81cab1ebb18e23b3bba787393d0c1a41fa27861c67fd4e01401858221b5c95",
   "oracle": "Scratch VM loadProject and headless turbo scheduler; 20000-tick ceiling; no renderer or storage",
   "scope": "Final scalar values and complete list contents, with types; IEEE exceptional values tagged; scheduler timing is not compared",
   "cases": [

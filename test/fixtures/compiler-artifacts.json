@@ -1,0 +1,14 @@
+{
+  "generated": {
+    "count": 128,
+    "sha256": "b44fbd8788d79566332cd2c6161642b74a020a9948608835ae502f980b51f0bc"
+  },
+  "lists-generated": {
+    "count": 192,
+    "sha256": "09379510c4d85f71ec7e81473d960e74ce96f1b4556d2a4426851349409b47aa"
+  },
+  "procedures-generated": {
+    "count": 192,
+    "sha256": "b3b9006becaee0b722da06102292230e6a4dcd8e9191dd4a943055393435b800"
+  }
+}

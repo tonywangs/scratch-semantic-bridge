@@ -2,9 +2,11 @@
 import {writeFile, unlink} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {compile, loadSb3, BridgeError} from '../src/index.js';
+import {inspectionCli} from '../src/inspection-cli.js';
 
 const help = `Usage: scratch-bridge INPUT.sb3 -o OUTPUT.mjs [options]
        scratch-bridge INPUT.sb3 --check [options]
+       scratch-bridge inspect INPUT.sb3|INPUT.json [--json] [limits]
 
 Convert one sequential green-flag script without executing it.
 Writes a standalone Node ES module and OUTPUT.mjs.map.json.
@@ -19,6 +21,9 @@ Options:
   --check                Validate compatibility without writing code
   --help                 Show this help
 `;
+if (process.argv[2] === 'inspect') {
+  await inspectionCli(process.argv.slice(3));
+} else {
 try {
   const args = process.argv.slice(2), options = {};
   let input, output, check = false;
@@ -61,4 +66,5 @@ try {
 } catch (error) {
   console.error(JSON.stringify(error instanceof BridgeError ? error.toJSON() : {code: error.code ?? 'IO_ERROR', message: error.message}));
   process.exitCode = 1;
+}
 }

@@ -58,3 +58,16 @@ compiler technique or performance advantage is claimed. In particular, direct
 inspection and a failing VM comparison established that an empty procedure
 socket uses its definition default, unlike a regular empty Boolean operator
 socket. The preserved negative result is documented in the experiment protocol.
+
+For inspection (2026-09-24), the installed `scratch-vm@5.0.300`
+`src/engine/blocks.js` (`getScripts`, `getProcedureDefinition`, parameter metadata)
+and `src/blocks/scratch3_procedures.js` (missing-definition no-op and defaults) were
+inspected. The public [block implementation](https://github.com/scratchfoundation/scratch-vm/blob/develop/src/engine/blocks.js),
+[sb-edit README](https://github.com/leopard-js/sb-edit), and
+[TurboWarp explanation](https://docs.turbowarp.org/how) were revisited. sb-edit
+already imports Scratch 3 projects and exports to Leopard; TurboWarp already
+compiles scripts within its player. Inspection here reports this repository's
+conversion policy, not a new general Scratch analyzer or an alternative player.
+The graph traversal is conservative over saved links, including hidden shadows
+and both conditional branches. Neither those links nor compiler acceptance prove
+that code executes. The old pinned npm sources remain the behavioral authority.
