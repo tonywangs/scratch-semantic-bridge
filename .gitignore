@@ -3,3 +3,4 @@ node_modules/
 .verification/
 *.log
 !results/tests.log
+corpus/fixtures/

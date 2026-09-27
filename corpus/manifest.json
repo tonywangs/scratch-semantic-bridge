@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "id": "broadcast_special_chars",
+      "path": "fixtures/broadcast_special_chars.sb3"
+    },
+    {
+      "id": "cloud_variables_exceeded_limit",
+      "path": "fixtures/cloud_variables_exceeded_limit.sb3"
+    },
+    {
+      "id": "cloud_variables_limit",
+      "path": "fixtures/cloud_variables_limit.sb3"
+    },
+    {
+      "id": "cloud_variables_local",
+      "path": "fixtures/cloud_variables_local.sb3"
+    },
+    {
+      "id": "cloud_variables_simple",
+      "path": "fixtures/cloud_variables_simple.sb3"
+    },
+    {
+      "id": "comments",
+      "path": "fixtures/comments.sb3"
+    },
+    {
+      "id": "comments_no_duplicate_id_serialization",
+      "path": "fixtures/comments_no_duplicate_id_serialization.sb3"
+    },
+    {
+      "id": "corrupt_png",
+      "path": "fixtures/corrupt_png.sb3"
+    },
+    {
+      "id": "corrupt_sound",
+      "path": "fixtures/corrupt_sound.sb3"
+    },
+    {
+      "id": "corrupt_svg",
+      "path": "fixtures/corrupt_svg.sb3"
+    },
+    {
+      "id": "default",
+      "path": "fixtures/default.sb3"
+    },
+    {
+      "id": "draggable",
+      "path": "fixtures/draggable.sb3"
+    },
+    {
+      "id": "edge-triggered-hat",
+      "path": "fixtures/edge-triggered-hat.sb3"
+    },
+    {
+      "id": "order-library-reverse",
+      "path": "fixtures/execute/order-library-reverse.sb3"
+    },
+    {
+      "id": "order-library",
+      "path": "fixtures/execute/order-library.sb3"
+    },
+    {
+      "id": "list-monitor-rename",
+      "path": "fixtures/list-monitor-rename.sb3"
+    },
+    {
+      "id": "ev3-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/ev3-simple-project.sb3"
+    },
+    {
+      "id": "microbit-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/microbit-simple-project.sb3"
+    },
+    {
+      "id": "music-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/music-simple-project.sb3"
+    },
+    {
+      "id": "pen-dolphin-3d",
+      "path": "fixtures/load-extensions/confirm-load/pen-dolphin-3d.sb3"
+    },
+    {
+      "id": "pen-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/pen-simple-project.sb3"
+    },
+    {
+      "id": "text2speech-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/text2speech-simple-project.sb3"
+    },
+    {
+      "id": "videoSensing-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/videoSensing-simple-project.sb3"
+    },
+    {
+      "id": "wedo2-simple-project",
+      "path": "fixtures/load-extensions/confirm-load/wedo2-simple-project.sb3"
+    },
+    {
+      "id": "missing_png",
+      "path": "fixtures/missing_png.sb3"
+    },
+    {
+      "id": "missing_sound",
+      "path": "fixtures/missing_sound.sb3"
+    },
+    {
+      "id": "missing_svg",
+      "path": "fixtures/missing_svg.sb3"
+    },
+    {
+      "id": "monitored_variables",
+      "path": "fixtures/monitored_variables.sb3"
+    },
+    {
+      "id": "monitors",
+      "path": "fixtures/monitors.sb3"
+    },
+    {
+      "id": "origin-absent",
+      "path": "fixtures/origin-absent.sb3"
+    },
+    {
+      "id": "origin",
+      "path": "fixtures/origin.sb3"
+    },
+    {
+      "id": "timer-monitor",
+      "path": "fixtures/timer-monitor.sb3"
+    },
+    {
+      "id": "top-level-reporters",
+      "path": "fixtures/top-level-reporters.sb3"
+    },
+    {
+      "id": "variable_characters",
+      "path": "fixtures/variable_characters.sb3"
+    }
+  ]
+}

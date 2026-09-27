@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "observedAtUtc": "2026-09-27T02:37:45.518Z",
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "arch": "x64",
+    "kernel": "6.8.0-124-generic",
+    "cpu": "DO-Regular",
+    "logicalCpus": 4,
+    "python": "Python 3.12.3"
+  },
+  "sourceRevision": "e6f5711f25f607ce8370a5a7afcfb391b349a6e1",
+  "sourcesSha256": "178dd0e865895c2b50637ca0a7bd2b60f446beeaeaf53dffd80761225ee3fe86",
+  "expectationsSha256": "9b821921b7d8137ea65bb28723cbcf116a7bf30fe0f4b6d49e14ffe584bc34ea",
+  "sourceAudit": {
+    "schemaVersion": 1,
+    "status": "pass",
+    "fixtures": 34,
+    "diagnosticLocationChecks": 0,
+    "method": "Independent Python ZIP/source facts and documented opcode table; no project execution"
+  },
+  "population": "Upstream automated-test fixtures, not a random or representative sample of Scratch user projects.",
+  "offline": "Isolated npm --offline install. Network/eval/Function APIs denied in parent and children; only the installed inspection worker can be forked. API guards are not an OS firewall or hostile-code sandbox.",
+  "measurement": "GNU time wall seconds and maximum resident set size (KiB), including process startup. RSS is the largest process peak in the process tree, not the simultaneous sum. Filesystem cache uncontrolled. Three installed corpus runs; deterministic report excludes timing.",
+  "importedProjectsExecuted": 0,
+  "inputBytes": 2749647,
+  "repetitions": [
+    {
+      "elapsedSeconds": 6.6,
+      "peakProcessRssKiB": 73504,
+      "exitCode": 2,
+      "reportBytes": 90156,
+      "reportSha256": "ebc86575a8bd03d49073f9d27a7467a6802358116bd501567aa0897572aacb9f"
+    },
+    {
+      "elapsedSeconds": 7.01,
+      "peakProcessRssKiB": 73748,
+      "exitCode": 2,
+      "reportBytes": 90156,
+      "reportSha256": "ebc86575a8bd03d49073f9d27a7467a6802358116bd501567aa0897572aacb9f"
+    },
+    {
+      "elapsedSeconds": 7.51,
+      "peakProcessRssKiB": 73288,
+      "exitCode": 2,
+      "reportBytes": 90156,
+      "reportSha256": "ebc86575a8bd03d49073f9d27a7467a6802358116bd501567aa0897572aacb9f"
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "cloud_variables_exceeded_limit",
+      "expected": "UNSUPPORTED_FEATURE",
+      "actual": "INVALID_VARIABLE"
+    },
+    {
+      "id": "cloud_variables_limit",
+      "expected": "UNSUPPORTED_FEATURE",
+      "actual": "INVALID_VARIABLE"
+    },
+    {
+      "id": "cloud_variables_local",
+      "expected": "UNSUPPORTED_FEATURE",
+      "actual": "INVALID_VARIABLE"
+    },
+    {
+      "id": "cloud_variables_simple",
+      "expected": "UNSUPPORTED_FEATURE",
+      "actual": "INVALID_VARIABLE"
+    }
+  ],
+  "fixtureFindings": [
+    {
+      "id": "broadcast_special_chars",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "cloud_variables_exceeded_limit",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "observedCodes": [
+        "INVALID_VARIABLE",
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [
+        "UNSUPPORTED_FEATURE"
+      ],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "cloud_variables_limit",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "observedCodes": [
+        "INVALID_VARIABLE",
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [
+        "UNSUPPORTED_FEATURE"
+      ],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "cloud_variables_local",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "observedCodes": [
+        "INVALID_VARIABLE",
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [
+        "UNSUPPORTED_FEATURE"
+      ],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "cloud_variables_simple",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "observedCodes": [
+        "INVALID_VARIABLE",
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [
+        "UNSUPPORTED_FEATURE"
+      ],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "comments",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "comments_no_duplicate_id_serialization",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "corrupt_png",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "corrupt_sound",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "corrupt_svg",
+      "status": "incomplete",
+      "reason": "INVALID_ARCHIVE",
+      "expectedCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "observedCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "INPUT_NOT_ANALYZED"
+      ]
+    },
+    {
+      "id": "default",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "draggable",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "edge-triggered-hat",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "order-library-reverse",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "order-library",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "list-monitor-rename",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "ev3-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "microbit-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "music-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "pen-dolphin-3d",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "INVALID_BLOCK",
+        "INVALID_PARENT",
+        "INVALID_PROCEDURE",
+        "SCRIPT_COUNT",
+        "UNREACHABLE_BLOCK",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "pen-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "text2speech-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "videoSensing-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "wedo2-simple-project",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "missing_png",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "missing_sound",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "missing_svg",
+      "status": "incomplete",
+      "reason": "INVALID_ARCHIVE",
+      "expectedCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "observedCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "INPUT_NOT_ANALYZED"
+      ]
+    },
+    {
+      "id": "monitored_variables",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "monitors",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "origin-absent",
+      "status": "incompatible",
+      "reason": null,
+      "expectedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "observedCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": []
+    },
+    {
+      "id": "origin",
+      "status": "incomplete",
+      "reason": "INVALID_ARCHIVE",
+      "expectedCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "observedCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "INPUT_NOT_ANALYZED"
+      ]
+    },
+    {
+      "id": "timer-monitor",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "top-level-reporters",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    },
+    {
+      "id": "variable_characters",
+      "status": "incomplete",
+      "reason": "INSPECTION_INCOMPLETE",
+      "expectedCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "observedCodes": [
+        "EXTRA_SCRIPT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "missingCodes": [],
+      "missingOpcodes": [],
+      "semanticCoverage": [
+        "SEMANTIC_REGIONS_UNANALYZED"
+      ]
+    }
+  ],
+  "counts": {
+    "total": 34,
+    "reported": 34,
+    "compatible": 0,
+    "incompatible": 13,
+    "incomplete": 21,
+    "skipped": 0,
+    "omitted": 0
+  },
+  "projectBlockerFrequency": {
+    "EXTRA_SCRIPT": 15,
+    "INVALID_ARCHIVE": 3,
+    "INVALID_BLOCK": 1,
+    "INVALID_PARENT": 1,
+    "INVALID_PROCEDURE": 1,
+    "INVALID_VARIABLE": 4,
+    "SCRIPT_COUNT": 28,
+    "UNREACHABLE_BLOCK": 1,
+    "UNSUPPORTED_FEATURE": 9,
+    "UNSUPPORTED_OPCODE": 18
+  },
+  "inputsUnchanged": true,
+  "compilerAcceptance": {
+    "corpusCompatible": 0,
+    "checked": 0,
+    "note": "Zero corpus-compatible projects makes this corpus check vacuous; installed synthetic controls below exercise code generation."
+  },
+  "positiveControls": {
+    "compatible": 2,
+    "compilerAccepted": 2,
+    "infiniteProgramNotExecuted": true
+  },
+  "sourceLocationAudit": {
+    "schemaVersion": 1,
+    "status": "pass",
+    "fixtures": 34,
+    "diagnosticLocationChecks": 357,
+    "method": "Independent Python ZIP/source facts and documented opcode table; no project execution"
+  }
+}

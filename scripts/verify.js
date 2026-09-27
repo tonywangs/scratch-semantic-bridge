@@ -10,6 +10,7 @@ import {listExamples, generatedLists, listSeedStart, listSeedCount} from './list
 import {procedureExamples, generatedProcedures, procedureSeedStart, procedureSeedCount} from './procedure-programs.js';
 import {sb3} from './zip.js';
 import {verifyInspection} from './verify-inspection.js';
+import {verifyBatch} from './verify-batch.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 process.chdir(root);
@@ -41,7 +42,7 @@ try {
   assert.equal(await readFile('test/fixtures/lists-generated.jsonl', 'utf8'), listCorpus.map(c => JSON.stringify(c)).join('\n') + '\n');
   const procedureCorpus = Array.from({length: procedureSeedCount}, (_, i) => { const seed = procedureSeedStart + i; return {seed, project: generatedProcedures(seed)}; });
   assert.equal(await readFile('test/fixtures/procedures-generated.jsonl', 'utf8'), procedureCorpus.map(c => JSON.stringify(c)).join('\n') + '\n');
-  const tests = command([process.execPath, '--test', 'test/archive.test.js', 'test/coercion.test.js', 'test/compiler.test.js', 'test/cli.test.js', 'test/lists.test.js', 'test/procedures.test.js', 'test/inspect.test.js']);
+  const tests = command([process.execPath, '--test', 'test/archive.test.js', 'test/coercion.test.js', 'test/compiler.test.js', 'test/cli.test.js', 'test/lists.test.js', 'test/procedures.test.js', 'test/inspect.test.js', 'test/batch.test.js']);
   await writeFile(join(output, 'tests.log'), tests.stdout + tests.stderr);
   command([process.execPath, 'scripts/differential.js', '--output', join(output, 'differential')]);
   const packed = command(['npm', 'pack', '--offline', '--ignore-scripts', '--json', '--pack-destination', temporary], {log: false});
@@ -55,6 +56,7 @@ try {
   assert.equal(Object.keys(installedPackage.dependencies ?? {}).length, 0);
   const cli = join(installed, 'node_modules/.bin/scratch-bridge');
   evidence.inspection = await verifyInspection({cli, cwd: installed, temporary, env, output});
+  evidence.batch = await verifyBatch({cli, cwd: installed, temporary, env, output});
   for (const [name, {expected, expectedLists}] of Object.entries({...examples(), ...listExamples(), ...procedureExamples()})) {
     // Use the installed package's fixture, from a working directory outside the repository.
     const input = join(installed, 'node_modules/scratch-semantic-bridge/examples', `${name}.sb3`);

@@ -27,7 +27,7 @@ To install the CLI from a local package, without fetching dependencies:
 
 ```sh
 npm pack --offline --ignore-scripts
-npm install --offline --ignore-scripts --no-audit --no-fund --prefix /tmp/bridge-install ./scratch-semantic-bridge-0.4.0.tgz
+npm install --offline --ignore-scripts --no-audit --no-fund --prefix /tmp/bridge-install ./scratch-semantic-bridge-0.5.0.tgz
 /tmp/bridge-install/node_modules/.bin/scratch-bridge examples/summation.sb3 -o /tmp/summation.mjs
 node /tmp/summation.mjs
 ```
@@ -41,6 +41,7 @@ can write to if your environment restricts the default cache.
 scratch-bridge INPUT.sb3 -o OUTPUT.mjs [--max-steps N] [--max-list-length N] [--max-call-depth N]
 scratch-bridge INPUT.sb3 --check
 scratch-bridge inspect INPUT.sb3|INPUT.json [--json]
+scratch-bridge inspect-batch MANIFEST.json [--json] [--output NEW_FILE]
 scratch-bridge --help
 ```
 
@@ -63,6 +64,15 @@ procedures, disconnected blocks, and unanalyzed content. Structural reachability
 **does not imply execution**. A compatible report means this converter's front end
 accepts the project under the reported settings; it is not a claim of general
 Scratch compatibility. JSON reports are deterministic, versioned, and bounded.
+
+For a collection, `inspect-batch` reads an explicit file manifest and enforces
+aggregate file, byte, traversal, report and time limits. Each file runs in an
+isolated inspection process; cancellation and timeouts produce incomplete
+outcomes. It never runs imported programs. See [batch usage](docs/batch-inspection.md).
+The [frozen upstream audit](docs/corpus-audit.md) covers all 34 SB3 test fixtures
+at a pinned Scratch VM revision: 0 compatible, 13 completed incompatible, and
+21 incomplete inspections. These are upstream test cases, not representative
+user projects. Four expected diagnostic categories disagreed and are preserved.
 No assets, literals, variable values, or procedure bodies are copied into them.
 See [inspection semantics, exit codes, and limits](docs/inspection.md).
 
@@ -148,11 +158,14 @@ already cached):
 
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
+node scripts/acquire-corpus.js
 ```
 
-Then one command covers unit tests, differential execution, package creation,
-isolated installation with an empty npm cache in offline mode, and execution of
-all nine examples from that installed package:
+Then one command covers unit tests, differential execution, the independent
+upstream source audit, package creation, isolated installation with an empty npm
+cache in offline mode, three nonexecuting corpus inspections, and execution of
+all nine synthetic examples from that installed package. The measured harness
+also requires Python 3 and GNU `/usr/bin/time` on Linux:
 
 ```sh
 node scripts/verify.js

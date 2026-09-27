@@ -3,10 +3,12 @@ import {writeFile, unlink} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {compile, loadSb3, BridgeError} from '../src/index.js';
 import {inspectionCli} from '../src/inspection-cli.js';
+import {batchCli} from '../src/batch-cli.js';
 
 const help = `Usage: scratch-bridge INPUT.sb3 -o OUTPUT.mjs [options]
        scratch-bridge INPUT.sb3 --check [options]
        scratch-bridge inspect INPUT.sb3|INPUT.json [--json] [limits]
+       scratch-bridge inspect-batch MANIFEST.json [--json] [--output NEW_FILE] [limits]
 
 Convert one sequential green-flag script without executing it.
 Writes a standalone Node ES module and OUTPUT.mjs.map.json.
@@ -21,7 +23,9 @@ Options:
   --check                Validate compatibility without writing code
   --help                 Show this help
 `;
-if (process.argv[2] === 'inspect') {
+if (process.argv[2] === 'inspect-batch') {
+  await batchCli(process.argv.slice(3));
+} else if (process.argv[2] === 'inspect') {
   await inspectionCli(process.argv.slice(3));
 } else {
 try {

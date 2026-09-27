@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/scratchfoundation/scratch-vm",
+  "revision": "e6f5711f25f607ce8370a5a7afcfb391b349a6e1",
+  "attribution": "Scratch Foundation, Massachusetts Institute of Technology, and scratch-vm contributors; see immutable upstream history for individual contributions.",
+  "license": {
+    "repositoryDeclared": "AGPL-3.0-only",
+    "sourcePath": "LICENSE",
+    "licenseSha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+    "basis": "package.json license and root LICENSE at pinned revision. No fixture-specific license overrides found in the source tree. Embedded asset authorship is not individually established; original archives are acquired into ignored local cache, not redistributed here."
+  },
+  "selection": "All files with case-sensitive .sb3 suffix in the complete pinned repository Git tree, sorted lexicographically by source path; frozen before inspector evaluation.",
+  "exclusions": "No .sb3 exclusions. Non-SB3 files (including SB/SB2 and sprite files) excluded by format rule.",
+  "population": "Upstream automated-test fixtures, not a random or representative sample of Scratch user projects.",
+  "files": [
+    {
+      "id": "broadcast_special_chars",
+      "sourcePath": "test/fixtures/broadcast_special_chars.sb3",
+      "gitBlob": "9a840b0ef3dacae8acdb47ca0d6b6e24a3900543",
+      "sha256": "9a3dd8d4430a32e8d9fa4cd5b2aaba83447f9d61ff65f318498abecedf011273",
+      "bytes": 43316
+    },
+    {
+      "id": "cloud_variables_exceeded_limit",
+      "sourcePath": "test/fixtures/cloud_variables_exceeded_limit.sb3",
+      "gitBlob": "ce1b78ac76fd290301bdb8597fa3e7ad53306dbe",
+      "sha256": "1c23d97124b9914367dcb49014cc151be6718e93c561072a03229b4cfbab2a3b",
+      "bytes": 45681
+    },
+    {
+      "id": "cloud_variables_limit",
+      "sourcePath": "test/fixtures/cloud_variables_limit.sb3",
+      "gitBlob": "373f73a963ee015dec7ba96fb93977b95e104998",
+      "sha256": "dd0dfde8995248152fff0dc89702ac2efb912821f8e90f9ff021a8e3646d9ca1",
+      "bytes": 42361
+    },
+    {
+      "id": "cloud_variables_local",
+      "sourcePath": "test/fixtures/cloud_variables_local.sb3",
+      "gitBlob": "35df5de92249238808ac7ff4fa4b8a151de0041e",
+      "sha256": "45f348e1e9a95b917613efa0e7ef22322db1194f0d0f587df626aee48abeef85",
+      "bytes": 45578
+    },
+    {
+      "id": "cloud_variables_simple",
+      "sourcePath": "test/fixtures/cloud_variables_simple.sb3",
+      "gitBlob": "a25bd6252d52c50f1032fb99e86d18b6df7efd2e",
+      "sha256": "39c99a8264729c20dba34ab77ef3051a05987447cf123848120754d7a8cfe7fb",
+      "bytes": 43129
+    },
+    {
+      "id": "comments",
+      "sourcePath": "test/fixtures/comments.sb3",
+      "gitBlob": "ce937c45474cef94891edced09c38bf88852493f",
+      "sha256": "656102a3256382d4cbb39b4af37cb8d23df0b6ac05f00fb4d02d4642277dce95",
+      "bytes": 43749
+    },
+    {
+      "id": "comments_no_duplicate_id_serialization",
+      "sourcePath": "test/fixtures/comments_no_duplicate_id_serialization.sb3",
+      "gitBlob": "64b4117b9ae85dd2fbb21ca5dc74acb66f212a59",
+      "sha256": "d9ba4ffa47bbc3fc4b262be6540ed1a027367eec98338a881be9ad135dff7d5b",
+      "bytes": 43026
+    },
+    {
+      "id": "corrupt_png",
+      "sourcePath": "test/fixtures/corrupt_png.sb3",
+      "gitBlob": "acc4822166ce8a3762caaebf28f203aed480aa51",
+      "sha256": "2d72a9e23c4a9d8a7763378354526636e492af1a11e6ec484029aa68eb437dd5",
+      "bytes": 16188
+    },
+    {
+      "id": "corrupt_sound",
+      "sourcePath": "test/fixtures/corrupt_sound.sb3",
+      "gitBlob": "d2611babcb293a365e7de6e2d9ba9753bfaf336e",
+      "sha256": "cebefd6fd1fbc9bfd570d85be62937b6e3eb20629a56c003ea1eb8ddad1cf5c2",
+      "bytes": 9043
+    },
+    {
+      "id": "corrupt_svg",
+      "sourcePath": "test/fixtures/corrupt_svg.sb3",
+      "gitBlob": "52fb93096f082385fc0aec5c32df6fff96e588b7",
+      "sha256": "58922b86bad938f6d522f65addd4a55dea0a47e10113469290420c95e7d02495",
+      "bytes": 4856
+    },
+    {
+      "id": "default",
+      "sourcePath": "test/fixtures/default.sb3",
+      "gitBlob": "61b71838914e562a69f235781217de928d921b00",
+      "sha256": "efb9941a8ef6c16bc34a9fce5f0867cf72ef00fb388e3f4e55914610bdf5178d",
+      "bytes": 41932
+    },
+    {
+      "id": "draggable",
+      "sourcePath": "test/fixtures/draggable.sb3",
+      "gitBlob": "06cbdda54d9721ce12fdef22e8eca16000a1a7bf",
+      "sha256": "c7a1734bd3868b5480815e7f065c65a513c84c6233339ba860b021aeb8b9c050",
+      "bytes": 42868
+    },
+    {
+      "id": "edge-triggered-hat",
+      "sourcePath": "test/fixtures/edge-triggered-hat.sb3",
+      "gitBlob": "cd9464378bdf6570a43e7da2f1420fbf435a70fa",
+      "sha256": "9dda61f930b6bc46d5e91222a4a7981e78d928bd2ec3d02eaac10aad3a96e9db",
+      "bytes": 42138
+    },
+    {
+      "id": "order-library-reverse",
+      "sourcePath": "test/fixtures/execute/order-library-reverse.sb3",
+      "gitBlob": "f818a47fead84a81e6aef85bb27288800297edf2",
+      "sha256": "b677669506b60e3ba350be8ae545db93d7bcbb5f368ba21d86b0d4e966e7e09c",
+      "bytes": 44232
+    },
+    {
+      "id": "order-library",
+      "sourcePath": "test/fixtures/execute/order-library.sb3",
+      "gitBlob": "f3c6dbc46b81d5c4cb0b46c7d687df5c0c4906ea",
+      "sha256": "7f0df1e9c4a6b87f8bbea53b22d5a1201ebe774e535661cef5da3bd75af45c11",
+      "bytes": 44223
+    },
+    {
+      "id": "list-monitor-rename",
+      "sourcePath": "test/fixtures/list-monitor-rename.sb3",
+      "gitBlob": "e3d20ea799515a9edd94f25042c87e515cec80ae",
+      "sha256": "7560b8303898b20a7cc31b302e1a42c323c3d414a52afc7a41b2e310459f52dc",
+      "bytes": 42058
+    },
+    {
+      "id": "ev3-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/ev3-simple-project.sb3",
+      "gitBlob": "3d72a98f3a759b4cbfdfa05152a0e22088a89761",
+      "sha256": "8a4d101febf1f90696b63fe119e7bb891bfdde833a37463a838c426d32a63b09",
+      "bytes": 42893
+    },
+    {
+      "id": "microbit-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/microbit-simple-project.sb3",
+      "gitBlob": "3651b1c9185a45843ae4ada2e53597f3a52726c6",
+      "sha256": "de2eaf848b97aef78be0a45ff1acce1054616d39002135773dc4eb58da02e1b7",
+      "bytes": 42920
+    },
+    {
+      "id": "music-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/music-simple-project.sb3",
+      "gitBlob": "9610b62b3880c76146096b5d60add978f47e1fcf",
+      "sha256": "b8faa04eacbef599c71747d880ba5037f1351de7b897b42e2e34bffad5e5bff8",
+      "bytes": 42984
+    },
+    {
+      "id": "pen-dolphin-3d",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/pen-dolphin-3d.sb3",
+      "gitBlob": "abf459370fc93ac0959e8940cfc2a0aa21b2c172",
+      "sha256": "975052cbd3946ea1d60eb3c2c8c0d99fc1d9bf9aa39d4e0c30a96112b4297a83",
+      "bytes": 1527227
+    },
+    {
+      "id": "pen-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/pen-simple-project.sb3",
+      "gitBlob": "411ae8c9eb2149ec9f67cebc14229d5c8ab3daf7",
+      "sha256": "9f8ece5e491269d498983d2a8234ba2d2430184c0c01a1fbef0f52908afac8c3",
+      "bytes": 42891
+    },
+    {
+      "id": "text2speech-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/text2speech-simple-project.sb3",
+      "gitBlob": "b0651ccae348a77f4447df7f2e24ceb00d5b56ca",
+      "sha256": "d4f0816c87d3edf59ef15efd82cee6ef2bdc772ff14febcd4ff44620b130dffb",
+      "bytes": 42942
+    },
+    {
+      "id": "videoSensing-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/videoSensing-simple-project.sb3",
+      "gitBlob": "435864e0a117347b7e246db6c6116c84d430aca7",
+      "sha256": "e9e73667402eba259cdf645c5ace0b512e895dd68958ea20b9c80d510bfb762f",
+      "bytes": 42986
+    },
+    {
+      "id": "wedo2-simple-project",
+      "sourcePath": "test/fixtures/load-extensions/confirm-load/wedo2-simple-project.sb3",
+      "gitBlob": "7eabedc00c2064f24574915467e76334b6f3ccc2",
+      "sha256": "e6fcebc196fca7e5983d3acabf74bd227cd8ca253a7d94cd9060ebb1962e2953",
+      "bytes": 42895
+    },
+    {
+      "id": "missing_png",
+      "sourcePath": "test/fixtures/missing_png.sb3",
+      "gitBlob": "40260a33bf4740eb43a426bd162919cb3185e3bb",
+      "sha256": "130263f80569fce54b976b44b7d96e50f0605d999621511b97f0e7aebf12c6ea",
+      "bytes": 3150
+    },
+    {
+      "id": "missing_sound",
+      "sourcePath": "test/fixtures/missing_sound.sb3",
+      "gitBlob": "14dea75830d86de68144b77fe81a02588092fd9f",
+      "sha256": "41cba59b125c08c302fbb756d2b18a753a5751e1fc508db593ce0aba073b4bdf",
+      "bytes": 8402
+    },
+    {
+      "id": "missing_svg",
+      "sourcePath": "test/fixtures/missing_svg.sb3",
+      "gitBlob": "e0956c36f06c05e56a9de97f38882654b9158ee7",
+      "sha256": "02a782c45681bc840f676f84653bb72ff3abaa5eefdbe5173962ae0a7bf96dbf",
+      "bytes": 3446
+    },
+    {
+      "id": "monitored_variables",
+      "sourcePath": "test/fixtures/monitored_variables.sb3",
+      "gitBlob": "cae7b47d51b0d971b7dfb0d44dbce1330620b01a",
+      "sha256": "3d65e2114e758928da37ff99bf14cb959339d6437dbed78de30de15c7bde8472",
+      "bytes": 43615
+    },
+    {
+      "id": "monitors",
+      "sourcePath": "test/fixtures/monitors.sb3",
+      "gitBlob": "1343243ddd84bdacfcc94c6424440998d2454b1b",
+      "sha256": "943137ed040a50103e956cd00de2b287f962f6c43740d7db0a34c9a815990515",
+      "bytes": 50213
+    },
+    {
+      "id": "origin-absent",
+      "sourcePath": "test/fixtures/origin-absent.sb3",
+      "gitBlob": "c6c7755d895e6afc4a880bb14c83ac0ac6bb60ae",
+      "sha256": "7d538f8fca7f03d9f21151fdcb1a762efddd434515ed44183ed887b770ba13c2",
+      "bytes": 41908
+    },
+    {
+      "id": "origin",
+      "sourcePath": "test/fixtures/origin.sb3",
+      "gitBlob": "b8356a1f0daa58e3885eea65427e95b9dd993acc",
+      "sha256": "413ac7b8bc7fa50c489eefd11e9657bd20d2ced81bf012ecce7dcbcfdf580820",
+      "bytes": 45396
+    },
+    {
+      "id": "timer-monitor",
+      "sourcePath": "test/fixtures/timer-monitor.sb3",
+      "gitBlob": "b5f9d567c370529ca378f8d979d18f55d34c7ba1",
+      "sha256": "c7efc49118e5f75b66ecc0e0803770a3f92607fed86ec8034429f78073a39cae",
+      "bytes": 42997
+    },
+    {
+      "id": "top-level-reporters",
+      "sourcePath": "test/fixtures/top-level-reporters.sb3",
+      "gitBlob": "7e66deef10343d84721f4aab17c960ba726c9ef1",
+      "sha256": "9997eeea81402a83585c0547504891defc3da9c5419848d99af0d4be6ba6ff8a",
+      "bytes": 42049
+    },
+    {
+      "id": "variable_characters",
+      "sourcePath": "test/fixtures/variable_characters.sb3",
+      "gitBlob": "10720e5eee055793f25b797a35c9ca07ea74dcb7",
+      "sha256": "65313d7ee826758db8cf48d56dde43ddec1c4eba437594a4195cb1ee757d2425",
+      "bytes": 46355
+    }
+  ]
+}

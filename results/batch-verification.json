@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "packageVersion": "0.5.0",
+  "node": "v24.20.0",
+  "unitTests": {
+    "total": 140,
+    "passed": 140,
+    "failed": 0
+  },
+  "syntheticInspection": {
+    "total": 576,
+    "compatible": 96,
+    "expectationsPassed": 576
+  },
+  "syntheticVmComparisons": {
+    "total": 660,
+    "passed": 660,
+    "failed": 0
+  },
+  "installedSingleInspectionRuns": 33,
+  "installedConversionExamples": 9,
+  "upstreamCorpus": {
+    "total": 34,
+    "reported": 34,
+    "compatible": 0,
+    "incompatible": 13,
+    "incomplete": 21,
+    "skipped": 0,
+    "omitted": 0
+  },
+  "installedBatchCorpusRuns": 3,
+  "installedBatchPositiveControls": {
+    "compatible": 2,
+    "compilerAccepted": 2,
+    "infiniteProgramNotExecuted": true
+  },
+  "independentSourceLocationChecks": 357,
+  "corpusReportSha256": "ebc86575a8bd03d49073f9d27a7467a6802358116bd501567aa0897572aacb9f",
+  "verificationCommand": [
+    "node",
+    "scripts/verify.js"
+  ],
+  "note": "Existing historical results and generated-code fixture baselines are preserved; new measured corpus outcomes have separate snapshots."
+}

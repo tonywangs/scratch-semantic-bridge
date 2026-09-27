@@ -13,7 +13,7 @@ export function crc32(bytes) {
 }
 
 // Read only project.json. Asset paths are never written to the filesystem.
-export function readSb3(bytes, options = {}) {
+export function readSb3(bytes, options = {}, accounting = undefined) {
   const limits = {...ARCHIVE_LIMITS, ...options};
   for (const [key, value] of Object.entries(limits)) positiveLimit(value, key);
   if (!Buffer.isBuffer(bytes)) fail('INVALID_ARCHIVE', 'Expected an sb3 Buffer');
@@ -50,6 +50,7 @@ export function readSb3(bytes, options = {}) {
     if (flags & ~0x080e || flags & 1) bad('Unsupported ZIP flags or encryption');
     if (method !== 0 && method !== 8) bad('Only stored and deflated ZIP entries are supported');
     total += expanded;
+    if (accounting) accounting.expandedBytes = total;
     if (total > limits.maxExpandedBytes) fail('ARCHIVE_LIMIT', 'Declared expanded archive exceeds maxExpandedBytes');
     bounds(local, 30);
     if (u32(local) !== 0x04034b50 || u16(local + 6) !== flags || u16(local + 8) !== method) bad('Central and local ZIP headers disagree');

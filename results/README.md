@@ -97,9 +97,14 @@ uses npm's `--offline` mode with an empty cache; it does not use an OS firewall.
 See the [specification](../docs/specification.md) and
 [experiment protocol](../docs/experiments.md) for the full boundary.
 
-Re-run with development dependencies installed:
+The new [34-fixture upstream audit](corpus-audit.md) has separate snapshots;
+the historical results above remain unchanged. Its [verification summary](batch-verification.json)
+records 140 passing tests, 660 passing VM comparisons, 576 seeded inspection
+expectations, and the installed offline checks. Re-run with development
+dependencies and the frozen corpus acquired once:
 
 ```sh
+node scripts/acquire-corpus.js
 node scripts/verify.js
 ```
 

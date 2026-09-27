@@ -71,3 +71,16 @@ conversion policy, not a new general Scratch analyzer or an alternative player.
 The graph traversal is conservative over saved links, including hidden shadows
 and both conditional branches. Neither those links nor compiler acceptance prove
 that code executes. The old pinned npm sources remain the behavioral authority.
+
+For bounded batch inspection and the upstream fixture audit (2026-09-27), the
+complete Git tree and test sources at
+[`e6f5711f25f607ce8370a5a7afcfb391b349a6e1`](https://github.com/scratchfoundation/scratch-vm/tree/e6f5711f25f607ce8370a5a7afcfb391b349a6e1)
+were read without executing upstream code. This is the source revision declared
+by the pinned VM npm package. [Fixture provenance](../corpus/sources.json),
+[test-intent review](../corpus/source-review.json), and
+[frozen expectations](../corpus/expectations.json) identify the inputs and their
+independent source basis. The root source license is AGPL-3.0-only. Original
+archives, including embedded media with unaudited individual authorship, stay
+in an ignored acquisition cache and are not redistributed. Existing Scratch
+importers and compilers remain the related work; no novelty or comparative
+performance claim is made by this compatibility audit.

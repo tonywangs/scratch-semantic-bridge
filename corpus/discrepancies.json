@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "frozenSourcesSha256": "178dd0e865895c2b50637ca0a7bd2b60f446beeaeaf53dffd80761225ee3fe86",
+  "frozenExpectationsSha256": "9b821921b7d8137ea65bb28723cbcf116a7bf30fe0f4b6d49e14ffe584bc34ea",
+  "discrepancies": [
+    {"id": "cloud_variables_exceeded_limit", "expected": "UNSUPPORTED_FEATURE", "actual": "INVALID_VARIABLE"},
+    {"id": "cloud_variables_limit", "expected": "UNSUPPORTED_FEATURE", "actual": "INVALID_VARIABLE"},
+    {"id": "cloud_variables_local", "expected": "UNSUPPORTED_FEATURE", "actual": "INVALID_VARIABLE"},
+    {"id": "cloud_variables_simple", "expected": "UNSUPPORTED_FEATURE", "actual": "INVALID_VARIABLE"}
+  ],
+  "resolution": "Expectation classification error, retained rather than rewriting the frozen oracle. Source confirms cloud flags, but src/compiler.js rejects a variable tuple with a truthy third element as INVALID_VARIABLE. The policy rejection agrees with the source-derived expectation; the diagnostic category does not. No compiler/inspection semantics changed. All other required codes and unsupported opcodes matched on the first pass.",
+  "unresolved": [],
+  "reviewLimit": "Source-derived review and independent Python structural checks are not an external human review or a complete semantic oracle. Additional inspector findings remain observations; no behavioral equivalence claim is made."
+}

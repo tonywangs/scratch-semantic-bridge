@@ -1,0 +1,865 @@
+{
+  "schemaVersion": 1,
+  "method": "Frozen before inspector evaluation, derived from archive paths and saved source blocks using Python zipfile/json and documented sequential policy. Required findings are lower bounds, not complete semantic oracles. No imported project was executed.",
+  "fixtures": [
+    {
+      "id": "broadcast_special_chars",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "event_broadcast"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 2,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 2,
+        "extensions": [],
+        "opcodeCounts": {
+          "event_broadcast": 2
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "cloud_variables_exceeded_limit",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 15,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "cloud_variables_limit",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 10,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "cloud_variables_local",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 1,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "cloud_variables_simple",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 1,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "comments",
+      "compatible": false,
+      "requiredCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "control_stop",
+        "looks_changeeffectby",
+        "motion_movesteps",
+        "motion_turnright"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 6,
+        "greenFlags": 1,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "control_repeat": 1,
+          "control_stop": 1,
+          "event_whenflagclicked": 1,
+          "looks_changeeffectby": 1,
+          "motion_movesteps": 1,
+          "motion_turnright": 1
+        }
+      },
+      "basis": "One green-flag script. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "comments_no_duplicate_id_serialization",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "motion_movesteps"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "motion_movesteps": 1
+        }
+      },
+      "basis": "No green-flag script. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "corrupt_png",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "corrupt_sound",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "corrupt_svg",
+      "compatible": false,
+      "requiredCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "unsupportedOpcodes": [],
+      "basis": "No root project.json; only a nested project.json is present.",
+      "sourceFacts": {
+        "rootProject": false
+      }
+    },
+    {
+      "id": "default",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "draggable",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "edge-triggered-hat",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "event_whengreaterthan",
+        "motion_movesteps"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 2,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "event_whengreaterthan": 1,
+          "motion_movesteps": 1
+        }
+      },
+      "basis": "No green-flag script. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "order-library-reverse",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "control_wait",
+        "looks_say",
+        "operator_join"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 4,
+        "blocks": 24,
+        "greenFlags": 3,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "control_if_else": 2,
+          "control_wait": 5,
+          "data_changevariableby": 2,
+          "data_setvariableto": 2,
+          "event_whenflagclicked": 3,
+          "looks_say": 6,
+          "operator_equals": 2,
+          "operator_join": 2
+        }
+      },
+      "basis": "Multiple green-flag scripts. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "order-library",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "control_wait",
+        "looks_say",
+        "operator_join"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 4,
+        "blocks": 24,
+        "greenFlags": 3,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "control_if_else": 2,
+          "control_wait": 5,
+          "data_changevariableby": 2,
+          "data_setvariableto": 2,
+          "event_whenflagclicked": 3,
+          "looks_say": 6,
+          "operator_equals": 2,
+          "operator_join": 2
+        }
+      },
+      "basis": "Multiple green-flag scripts. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "list-monitor-rename",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "ev3-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "ev3_getDistance"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "ev3"
+        ],
+        "opcodeCounts": {
+          "ev3_getDistance": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "microbit-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "microbit_displayText"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "microbit"
+        ],
+        "opcodeCounts": {
+          "microbit_displayText": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "music-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "music_menu_DRUM",
+        "music_playDrumForBeats"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 2,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "music"
+        ],
+        "opcodeCounts": {
+          "music_menu_DRUM": 1,
+          "music_playDrumForBeats": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "pen-dolphin-3d",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "control_forever",
+        "control_wait",
+        "control_wait_until",
+        "event_broadcast",
+        "event_broadcastandwait",
+        "event_whenbroadcastreceived",
+        "looks_backdrops",
+        "looks_changeeffectby",
+        "looks_costume",
+        "looks_hide",
+        "looks_nextcostume",
+        "looks_seteffectto",
+        "looks_show",
+        "looks_switchbackdropto",
+        "looks_switchcostumeto",
+        "motion_changexby",
+        "motion_gotoxy",
+        "operator_mathop",
+        "pen_clear",
+        "pen_penDown",
+        "pen_penUp",
+        "pen_setPenColorToColor",
+        "pen_setPenSizeTo",
+        "pen_stamp",
+        "sensing_of",
+        "sensing_of_object_menu",
+        "sensing_timer",
+        "sound_playuntildone",
+        "sound_sounds_menu"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 5,
+        "blocks": 358,
+        "greenFlags": 4,
+        "cloudVariables": 0,
+        "broadcasts": 4,
+        "extensions": [
+          "pen"
+        ],
+        "opcodeCounts": {
+          "argument_reporter_string_number": 74,
+          "control_forever": 3,
+          "control_if_else": 2,
+          "control_repeat": 9,
+          "control_wait": 10,
+          "control_wait_until": 1,
+          "data_changevariableby": 8,
+          "data_setvariableto": 20,
+          "event_broadcast": 1,
+          "event_broadcastandwait": 3,
+          "event_whenbroadcastreceived": 8,
+          "event_whenflagclicked": 4,
+          "looks_backdrops": 2,
+          "looks_changeeffectby": 4,
+          "looks_costume": 3,
+          "looks_hide": 4,
+          "looks_nextcostume": 1,
+          "looks_seteffectto": 2,
+          "looks_show": 2,
+          "looks_switchbackdropto": 2,
+          "looks_switchcostumeto": 3,
+          "motion_changexby": 1,
+          "motion_gotoxy": 4,
+          "operator_add": 10,
+          "operator_and": 1,
+          "operator_divide": 4,
+          "operator_gt": 2,
+          "operator_lt": 2,
+          "operator_mathop": 18,
+          "operator_mod": 1,
+          "operator_multiply": 30,
+          "operator_subtract": 15,
+          "pen_clear": 3,
+          "pen_penDown": 1,
+          "pen_penUp": 2,
+          "pen_setPenColorToColor": 1,
+          "pen_setPenSizeTo": 1,
+          "pen_stamp": 2,
+          "procedures_call": 31,
+          "procedures_definition": 19,
+          "procedures_prototype": 19,
+          "sensing_of": 10,
+          "sensing_of_object_menu": 10,
+          "sensing_timer": 3,
+          "sound_playuntildone": 1,
+          "sound_sounds_menu": 1
+        }
+      },
+      "basis": "Multiple green-flag scripts. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "pen-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "pen_penDown"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "pen"
+        ],
+        "opcodeCounts": {
+          "pen_penDown": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "text2speech-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "text2speech_speakAndWait"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "text2speech"
+        ],
+        "opcodeCounts": {
+          "text2speech_speakAndWait": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "videoSensing-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "videoSensing_menu_VIDEO_STATE",
+        "videoSensing_videoToggle"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 2,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "videoSensing"
+        ],
+        "opcodeCounts": {
+          "videoSensing_menu_VIDEO_STATE": 1,
+          "videoSensing_videoToggle": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "wedo2-simple-project",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_FEATURE",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "wedo2_getDistance"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [
+          "wedo2"
+        ],
+        "opcodeCounts": {
+          "wedo2_getDistance": 1
+        }
+      },
+      "basis": "No green-flag script. Cloud data, broadcasts, or extensions violate the sequential policy. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "missing_png",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "missing_sound",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "missing_svg",
+      "compatible": false,
+      "requiredCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "unsupportedOpcodes": [],
+      "basis": "No root project.json; only a nested project.json is present.",
+      "sourceFacts": {
+        "rootProject": false
+      }
+    },
+    {
+      "id": "monitored_variables",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 3,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "monitors",
+      "compatible": false,
+      "requiredCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "data_hidevariable",
+        "data_showvariable",
+        "event_whenkeypressed"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 3,
+        "blocks": 4,
+        "greenFlags": 1,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "data_hidevariable": 1,
+          "data_showvariable": 1,
+          "event_whenflagclicked": 1,
+          "event_whenkeypressed": 1
+        }
+      },
+      "basis": "One green-flag script. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "origin-absent",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT"
+      ],
+      "unsupportedOpcodes": [],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 0,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {}
+      },
+      "basis": "No green-flag script. Asset and editor metadata do not supply an executable entry script."
+    },
+    {
+      "id": "origin",
+      "compatible": false,
+      "requiredCodes": [
+        "INVALID_ARCHIVE"
+      ],
+      "unsupportedOpcodes": [],
+      "basis": "No root project.json; only a nested project.json is present.",
+      "sourceFacts": {
+        "rootProject": false
+      }
+    },
+    {
+      "id": "timer-monitor",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "sensing_timer"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 1,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "sensing_timer": 1
+        }
+      },
+      "basis": "No green-flag script. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "top-level-reporters",
+      "compatible": false,
+      "requiredCodes": [
+        "SCRIPT_COUNT",
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "looks_size",
+        "motion_xposition"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 2,
+        "blocks": 2,
+        "greenFlags": 0,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "looks_size": 1,
+          "motion_xposition": 1
+        }
+      },
+      "basis": "No green-flag script. Unsupported operations are identified directly in saved block records."
+    },
+    {
+      "id": "variable_characters",
+      "compatible": false,
+      "requiredCodes": [
+        "UNSUPPORTED_OPCODE"
+      ],
+      "unsupportedOpcodes": [
+        "motion_turnright"
+      ],
+      "sourceFacts": {
+        "rootProject": true,
+        "targets": 3,
+        "blocks": 8,
+        "greenFlags": 1,
+        "cloudVariables": 0,
+        "broadcasts": 0,
+        "extensions": [],
+        "opcodeCounts": {
+          "data_addtolist": 1,
+          "data_changevariableby": 1,
+          "data_itemoflist": 1,
+          "data_listcontainsitem": 1,
+          "data_setvariableto": 2,
+          "event_whenflagclicked": 1,
+          "motion_turnright": 1
+        }
+      },
+      "basis": "One green-flag script. Unsupported operations are identified directly in saved block records."
+    }
+  ]
+}

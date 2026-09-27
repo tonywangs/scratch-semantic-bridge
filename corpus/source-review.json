@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "revision": "e6f5711f25f607ce8370a5a7afcfb391b349a6e1",
+  "method": "Read upstream tests without executing them; compare immutable source structure against the documented subset. Fixture expectation file is frozen separately. Review is independent of inspector output, not performed by an external reviewer.",
+  "upstreamSourceHashes": {
+    "test/integration/broadcast_special_chars_sb3.js": "066bba4438e0edf4e286ad97d2455aea45afd5cacb363024ec77b4cbdd7bf558",
+    "test/integration/cloud_variables_sb3.js": "c0d8cca2b4bde95f0b07e6481329049e1993fb70b9467df58e518e55a372c84c",
+    "test/integration/comments_sb3.js": "d77a26c6ee7b82f4543b8df5ab4349e698ffec00cb801cdeae4a62d0df540675",
+    "test/unit/serialization_sb3.js": "95115597079dd4f5db7e1b07517465da9ae7324cc299544fac8b390625154e3e",
+    "test/integration/sb3_corrupted_png.js": "57d06bffefc1169d89f9a45136db11ac2f52678f3a4f01413e11c35b5b62b562",
+    "test/integration/sb3_corrupted_sound.js": "6654c72c5618da54549616b6be2f539d9cb55a243ef0ce206c07fd16e026b862",
+    "test/integration/sb3_corrupted_svg.js": "eeb45afbb09c43bc3495fa12b7038f263c45125cbf24a6c5dd4e69e4b7abee19",
+    "test/integration/runId.js": "447f7bac47cc90751d52013c152eb3930376cf5c497144eddf21a508cc31043b",
+    "test/integration/sprite2_corrupted_png.js": "f031bb53a9ff7c2b4f69a9a9b108a8528ea705af5965fd8105d6a12b8d434ddd",
+    "test/integration/sprite2_corrupted_svg.js": "204e60d39394569b9b2d1df418a5372001373c5aa508e55742efdc881108f5e8",
+    "test/integration/sprite2_missing_png.js": "927e23b353eed81a68a5d07a8fc9a8108f72d621bdf94d89076dc4c0199bf7f8",
+    "test/integration/sprite2_missing_svg.js": "bb377b412f5c18ac12a27bc6df9dccc2a3198f7745abc7d36483178f8c35d72f",
+    "test/integration/sprite3_corrupted_png.js": "8a22ed62b59d56574160dbd5bc0ad5d1218ac434eb7e7b803f0627585e6618bd",
+    "test/integration/sprite3_corrupted_svg.js": "397440e2340a3c0e5f5dce006ba8149231026582dd6fb6df01bdbc03b6631a66",
+    "test/integration/sprite3_missing_png.js": "9428a741d36f35343eebb148a0c63b6217d2002e29206da2189e881ba6178156",
+    "test/integration/sprite3_missing_svg.js": "91bc9c2546178d868047cd5d81263b2a432c0342a7ed51ab0f9ae61338bb577b",
+    "test/integration/hat-threads-run-every-frame.js": "1813aaee96308cbb9b5caa4fb35613e3d00b25cff1ef948085e0895246484912",
+    "test/integration/execute.js": "a088c2ed5eb200c56d937cf57e0121e383b449b71e86d03342fdde6f21c61596",
+    "test/integration/list-monitor-rename.js": "2b3cd8c0581ae884c709d8f72e9926bf484f5cd45f20f5dcc622ac61670bb9a7",
+    "test/integration/load-extensions.js": "83901187b023ecab9d1059ad7825802296f4ed094809cba13cf7fa62e6fa2333",
+    "test/integration/sb3_missing_png.js": "efac8a7a1336691ae9974c90bcd293c1e3df6f55ff9aca6f9a1b3476cb63fc78",
+    "test/integration/sb3_missing_sound.js": "b8c3716127d400e3572c10f1c15174c58ef0fb029d16c38bfe4af742b1dd8040",
+    "test/integration/sb3_missing_svg.js": "a0e71c368156290023fdb35d8802b52958d1eb284f31afe2ac67527738014509",
+    "test/integration/variable_monitor_reset.js": "34139b299a7cbbe8d253c999dfd2e3e35d38a33d5a6c2a0dbf85ad193d3ba8ed",
+    "test/integration/monitors_sb3.js": "1774475bc68f62db4c092105e535215c3ec01266c98a7f9afc6298211e3cfdfa",
+    "test/integration/monitor-threads-run-every-frame.js": "4a252c1b891aa1d5a5634b76973dff29c58a7057f97f0cdc990c48b2a3655ba1",
+    "test/integration/variable_special_chars_sb3.js": "5416f7fb7987dee1a1e41c86b4a61d4117703685cd9ecf4b1503a8b2ae9916da",
+    "test/fixtures/readProjectFile.js": "3b02f4f607b796109f332c946563c7ad56d6acf17e4814e0e56f2a504ffd6a61"
+  },
+  "fixtures": [
+    {
+      "id": "broadcast_special_chars",
+      "upstreamIntent": "Broadcast names and references survive special-character import.",
+      "upstreamTests": [
+        "test/integration/broadcast_special_chars_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "cloud_variables_exceeded_limit",
+      "upstreamIntent": "Import caps enabled cloud variables at the VM cloud limit despite extra saved flags.",
+      "upstreamTests": [
+        "test/integration/cloud_variables_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "cloud_variables_limit",
+      "upstreamIntent": "Import cloud variables at the VM limit.",
+      "upstreamTests": [
+        "test/integration/cloud_variables_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "cloud_variables_local",
+      "upstreamIntent": "Sprite-local cloud flags are treated as local variables on import.",
+      "upstreamTests": [
+        "test/integration/cloud_variables_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "cloud_variables_simple",
+      "upstreamIntent": "Import one stage cloud variable.",
+      "upstreamTests": [
+        "test/integration/cloud_variables_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "comments",
+      "upstreamIntent": "Preserve attached and workspace comments when importing and serializing.",
+      "upstreamTests": [
+        "test/integration/comments_sb3.js",
+        "test/unit/serialization_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "comments_no_duplicate_id_serialization",
+      "upstreamIntent": "Avoid duplicate comment IDs during serialization.",
+      "upstreamTests": [
+        "test/unit/serialization_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "corrupt_png",
+      "upstreamIntent": "Recover from a corrupted PNG costume asset.",
+      "upstreamTests": [
+        "test/integration/sb3_corrupted_png.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "corrupt_sound",
+      "upstreamIntent": "Recover from a corrupted sound asset.",
+      "upstreamTests": [
+        "test/integration/sb3_corrupted_sound.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "corrupt_svg",
+      "upstreamIntent": "Recover from a corrupted SVG costume asset.",
+      "upstreamTests": [
+        "test/integration/sb3_corrupted_svg.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "default",
+      "upstreamIntent": "Default empty project used as a starting point for sprite import and run-ID tests.",
+      "upstreamTests": [
+        "test/integration/runId.js",
+        "test/integration/sprite2_corrupted_png.js",
+        "test/integration/sprite2_corrupted_svg.js",
+        "test/integration/sprite2_missing_png.js",
+        "test/integration/sprite2_missing_svg.js",
+        "test/integration/sprite3_corrupted_png.js",
+        "test/integration/sprite3_corrupted_svg.js",
+        "test/integration/sprite3_missing_png.js",
+        "test/integration/sprite3_missing_svg.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "draggable",
+      "upstreamIntent": "Read the saved sprite draggability state.",
+      "upstreamTests": [
+        "test/unit/serialization_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "edge-triggered-hat",
+      "upstreamIntent": "Schedule edge-triggered hats on VM frames.",
+      "upstreamTests": [
+        "test/integration/hat-threads-run-every-frame.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "order-library-reverse",
+      "upstreamIntent": "Exercise target/script execution order, in reverse library order.",
+      "upstreamTests": [
+        "test/integration/execute.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "order-library",
+      "upstreamIntent": "Exercise target/script execution order.",
+      "upstreamTests": [
+        "test/integration/execute.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "list-monitor-rename",
+      "upstreamIntent": "Import a list monitor with an incorrect saved name and reconcile it with the list.",
+      "upstreamTests": [
+        "test/integration/list-monitor-rename.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "ev3-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "microbit-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "music-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "pen-dolphin-3d",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "pen-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "text2speech-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "videoSensing-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "wedo2-simple-project",
+      "upstreamIntent": "Confirm the named extension loads from a saved project; this audit never loads that extension.",
+      "upstreamTests": [
+        "test/integration/load-extensions.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "missing_png",
+      "upstreamIntent": "Recover from a missing PNG costume asset.",
+      "upstreamTests": [
+        "test/integration/sb3_missing_png.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "missing_sound",
+      "upstreamIntent": "Recover from a missing sound asset.",
+      "upstreamTests": [
+        "test/integration/sb3_missing_sound.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "missing_svg",
+      "upstreamIntent": "Recover from a missing SVG costume asset.",
+      "upstreamTests": [
+        "test/integration/sb3_missing_svg.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "monitored_variables",
+      "upstreamIntent": "Reset variable monitor values.",
+      "upstreamTests": [
+        "test/integration/variable_monitor_reset.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "monitors",
+      "upstreamIntent": "Import variable/list monitors and visibility state.",
+      "upstreamTests": [
+        "test/integration/monitors_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "origin-absent",
+      "upstreamIntent": "Do not invent origin metadata when serializing a project without it.",
+      "upstreamTests": [
+        "test/unit/serialization_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "origin",
+      "upstreamIntent": "Read and preserve origin metadata.",
+      "upstreamTests": [
+        "test/unit/serialization_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "timer-monitor",
+      "upstreamIntent": "Run monitor threads on every frame, including timer reporters.",
+      "upstreamTests": [
+        "test/integration/monitor-threads-run-every-frame.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "top-level-reporters",
+      "upstreamIntent": "Serialize top-level reporter blocks.",
+      "upstreamTests": [
+        "test/unit/serialization_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    },
+    {
+      "id": "variable_characters",
+      "upstreamIntent": "Import special characters in variable/list names, references, and monitors.",
+      "upstreamTests": [
+        "test/integration/variable_special_chars_sb3.js"
+      ],
+      "review": "Checked saved archive/source structure before inspector evaluation; test intent establishes fixture purpose, not expected converter acceptance."
+    }
+  ]
+}
